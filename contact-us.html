@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
+    <form 
+      class="max-w-lg mx-auto bg-white p-6 rounded shadow-md"
+      action="https://script.google.com/macros/s/AKfycbxDJoRL5QOltHHMfRMeNiofEoonCCnUK4fbaCcN8M6ev4wE2FpVNPnXi0N91ifPDA/exec"      
+      method="POST"
+    >
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">Name (required)</label>
+        <input 
+          type="text" 
+          name="name" 
+          class="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">Phone (required)</label>
+        <input 
+          type="tel" 
+          name="phone" 
+          class="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">Email (required)</label>
+        <input 
+          type="email" 
+          name="email" 
+          class="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">Message</label>
+        <textarea 
+          name="message" 
+          class="w-full border border-gray-300 rounded px-3 py-2"
+          rows="4"
+        ></textarea>
+      </div>
+      <button 
+        type="submit"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        Submit Now
+      </button>
+    </form>
+  </div>
+</body>
+</html>

@@ -10,7 +10,6 @@ class ProductLoader {
       'sports': 'products-sportgoods.json'
     };
     
-    console.log('Loading category:', category); // Debug log
     const filename = productFiles[category];
     const response = await fetch(`/Assets/data/${filename}`);
     const data = await response.json();

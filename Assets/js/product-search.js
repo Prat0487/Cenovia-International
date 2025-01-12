@@ -4,9 +4,23 @@ class ProductSearch {
         this.productLoader = new ProductLoader();
         this.searchInput = document.querySelector('input[type="search"]');
         this.categoryFilter = document.getElementById('categoryFilter');
+        this.sortFilter = document.getElementById('sortFilter');
         this.productGrid = document.getElementById('productGrid');
+        
+        // Initialize all features
         this.initializeSearch();
         this.initializeCategoryFilter();
+        this.initializeSortFilter();
+        
+        // Load initial products
+        this.loadProducts();
+    }
+
+    async loadProducts() {
+        const products = await this.productLoader.loadProducts(this.productType);
+        const filteredProducts = this.filterByCategory(products);
+        const sortedProducts = this.sortProducts(filteredProducts);
+        this.renderSearchResults(sortedProducts);
     }
 
     initializeSearch() {
@@ -23,7 +37,19 @@ class ProductSearch {
             this.categoryFilter.addEventListener('change', async () => {
                 const products = await this.productLoader.loadProducts(this.productType);
                 const filteredProducts = this.filterByCategory(products);
-                this.renderSearchResults(filteredProducts);
+                const sortedProducts = this.sortProducts(filteredProducts);
+                this.renderSearchResults(sortedProducts);
+            });
+        }
+    }
+
+    initializeSortFilter() {
+        if (this.sortFilter) {
+            this.sortFilter.addEventListener('change', async () => {
+                const products = await this.productLoader.loadProducts(this.productType);
+                const filteredProducts = this.filterByCategory(products);
+                const sortedProducts = this.sortProducts(filteredProducts);
+                this.renderSearchResults(sortedProducts);
             });
         }
     }
@@ -43,11 +69,27 @@ class ProductSearch {
         });
     }
 
+    sortProducts(products) {
+        const sortType = this.sortFilter?.value;
+        if (!sortType) return products;
+
+        return [...products].sort((a, b) => {
+            if (sortType === 'weight-high') {
+                return b.attributes.weight - a.attributes.weight;
+            }
+            if (sortType === 'weight-low') {
+                return a.attributes.weight - b.attributes.weight;
+            }
+            return 0;
+        });
+    }
+
     filterProducts(products, searchTerm) {
         const categoryFiltered = this.filterByCategory(products);
-        if (!searchTerm) return categoryFiltered;
+        const sortedProducts = this.sortProducts(categoryFiltered);
+        if (!searchTerm) return sortedProducts;
 
-        return categoryFiltered.filter(product => 
+        return sortedProducts.filter(product => 
             product.name.toLowerCase().includes(searchTerm) ||
             product.description.toLowerCase().includes(searchTerm)
         );
@@ -56,54 +98,76 @@ class ProductSearch {
     renderSearchResults(products) {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
-            const productHTML = `
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
-                                <p class="text-gray-600">${product.description}</p>
-                            </div>
-                            <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
-                                <i class="far fa-heart text-xl"></i>
-                            </button>
-                        </div>
-                        ${this.getSpecificationsTemplate(product)}
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                            <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                                Enquire now
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            `;
+            const productHTML = this.productType === 'silvercraft' 
+                ? this.getSilvercraftTemplate(product)
+                : this.getSportsTemplate(product);
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);
         });
     }
 
-    getSpecificationsTemplate(product) {
-        if (this.productType === 'silvercraft') {
-            return `
-                <div class="specifications text-sm text-gray-600 mt-2">
-                    <p>Material: ${product.attributes.material}</p>
-                    <p>Weight: ${product.attributes.weight}g</p>
-                    <p>Purity: ${product.attributes.purity}</p>
+    getSilvercraftTemplate(product) {
+        return `
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
                 </div>
-            `;
-        } else {
-            return `
-                <div class="specifications text-sm text-gray-600 mt-2">
-                    <p>Sport Type: ${product.attributes.sportType}</p>
-                    <p>Age Group: ${product.attributes.ageGroup}</p>
-                    <p>Skill Level: ${product.attributes.skill_level}</p>
-                    <p>Warranty: ${product.attributes.warranty}</p>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
+                            <p class="text-gray-600">${product.description}</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="specifications text-sm text-gray-600 mt-2">
+                        <p>Material: ${product.attributes.material}</p>
+                        <p>Weight: ${product.attributes.weight}g</p>
+                        <p>Purity: ${product.attributes.purity}</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-lg font-bold text-gray-900">${product.price}</span>
+                        <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Enquire now
+                        </a>
+                    </div>
                 </div>
-            `;
-        }
+            </article>
+        `;
+    }
+
+    getSportsTemplate(product) {
+        return `
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
+                            <p class="text-gray-600">${product.description}</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="specifications text-sm text-gray-600 mt-2">
+                        <p>Sport Type: ${product.attributes.sportType}</p>
+                        <p>Age Group: ${product.attributes.ageGroup}</p>
+                        <p>Skill Level: ${product.attributes.skill_level}</p>
+                        <p>Warranty: ${product.attributes.warranty}</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-lg font-bold text-gray-900">${product.price}</span>
+                        <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Enquire now
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `;
     }
 
     debounce(func, wait) {

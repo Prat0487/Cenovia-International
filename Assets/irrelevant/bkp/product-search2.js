@@ -4,9 +4,11 @@ class ProductSearch {
         this.productLoader = new ProductLoader();
         this.searchInput = document.querySelector('input[type="search"]');
         this.categoryFilter = document.getElementById('categoryFilter');
+        this.sortFilter = document.getElementById('sortFilter');
         this.productGrid = document.getElementById('productGrid');
         this.initializeSearch();
         this.initializeCategoryFilter();
+        this.initializeSortFilter();
     }
 
     initializeSearch() {
@@ -23,7 +25,19 @@ class ProductSearch {
             this.categoryFilter.addEventListener('change', async () => {
                 const products = await this.productLoader.loadProducts(this.productType);
                 const filteredProducts = this.filterByCategory(products);
-                this.renderSearchResults(filteredProducts);
+                const sortedProducts = this.sortProducts(filteredProducts);
+                this.renderSearchResults(sortedProducts);
+            });
+        }
+    }
+
+    initializeSortFilter() {
+        if (this.sortFilter) {
+            this.sortFilter.addEventListener('change', async () => {
+                const products = await this.productLoader.loadProducts(this.productType);
+                const filteredProducts = this.filterByCategory(products);
+                const sortedProducts = this.sortProducts(filteredProducts);
+                this.renderSearchResults(sortedProducts);
             });
         }
     }
@@ -43,11 +57,27 @@ class ProductSearch {
         });
     }
 
+    sortProducts(products) {
+        const sortType = this.sortFilter?.value;
+        if (!sortType) return products;
+
+        return [...products].sort((a, b) => {
+            if (sortType === 'weight-high') {
+                return b.attributes.weight - a.attributes.weight;
+            }
+            if (sortType === 'weight-low') {
+                return a.attributes.weight - b.attributes.weight;
+            }
+            return 0;
+        });
+    }
+
     filterProducts(products, searchTerm) {
         const categoryFiltered = this.filterByCategory(products);
-        if (!searchTerm) return categoryFiltered;
+        const sortedProducts = this.sortProducts(categoryFiltered);
+        if (!searchTerm) return sortedProducts;
 
-        return categoryFiltered.filter(product => 
+        return sortedProducts.filter(product => 
             product.name.toLowerCase().includes(searchTerm) ||
             product.description.toLowerCase().includes(searchTerm)
         );
@@ -71,7 +101,11 @@ class ProductSearch {
                                 <i class="far fa-heart text-xl"></i>
                             </button>
                         </div>
-                        ${this.getSpecificationsTemplate(product)}
+                        <div class="specifications text-sm text-gray-600 mt-2">
+                            <p>Material: ${product.attributes.material}</p>
+                            <p>Weight: ${product.attributes.weight}g</p>
+                            <p>Purity: ${product.attributes.purity}</p>
+                        </div>
                         <div class="flex justify-between items-center mt-4">
                             <span class="text-lg font-bold text-gray-900">${product.price}</span>
                             <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
@@ -83,27 +117,6 @@ class ProductSearch {
             `;
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);
         });
-    }
-
-    getSpecificationsTemplate(product) {
-        if (this.productType === 'silvercraft') {
-            return `
-                <div class="specifications text-sm text-gray-600 mt-2">
-                    <p>Material: ${product.attributes.material}</p>
-                    <p>Weight: ${product.attributes.weight}g</p>
-                    <p>Purity: ${product.attributes.purity}</p>
-                </div>
-            `;
-        } else {
-            return `
-                <div class="specifications text-sm text-gray-600 mt-2">
-                    <p>Sport Type: ${product.attributes.sportType}</p>
-                    <p>Age Group: ${product.attributes.ageGroup}</p>
-                    <p>Skill Level: ${product.attributes.skill_level}</p>
-                    <p>Warranty: ${product.attributes.warranty}</p>
-                </div>
-            `;
-        }
     }
 
     debounce(func, wait) {

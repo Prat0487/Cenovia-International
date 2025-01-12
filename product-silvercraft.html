@@ -310,3 +310,24 @@
   padding: 2rem;
   width: 100%;
 }
+
+<!-- Add this script section just before closing body tag -->
+<script>
+    // Dropdown toggle
+    function toggleDropdown() {
+        const dropdown = document.getElementById('productDropdown');
+        const arrow = document.getElementById('dropdownArrow');
+        dropdown.classList.toggle('hidden');
+        arrow.style.transform = dropdown.classList.contains('hidden') ? '' : 'rotate(180deg)';
+    }
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('productDropdown');
+        const button = document.querySelector('[onclick="toggleDropdown()"]');
+        if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.add('hidden');
+            document.getElementById('dropdownArrow').style.transform = '';
+        }
+    });
+</script>

@@ -119,19 +119,10 @@
   <!-- Main Content -->
   <main class="flex-grow">
     <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-8">Sport Goods</h1>
-        <!-- Add search bar -->
-        <div class="mb-8">
-            <div class="relative">
-                <input type="search" 
-                       placeholder="Search products..." 
-                       class="w-full md:w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            </div>
-        </div>
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Products will be loaded here -->
-        </div>
+      <h1 class="text-3xl font-bold mb-8">Sport Goods</h1>
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Products will be loaded here -->
+      </div>
     </div>
   </main>
 
@@ -233,11 +224,9 @@
 
 <script src="Assets/js/product-loader.js"></script>
 <script src="Assets/js/infinite-scroll.js"></script>
-<script src="Assets/js/product-search.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const infiniteScroll = new InfiniteScroll('sports');
         infiniteScroll.init();
-        new ProductSearch('sports');
     });
 </script>

@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore our extensive collection of handcrafted silver items">
-  <title>Silvercraft Collection | Your Company Name</title>
+  <title>Silvercraft Collection - Cenovia International</title>
   
   <!-- Stylesheets -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
+  <!-- Custom styles -->
   <style>
+    .nav-link {
+        @apply text-gray-700 hover:text-blue-600 font-bold transition-all duration-300;
+    }
+    .nav-link.active {
+        @apply text-blue-600;
+    }
+    .social-link {
+        @apply hover:text-blue-300 transition-all duration-300 hover:scale-110;
+    }
+    .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+    }
     .product-card {
       @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
     }
@@ -20,13 +34,97 @@
     .product-image img {
       @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
     }
-    .quick-view {
-      @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100;
-    }
   </style>
 </head>
 
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-50 flex flex-col min-h-screen">
+  <!-- Top Ribbon -->
+  <div class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-3">
+    <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+      <div class="flex items-center space-x-4 mb-2 sm:mb-0">
+        <a href="tel:+919727444678" class="hover:text-gray-300 transition-colors duration-200">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <span>+91 97274 44678</span>
+        </a>
+        <a href="mailto:example@email.com" class="hover:text-gray-300 transition-colors duration-200">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>example@email.com</span>
+        </a>
+      </div>
+      <div class="flex space-x-6">
+        <a href="#" class="social-link" aria-label="Facebook">
+          <i class="fab fa-facebook text-lg"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Twitter">
+          <i class="fab fa-twitter text-lg"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin text-lg"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <i class="fab fa-instagram text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="glass-effect sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="Assets/others/your-logo.png" alt="Company Logo" class="h-12" width="auto" height="48">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="nav-link font-bold">ABOUT US</a>
+          
+          <!-- Products Dropdown -->
+          <div class="relative">
+            <button class="nav-link active flex items-center font-bold" onclick="toggleDropdown()" aria-expanded="false">
+              PRODUCT
+              <svg class="w-4 h-4 ml-1 transition-transform duration-200" id="dropdownArrow"
+                   fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="productDropdown" class="absolute z-50 hidden bg-white shadow-lg mt-2 rounded-lg overflow-hidden min-w-[200px]"
+                 role="menu">
+              <a href="product-silvercraft.html" class="block px-6 py-3 hover:bg-gray-50 text-blue-600 whitespace-nowrap" role="menuitem">
+                Silvercraft
+              </a>
+              <a href="product-sportgoods.html" class="block px-6 py-3 hover:bg-gray-50 text-gray-700 whitespace-nowrap" role="menuitem">
+                Sport Goods
+              </a>
+            </div>
+          </div>
+          <a href="our-team.html" class="nav-link font-bold">OUR TEAM</a>
+          <a href="contact-us.html" class="nav-link font-bold">CONTACT US</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2" id="mobile-menu-button" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">ABOUT US</a>
+          <a href="product-silvercraft.html" class="block px-3 py-2 rounded-md text-base font-bold text-orange-500">SILVERCRAFT</a>
+          <a href="product-sportgoods.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">SPORT GOODS</a>
+          <a href="our-team.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">OUR TEAM</a>
+          <a href="contact-us.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">CONTACT US</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <!-- Category Banner -->
   <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
     <div class="container mx-auto px-4">
@@ -35,7 +133,7 @@
     </div>
   </div>
 
-  <main class="container mx-auto px-4 py-8">
+  <main class="flex-grow container mx-auto px-4 py-8">
     <!-- Filters and Search Section -->
     <div class="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex items-center space-x-4 w-full md:w-auto">
@@ -75,29 +173,47 @@
 
     <!-- Product Grid -->
     <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <!-- Product cards will be dynamically loaded here -->
-    </div>
-
-    <!-- Pagination -->
-    <div class="mt-12 flex justify-center">
-      <nav class="flex items-center space-x-2" aria-label="Pagination">
-        <button id="prevPage" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="px-4 py-2 rounded-lg border border-blue-600 bg-blue-600 text-white" data-page="1">1</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="2">2</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="3">3</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="4">4</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="5">5</button>
-        <button id="nextPage" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </nav>
+      <!-- Products will be dynamically loaded here -->
     </div>
   </main>
-
+  <script src="Assets/js/product-templates.js"></script>
+  <script src="Assets/js/product-loader.js"></script>
+  <script src="Assets/js/infinite-scroll.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const loader = new ProductLoader();
+      const products = await loader.loadProducts('silvercraft');
+      const productGrid = document.getElementById('productGrid');
+      
+      // Clear existing content
+      productGrid.innerHTML = '';
+      
+      // Render products
+      products.forEach(product => {
+        const productHTML = `
+          <article class="product-card">
+            <div class="product-image">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+              </div>
+            </div>
+            <div class="p-4">
+              <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
+              <p class="text-gray-600">${product.description}</p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-lg font-bold text-gray-900">${product.price}</span>
+                <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  Enquire now
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+        productGrid.innerHTML += productHTML;
+      });
+    });
+  </script>
   <!-- Newsletter Section -->
-  <section class="bg-gray-100 py-12 mt-16">
+  <section class="bg-gray-100 py-12">
     <div class="container mx-auto px-4">
       <div class="max-w-xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
@@ -114,141 +230,86 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-auto">
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-4">About Us</h4>
+          <p class="text-gray-400">
+            Your trusted partner in silvercraft and sporting goods, delivering excellence since 2025.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
+            <li><a href="product-silvercraft.html" class="text-gray-400 hover:text-white transition-colors duration-200">Silvercraft</a></li>
+            <li><a href="product-sportgoods.html" class="text-gray-400 hover:text-white transition-colors duration-200">Sport Goods</a></li>
+            <li><a href="our-team.html" class="text-gray-400 hover:text-white transition-colors duration-200">Our Team</a></li>
+            <li><a href="contact-us.html" class="text-gray-400 hover:text-white transition-colors duration-200">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <i class="fas fa-envelope w-6"></i>
+              <a href="mailto:info@example.com" class="hover:text-white transition-colors duration-200">
+                info@example.com
+              </a>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i class="fas fa-phone w-6"></i>
+              <a href="tel:+1234567890" class="hover:text-white transition-colors duration-200">
+                (123) 456-7890
+              </a>
+            </li>
+            <li class="flex items-start text-gray-400">
+              <i class="fas fa-map-marker-alt w-6 mt-1"></i>
+              <span>123 Street Name<br>City, State 12345</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fab fa-twitter text-2xl"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fab fa-facebook text-2xl"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fab fa-linkedin text-2xl"></i>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>© 2025 Cenovia International. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="Assets/js/product-loader.js"></script>
+  <script src="Assets/js/infinite-scroll.js"></script>
+  <script src="Assets/js/product-search.js"></script>
   <script>
-    // Sample product data
-    const products = [
-      {
-        id: 1,
-        name: "Vintage Silver Tea Set",
-        description: "Traditional Craftsmanship",
-        price: "$299.99",
-        image: "Assets/Images/Silver/silver_craft_1.png"
-      },
-      {
-        id: 2,
-        name: "Ornate Silver Bowl",
-        description: "Hand-Engraved Design",
-        price: "$189.99",
-        image: "Assets/Images/Silver/silver_craft_2.png"
-      }
-    ];
-
-    let currentPage = 1;
-    const productsPerPage = 8;
-    const totalPages = 5;
-
-    function renderProducts(page) {
-      const productGrid = document.getElementById('productGrid');
-      productGrid.innerHTML = '';
-
-      if (page === 1) {
-        // Show actual products on first page
-        products.forEach(product => {
-          productGrid.innerHTML += `
-            <article class="product-card">
-              <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
-                <div class="quick-view">
-                  <button class="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
-                    Quick View
-                  </button>
-                </div>
-              </div>
-              <div class="p-4">
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
-                    <p class="text-gray-600">${product.description}</p>
-                  </div>
-                  <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
-                    <i class="far fa-heart text-xl"></i>
-                  </button>
-                </div>
-                <div class="flex justify-between items-center mt-4">
-                  <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                  <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                    Enquire now
-                  </a>
-                </div>
-              </div>
-            </article>
-          `;
-        });
-      } else {
-        // Show placeholder content for other pages
-        for (let i = 0; i < productsPerPage; i++) {
-          productGrid.innerHTML += `
-            <article class="product-card">
-              <div class="p-4 flex items-center justify-center h-64 bg-gray-100">
-                <p class="text-gray-500 text-center">Product yet to be added</p>
-              </div>
-              <div class="p-4">
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h2 class="text-xl font-semibold mb-1">Coming Soon</h2>
-                    <p class="text-gray-600">Product details will be available soon</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          `;
-        }
-      }
-
-      // Update pagination buttons
-      document.querySelectorAll('[data-page]').forEach(button => {
-        button.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-        button.classList.add('border-gray-300', 'text-gray-700');
-        if (parseInt(button.dataset.page) === page) {
-          button.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-          button.classList.remove('border-gray-300', 'text-gray-700');
-        }
-      });
-    }
-
-    // Initialize page
-    renderProducts(currentPage);
-
-    // Add event listeners for pagination
-    document.querySelectorAll('[data-page]').forEach(button => {
-      button.addEventListener('click', () => {
-        currentPage = parseInt(button.dataset.page);
-        renderProducts(currentPage);
-      });
-    });
-
-    document.getElementById('prevPage').addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderProducts(currentPage);
-      }
-    });
-
-    document.getElementById('nextPage').addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderProducts(currentPage);
-      }
-    });
-
-    // Quick view functionality
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('.quick-view button')) {
-        e.preventDefault();
-        alert('Quick view modal would open here');
-      }
-    });
-
-    // Wishlist functionality
-    document.addEventListener('click', (e) => {
-      const wishlistButton = e.target.closest('[aria-label="Add to wishlist"]');
-      if (wishlistButton) {
-        const icon = wishlistButton.querySelector('i');
-        icon.classList.toggle('far');
-        icon.classList.toggle('fas');
-        icon.classList.toggle('text-red-500');
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      new ProductSearch();
     });
   </script>
 </body>
 </html>
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}

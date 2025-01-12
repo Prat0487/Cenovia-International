@@ -3,10 +3,8 @@ class ProductSearch {
         this.productType = productType;
         this.productLoader = new ProductLoader();
         this.searchInput = document.querySelector('input[type="search"]');
-        this.categoryFilter = document.getElementById('categoryFilter');
         this.productGrid = document.getElementById('productGrid');
         this.initializeSearch();
-        this.initializeCategoryFilter();
     }
 
     initializeSearch() {
@@ -18,39 +16,17 @@ class ProductSearch {
         }, 300));
     }
 
-    initializeCategoryFilter() {
-        if (this.categoryFilter) {
-            this.categoryFilter.addEventListener('change', async () => {
-                const products = await this.productLoader.loadProducts(this.productType);
-                const filteredProducts = this.filterByCategory(products);
-                this.renderSearchResults(filteredProducts);
-            });
-        }
-    }
-
-    filterByCategory(products) {
-        const category = this.categoryFilter?.value;
-        if (!category) return products;
-        
-        return products.filter(product => {
-            if (category === 'fine') {
-                return product.attributes.material === 'Fine Silver';
-            }
-            if (category === 'sterling') {
-                return product.attributes.material === 'Sterling Silver';
-            }
-            return true;
-        });
-    }
-
     filterProducts(products, searchTerm) {
-        const categoryFiltered = this.filterByCategory(products);
-        if (!searchTerm) return categoryFiltered;
-
-        return categoryFiltered.filter(product => 
-            product.name.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm)
-        );
+        return products.filter(product => {
+            if (this.productType === 'silvercraft') {
+                return product.name.toLowerCase().includes(searchTerm) ||
+                       product.description.toLowerCase().includes(searchTerm);
+            } else {
+                return product.name.toLowerCase().includes(searchTerm) ||
+                       product.description.toLowerCase().includes(searchTerm) ||
+                       product.attributes.sportType.toLowerCase().includes(searchTerm);
+            }
+        });
     }
 
     renderSearchResults(products) {

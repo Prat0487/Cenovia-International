@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our extensive collection of handcrafted silver items">
+  <title>Silvercraft Collection | Your Company Name</title>
+  
+  <!-- Stylesheets -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    .product-card {
+      @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    }
+    .product-image {
+      @apply relative overflow-hidden group;
+    }
+    .product-image img {
+      @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
+    }
+    .quick-view {
+      @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+  <!-- Category Banner -->
+  <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Silvercraft Collection</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">Discover our exquisite range of handcrafted silver items, each piece telling its own story of artistry and elegance.</p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Filters and Search Section -->
+    <div class="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-4 w-full md:w-auto">
+        <div class="relative flex-grow md:flex-grow-0">
+          <input type="search" 
+                 placeholder="Search products..." 
+                 class="w-full md:w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
+        
+        <select class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500">
+          <option value="">All Categories</option>
+          <option value="tableware">Tableware</option>
+          <option value="decorative">Decorative</option>
+          <option value="jewelry">Jewelry</option>
+        </select>
+      </div>
+
+      <div class="flex items-center space-x-4 w-full md:w-auto">
+        <select class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500">
+          <option value="newest">Newest First</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="popular">Most Popular</option>
+        </select>
+        
+        <div class="flex space-x-2">
+          <button class="p-2 rounded-lg border border-gray-300 hover:bg-gray-100" aria-label="Grid view">
+            <i class="fas fa-th-large"></i>
+          </button>
+          <button class="p-2 rounded-lg border border-gray-300 hover:bg-gray-100" aria-label="List view">
+            <i class="fas fa-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Product cards will be dynamically loaded here -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-12 flex justify-center">
+      <nav class="flex items-center space-x-2" aria-label="Pagination">
+        <button id="prevPage" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="px-4 py-2 rounded-lg border border-blue-600 bg-blue-600 text-white" data-page="1">1</button>
+        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="2">2</button>
+        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="3">3</button>
+        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="4">4</button>
+        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="5">5</button>
+        <button id="nextPage" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Newsletter Section -->
+  <section class="bg-gray-100 py-12 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+        <p class="text-gray-600 mb-6">Subscribe to our newsletter for new product announcements and exclusive offers.</p>
+        <form class="flex gap-4">
+          <input type="email" 
+                 placeholder="Enter your email" 
+                 class="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500">
+          <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Sample product data
+    const products = [
+      {
+        id: 1,
+        name: "Vintage Silver Tea Set",
+        description: "Traditional Craftsmanship",
+        price: "$299.99",
+        image: "Assets/Images/Silver/silver_craft_1.png"
+      },
+      {
+        id: 2,
+        name: "Ornate Silver Bowl",
+        description: "Hand-Engraved Design",
+        price: "$189.99",
+        image: "Assets/Images/Silver/silver_craft_2.png"
+      }
+    ];
+
+    let currentPage = 1;
+    const productsPerPage = 8;
+    const totalPages = 5;
+
+    function renderProducts(page) {
+      const productGrid = document.getElementById('productGrid');
+      productGrid.innerHTML = '';
+
+      if (page === 1) {
+        // Show actual products on first page
+        products.forEach(product => {
+          productGrid.innerHTML += `
+            <article class="product-card">
+              <div class="product-image">
+                <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                <div class="quick-view">
+                  <button class="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="flex justify-between items-start mb-2">
+                  <div>
+                    <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
+                    <p class="text-gray-600">${product.description}</p>
+                  </div>
+                  <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
+                    <i class="far fa-heart text-xl"></i>
+                  </button>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <span class="text-lg font-bold text-gray-900">${product.price}</span>
+                  <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Enquire now
+                  </a>
+                </div>
+              </div>
+            </article>
+          `;
+        });
+      } else {
+        // Show placeholder content for other pages
+        for (let i = 0; i < productsPerPage; i++) {
+          productGrid.innerHTML += `
+            <article class="product-card">
+              <div class="p-4 flex items-center justify-center h-64 bg-gray-100">
+                <p class="text-gray-500 text-center">Product yet to be added</p>
+              </div>
+              <div class="p-4">
+                <div class="flex justify-between items-start mb-2">
+                  <div>
+                    <h2 class="text-xl font-semibold mb-1">Coming Soon</h2>
+                    <p class="text-gray-600">Product details will be available soon</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+      }
+
+      // Update pagination buttons
+      document.querySelectorAll('[data-page]').forEach(button => {
+        button.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+        button.classList.add('border-gray-300', 'text-gray-700');
+        if (parseInt(button.dataset.page) === page) {
+          button.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+          button.classList.remove('border-gray-300', 'text-gray-700');
+        }
+      });
+    }
+
+    // Initialize page
+    renderProducts(currentPage);
+
+    // Add event listeners for pagination
+    document.querySelectorAll('[data-page]').forEach(button => {
+      button.addEventListener('click', () => {
+        currentPage = parseInt(button.dataset.page);
+        renderProducts(currentPage);
+      });
+    });
+
+    document.getElementById('prevPage').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderProducts(currentPage);
+      }
+    });
+
+    document.getElementById('nextPage').addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderProducts(currentPage);
+      }
+    });
+
+    // Quick view functionality
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.quick-view button')) {
+        e.preventDefault();
+        alert('Quick view modal would open here');
+      }
+    });
+
+    // Wishlist functionality
+    document.addEventListener('click', (e) => {
+      const wishlistButton = e.target.closest('[aria-label="Add to wishlist"]');
+      if (wishlistButton) {
+        const icon = wishlistButton.querySelector('i');
+        icon.classList.toggle('far');
+        icon.classList.toggle('fas');
+        icon.classList.toggle('text-red-500');
+      }
+    });
+  </script>
+</body>
+</html>

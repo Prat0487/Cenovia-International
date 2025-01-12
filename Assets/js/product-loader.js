@@ -4,10 +4,16 @@ class ProductLoader {
     this.currentPage = 1;
   }
 
-  async loadProducts(page) {
-    const response = await fetch('/assets/data/silvercraft-products.json');
+  async loadProducts(category) {
+    const response = await fetch(`/Assets/data/products-${category}.json`);
     const data = await response.json();
-    const start = (page - 1) * this.pageSize;
-    return data.products.slice(start, start + this.pageSize);
+    return data.products;
+  }
+
+  renderProducts(products, targetElement) {
+    const productGrid = document.getElementById(targetElement);
+    products.forEach(product => {
+      productGrid.innerHTML += productTemplates[product.category](product);
+    });
   }
 }

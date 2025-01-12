@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Vintage Silver Tea Set",
+      "description": "Traditional Craftsmanship",
+      "price": "$299.99",
+      "image": "Assets/Images/Silver/silver_craft_1.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "850",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ornate Silver Bowl",
+      "description": "Hand-Engraved Design",
+      "price": "$189.99",
+      "image": "Assets/Images/Silver/silver_craft_2.png",
+      "attributes": {
+        "material": "Fine Silver",
+        "weight": "450",
+        "purity": "999"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Silver Candelabra",
+      "description": "Victorian Style Elegance",
+      "price": "$459.99",
+      "image": "Assets/Images/Silver/silver_craft_3.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "1200",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Silver Picture Frame",
+      "description": "Art Deco Inspired",
+      "price": "$129.99",
+      "image": "Assets/Images/Silver/silver_craft_4.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "300",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Silver Serving Tray",
+      "description": "Baroque Pattern Design",
+      "price": "$279.99",
+      "image": "Assets/Images/Silver/silver_craft_5.png",
+      "attributes": {
+        "material": "Fine Silver",
+        "weight": "950",
+        "purity": "999"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Silver Cutlery Set",
+      "description": "12-Piece Dining Collection",
+      "price": "$599.99",
+      "image": "Assets/Images/Silver/silver_craft_6.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "1500",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Silver Jewelry Box",
+      "description": "Antique Finish",
+      "price": "$239.99",
+      "image": "Assets/Images/Silver/silver_craft_7.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "600",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Silver Wine Goblets",
+      "description": "Set of Four",
+      "price": "$349.99",
+      "image": "Assets/Images/Silver/silver_craft_8.png",
+      "attributes": {
+        "material": "Fine Silver",
+        "weight": "800",
+        "purity": "999"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Silver Napkin Rings",
+      "description": "Floral Embossed Set",
+      "price": "$89.99",
+      "image": "Assets/Images/Silver/silver_craft_9.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "200",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Silver Candlesticks",
+      "description": "Pair of Classical Style",
+      "price": "$259.99",
+      "image": "Assets/Images/Silver/silver_craft_10.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "700",
+        "purity": "925"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Silver Coffee Pot",
+      "description": "Georgian Style",
+      "price": "$399.99",
+      "image": "Assets/Images/Silver/silver_craft_11.png",
+      "attributes": {
+        "material": "Fine Silver",
+        "weight": "900",
+        "purity": "999"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Silver Fruit Bowl",
+      "description": "Contemporary Design",
+      "price": "$219.99",
+      "image": "Assets/Images/Silver/silver_craft_12.png",
+      "attributes": {
+        "material": "Sterling Silver",
+        "weight": "550",
+        "purity": "925"
+      }
+    }
+  ]
+}

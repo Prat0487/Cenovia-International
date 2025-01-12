@@ -196,143 +196,45 @@
       </nav>
     </div>
   </main>
+  <script src="Assets/js/product-templates.js"></script>
+  <script src="Assets/js/product-loader.js"></script>
   <script>
-    // Sample product data
-    const products = [
-      {
-        id: 1,
-        name: "Vintage Silver Tea Set",
-        description: "Traditional Craftsmanship",
-        price: "$299.99",
-        image: "Assets/Images/Silver/silver_craft_1.png"
-      },
-      {
-        id: 2,
-        name: "Ornate Silver Bowl",
-        description: "Hand-Engraved Design",
-        price: "$189.99",
-        image: "Assets/Images/Silver/silver_craft_2.png"
-      }
-    ];
-
-    let currentPage = 1;
-    const productsPerPage = 8;
-    const totalPages = 5;
-
-    function renderProducts(page) {
+    document.addEventListener('DOMContentLoaded', async () => {
+      const loader = new ProductLoader();
+      const products = await loader.loadProducts('silvercraft');
       const productGrid = document.getElementById('productGrid');
+      
+      // Clear existing content
       productGrid.innerHTML = '';
-
-      if (page === 1) {
-        // Show actual products on first page
-        products.forEach(product => {
-          productGrid.innerHTML += `
-            <article class="product-card">
-              <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
-                <div class="quick-view">
-                  <button class="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
-                    Quick View
-                  </button>
-                </div>
+      
+      // Render products
+      products.forEach(product => {
+        const productHTML = `
+          <article class="product-card">
+            <div class="product-image">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+              <div class="quick-view">
+                <button class="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                  Quick View
+                </button>
               </div>
-              <div class="p-4">
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
-                    <p class="text-gray-600">${product.description}</p>
-                  </div>
-                  <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
-                    <i class="far fa-heart text-xl"></i>
-                  </button>
-                </div>
-                <div class="flex justify-between items-center mt-4">
-                  <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                  <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                    Enquire now
-                  </a>
-                </div>
+            </div>
+            <div class="p-4">
+              <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
+              <p class="text-gray-600">${product.description}</p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-lg font-bold text-gray-900">${product.price}</span>
+                <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  Enquire now
+                </a>
               </div>
-            </article>
-          `;
-        });
-      } else {
-        // Show placeholder content for other pages
-        for (let i = 0; i < productsPerPage; i++) {
-          productGrid.innerHTML += `
-            <article class="product-card">
-              <div class="p-4 flex items-center justify-center h-64 bg-gray-100">
-                <p class="text-gray-500 text-center">Product yet to be added</p>
-              </div>
-              <div class="p-4">
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h2 class="text-xl font-semibold mb-1">Coming Soon</h2>
-                    <p class="text-gray-600">Product details will be available soon</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          `;
-        }
-      }
-
-      // Update pagination buttons
-      document.querySelectorAll('[data-page]').forEach(button => {
-        button.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-        button.classList.add('border-gray-300', 'text-gray-700');
-        if (parseInt(button.dataset.page) === page) {
-          button.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-          button.classList.remove('border-gray-300', 'text-gray-700');
-        }
+            </div>
+          </article>
+        `;
+        productGrid.innerHTML += productHTML;
       });
-    }
-
-    // Initialize page
-    renderProducts(currentPage);
-
-    // Add event listeners for pagination
-    document.querySelectorAll('[data-page]').forEach(button => {
-      button.addEventListener('click', () => {
-        currentPage = parseInt(button.dataset.page);
-        renderProducts(currentPage);
-      });
-    });
-
-    document.getElementById('prevPage').addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderProducts(currentPage);
-      }
-    });
-
-    document.getElementById('nextPage').addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderProducts(currentPage);
-      }
-    });
-
-    // Quick view functionality
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('.quick-view button')) {
-        e.preventDefault();
-        alert('Quick view modal would open here');
-      }
-    });
-
-    // Wishlist functionality
-    document.addEventListener('click', (e) => {
-      const wishlistButton = e.target.closest('[aria-label="Add to wishlist"]');
-      if (wishlistButton) {
-        const icon = wishlistButton.querySelector('i');
-        icon.classList.toggle('far');
-        icon.classList.toggle('fas');
-        icon.classList.toggle('text-red-500');
-      }
     });
   </script>
-
   <!-- Newsletter Section -->
   <section class="bg-gray-100 py-12">
     <div class="container mx-auto px-4">
@@ -418,31 +320,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-      this.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
-    });
-
-    // Dropdown toggle
-    function toggleDropdown() {
-      const dropdown = document.getElementById('productDropdown');
-      const arrow = document.getElementById('dropdownArrow');
-      dropdown.classList.toggle('hidden');
-      arrow.style.transform = dropdown.classList.contains('hidden') ? '' : 'rotate(180deg)';
-    }
-
-    // Close dropdown when clicking outside
-    window.addEventListener('click', function(e) {
-      const dropdown = document.getElementById('productDropdown');
-      const button = document.querySelector('[onclick="toggleDropdown()"]');
-      if (!button.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.add('hidden');
-        document.getElementById('dropdownArrow').style.transform = '';
-      }
-    });
-  </script>
+  <script src="Assets/js/product-loader.js"></script>
+  <script src="Assets/js/product-templates.js"></script>
+  <script src="Assets/js/main.js"></script>
 </body>
 </html>

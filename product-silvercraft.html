@@ -178,26 +178,10 @@
     <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       <!-- Products will be dynamically loaded here -->
     </div>
-
-    <!-- Pagination -->
-    <div class="mt-12 flex justify-center">
-      <nav class="flex items-center space-x-2" aria-label="Pagination">
-        <button id="prevPage" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="px-4 py-2 rounded-lg border border-blue-600 bg-blue-600 text-white" data-page="1">1</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="2">2</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="3">3</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="4">4</button>
-        <button class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100" data-page="5">5</button>
-        <button id="nextPage" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </nav>
-    </div>
   </main>
   <script src="Assets/js/product-templates.js"></script>
   <script src="Assets/js/product-loader.js"></script>
+  <script src="Assets/js/infinite-scroll.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       const loader = new ProductLoader();
@@ -321,7 +305,18 @@
 
   <!-- Scripts -->
   <script src="Assets/js/product-loader.js"></script>
-  <script src="Assets/js/product-templates.js"></script>
-  <script src="Assets/js/main.js"></script>
+  <script src="Assets/js/infinite-scroll.js"></script>
+  <script src="Assets/js/product-search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new ProductSearch();
+    });
+  </script>
 </body>
 </html>
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}

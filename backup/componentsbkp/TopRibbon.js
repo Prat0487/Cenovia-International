@@ -4,11 +4,11 @@ class TopRibbon extends HTMLElement {
             <div class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-3">
                 <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
                     <div class="flex items-center space-x-4 mb-2 sm:mb-0">
-                        <a href="tel:+919727444678" class="hover:text-gray-300 transition-colors duration-200 font-semibold text-base sm:text-lg">
+                        <a href="tel:+919727444678" class="hover:text-gray-300 transition-colors duration-200">
                             <i class="fas fa-phone" aria-hidden="true"></i>
                             <span>+91 97274 44678</span>
                         </a>
-                        <a href="mailto:example@email.com" class="hover:text-gray-300 transition-colors duration-200 font-semibold text-base sm:text-lg">
+                        <a href="mailto:example@email.com" class="hover:text-gray-300 transition-colors duration-200">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                             <span>example@email.com</span>
                         </a>
@@ -32,5 +32,6 @@ class TopRibbon extends HTMLElement {
         `;
     }
 }
+customElements.define('top-ribbon', TopRibbon);
 
 customElements.define('top-ribbon', TopRibbon);

@@ -5,239 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore our collection of high-quality sport goods">
   <title>Sport Goods - Cenovia International</title>
-  
+    
   <!-- Stylesheets -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+    
   <!-- Custom styles -->
   <style>
-    .nav-link {
-        @apply text-gray-700 hover:text-blue-600 font-bold transition-all duration-300;
-    }
-    .nav-link.active {
-        @apply text-blue-600;
-    }
-    .social-link {
-        @apply hover:text-blue-300 transition-all duration-300 hover:scale-110;
-    }
-    .glass-effect {
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.9);
-    }
+      .nav-link {
+          @apply text-gray-700 hover:text-blue-600 font-bold transition-all duration-300;
+      }
+      .nav-link.active {
+          @apply text-blue-600;
+      }
+      .social-link {
+          @apply hover:text-blue-300 transition-all duration-300 hover:scale-110;
+      }
+      .glass-effect {
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.9);
+      }
+      .product-card {
+          @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+      }
+      .product-image {
+          @apply relative overflow-hidden group;
+      }
+      .product-image img {
+          @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
+      }
   </style>
+    
+  <!-- Web Components -->
+  <script src="components/TopRibbon.js"></script>
+  <script src="components/MainNav.js"></script>
+  <script src="components/SiteFooter.js"></script>
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen">
-  <!-- Top Ribbon -->
-  <div class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-3">
-    <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-      <div class="flex items-center space-x-4 mb-2 sm:mb-0">
-        <a href="tel:+919727444678" class="hover:text-gray-300 transition-colors duration-200">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <span>+91 97274 44678</span>
-        </a>
-        <a href="mailto:example@email.com" class="hover:text-gray-300 transition-colors duration-200">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-          <span>example@email.com</span>
-        </a>
-      </div>
-      <div class="flex space-x-6">
-        <a href="#" class="social-link" aria-label="Facebook">
-          <i class="fab fa-facebook text-lg"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <i class="fab fa-twitter text-lg"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="LinkedIn">
-          <i class="fab fa-linkedin text-lg"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Instagram">
-          <i class="fab fa-instagram text-lg"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Navigation -->
-  <nav class="glass-effect sticky top-0 z-50 shadow-lg">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0">
-          <img src="Assets/others/your-logo.png" alt="Company Logo" class="h-12" width="auto" height="48">
-        </a>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
-          <a href="index.html" class="nav-link font-bold">ABOUT US</a>
-          
-          <!-- Products Dropdown -->
-          <div class="relative">
-            <button class="nav-link active flex items-center font-bold" onclick="toggleDropdown()" aria-expanded="false">
-              PRODUCT
-              <svg class="w-4 h-4 ml-1 transition-transform duration-200" id="dropdownArrow"
-                   fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <div id="productDropdown" class="absolute z-50 hidden bg-white shadow-lg mt-2 rounded-lg overflow-hidden min-w-[200px]"
-                 role="menu">
-              <a href="product-silvercraft.html" class="block px-6 py-3 hover:bg-gray-50 text-gray-700 whitespace-nowrap" role="menuitem">
-                Silvercraft
-              </a>
-              <a href="product-sportgoods.html" class="block px-6 py-3 hover:bg-gray-50 text-blue-600 whitespace-nowrap" role="menuitem">
-                Sport Goods
-              </a>
-            </div>
-          </div>
-          <a href="our-team.html" class="nav-link font-bold">OUR TEAM</a>
-          <a href="contact-us.html" class="nav-link font-bold">CONTACT US</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden p-2" id="mobile-menu-button" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">ABOUT US</a>
-          <a href="product-silvercraft.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">SILVERCRAFT</a>
-          <a href="product-sportgoods.html" class="block px-3 py-2 rounded-md text-base font-bold text-orange-500">SPORT GOODS</a>
-          <a href="our-team.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">OUR TEAM</a>
-          <a href="contact-us.html" class="block px-3 py-2 rounded-md text-base font-bold text-gray-700">CONTACT US</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <top-ribbon></top-ribbon>
+  <main-nav></main-nav>
 
   <!-- Main Content -->
   <main class="flex-grow">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-8">Sport Goods</h1>
-        <!-- Add search bar -->
-        <div class="mb-8">
-            <div class="relative">
-                <input type="search" 
-                       placeholder="Search products..." 
-                       class="w-full md:w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            </div>
-        </div>
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Products will be loaded here -->
-        </div>
-    </div>
+      <!-- Category Banner -->
+      <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
+          <div class="container mx-auto px-4">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">Sport Goods Collection</h1>
+              <p class="text-lg text-gray-300 max-w-2xl">Discover our premium range of sporting equipment, designed for performance and durability.</p>
+          </div>
+      </div>
+
+      <div class="container mx-auto px-4 py-8">
+          <!-- Search Section -->
+          <div class="mb-8">
+              <div class="relative">
+                  <input type="search" 
+                         placeholder="Search products..." 
+                         class="w-full md:w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+              </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <!-- Products will be loaded here -->
+          </div>
+      </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white mt-auto">
-    <div class="container mx-auto px-4 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h4 class="text-lg font-semibold mb-4">About Us</h4>
-          <p class="text-gray-400">
-            Your trusted partner in silvercraft and sporting goods, delivering excellence since 2025.
-          </p>
-        </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
-            <li><a href="product-silvercraft.html" class="text-gray-400 hover:text-white transition-colors duration-200">Silvercraft</a></li>
-            <li><a href="product-sportgoods.html" class="text-gray-400 hover:text-white transition-colors duration-200">Sport Goods</a></li>
-            <li><a href="our-team.html" class="text-gray-400 hover:text-white transition-colors duration-200">Our Team</a></li>
-            <li><a href="contact-us.html" class="text-gray-400 hover:text-white transition-colors duration-200">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Contact</h4>
-          <ul class="space-y-2">
-            <li class="flex items-center text-gray-400">
-              <i class="fas fa-envelope w-6"></i>
-              <a href="mailto:info@example.com" class="hover:text-white transition-colors duration-200">
-                info@example.com
-              </a>
-            </li>
-            <li class="flex items-center text-gray-400">
-              <i class="fas fa-phone w-6"></i>
-              <a href="tel:+1234567890" class="hover:text-white transition-colors duration-200">
-                (123) 456-7890
-              </a>
-            </li>
-            <li class="flex items-start text-gray-400">
-              <i class="fas fa-map-marker-alt w-6 mt-1"></i>
-              <span>123 Street Name<br>City, State 12345</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-              <i class="fab fa-twitter text-2xl"></i>
-              <span class="sr-only">Twitter</span>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-              <i class="fab fa-facebook text-2xl"></i>
-              <span class="sr-only">Facebook</span>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-              <i class="fab fa-linkedin text-2xl"></i>
-              <span class="sr-only">LinkedIn</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-        <p>© 2025 Cenovia International. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 
   <!-- Scripts -->
+  <script src="Assets/js/product-loader.js"></script>
+  <script src="Assets/js/infinite-scroll.js"></script>
+  <script src="Assets/js/product-search.js"></script>
   <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-      this.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
-    });
-
-    // Dropdown toggle
-    function toggleDropdown() {
-      const dropdown = document.getElementById('productDropdown');
-      const arrow = document.getElementById('dropdownArrow');
-      dropdown.classList.toggle('hidden');
-      arrow.style.transform = dropdown.classList.contains('hidden') ? '' : 'rotate(180deg)';
-    }
-
-    // Close dropdown when clicking outside
-    window.addEventListener('click', function(e) {
-      const dropdown = document.getElementById('productDropdown');
-      const button = document.querySelector('[onclick="toggleDropdown()"]');
-      if (!button.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.add('hidden');
-        document.getElementById('dropdownArrow').style.transform = '';
-      }
-    });
+      document.addEventListener('DOMContentLoaded', () => {
+          const infiniteScroll = new InfiniteScroll('sports');
+          infiniteScroll.init();
+          new ProductSearch('sports');
+      });
   </script>
 </body>
 </html>
-
-<script src="Assets/js/product-loader.js"></script>
-<script src="Assets/js/infinite-scroll.js"></script>
-<script src="Assets/js/product-search.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const infiniteScroll = new InfiniteScroll('sports');
-        infiniteScroll.init();
-        new ProductSearch('sports');
-    });
-</script>

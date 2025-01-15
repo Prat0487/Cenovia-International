@@ -72,62 +72,106 @@ class MainNav extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
-                        <button id="mobileMenuBtn" 
-                                class="md:hidden p-2" 
-                                aria-label="Menu" 
-                                aria-expanded="false">
+                        <button id="mobile-menu-button" 
+                                class="md:hidden p-2"
+                                aria-label="Toggle Menu">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
 
-                        <!-- Mobile Menu Panel -->
-                        <div id="mobileMenu" 
-                             class="md:hidden hidden fixed inset-0 bg-white transform -translate-y-full opacity-0 transition-all duration-300 z-50">
-                            <div class="p-4">
-                                <button id="closeMenuBtn" class="absolute top-4 right-4">
+                        <!-- Mobile Menu with Overlay -->
+                        <div id="mobile-menu" 
+                             class="fixed inset-0 z-50 hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+                            <!-- Overlay Background -->
+                            <div id="mobile-menu-overlay" 
+                                 class="absolute inset-0 bg-black bg-opacity-25 hidden">
+                            </div>
+
+                            <!-- Menu Content -->
+                            <div class="absolute right-0 top-0 w-3/4 max-w-xs bg-white h-full shadow-xl p-4">
+                                <button id="close-mobile-menu" 
+                                        class="absolute top-4 right-4 text-gray-700">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                                     </svg>
                                 </button>
-                                <div class="mt-8 space-y-4">
-                                    <a href="/" class="block py-2 text-lg">ABOUT US</a>
-                                    <div>
-                                        <button id="mobileDropdownBtn" 
-                                                class="flex items-center justify-between w-full py-2 text-lg"
-                                                aria-expanded="false">
+
+                                <nav class="mt-12 space-y-4">
+                                    <a href="/" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        ABOUT US
+                                    </a>
+                                    
+                                    <!-- Products Dropdown -->
+                                    <div class="space-y-2">
+                                        <button id="mobile-dropdown-btn" 
+                                                class="flex items-center justify-between w-full text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                             PRODUCT
-                                            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                             </svg>
                                         </button>
-                                        <div id="mobileProductDropdown" 
-                                             class="hidden pl-4 space-y-2 transform scale-95 opacity-0 transition-all duration-200">
-                                            <a href="/product-silvercraft" class="block py-2">Silvercraft</a>
-                                            <a href="/product-sportgoods" class="block py-2">Sport Goods</a>
+                                        <div id="mobile-product-dropdown" class="hidden pl-4 space-y-2">
+                                            <a href="/product-silvercraft" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                                Silvercraft
+                                            </a>
+                                            <a href="/product-sportgoods" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                                Sport Goods
+                                            </a>
                                         </div>
                                     </div>
-                                    <a href="/our-team" class="block py-2 text-lg">OUR TEAM</a>
-                                    <a href="/contact-us" class="block py-2 text-lg">CONTACT US</a>
-                                </div>
+
+                                    <a href="/our-team" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        OUR TEAM
+                                    </a>
+                                    <a href="/contact-us" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        CONTACT US
+                                    </a>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
         `;
-        this.initializeEventListeners();
-    }
 
-    initializeEventListeners() {
+        const mobileMenuBtn = this.querySelector('#mobile-menu-button');
+        const mobileMenu = this.querySelector('#mobile-menu');
+        const mobileMenuOverlay = this.querySelector('#mobile-menu-overlay');
+        const closeMobileMenuBtn = this.querySelector('#close-mobile-menu');
+        const mobileDropdownBtn = this.querySelector('#mobile-dropdown-btn');
+        const mobileProductDropdown = this.querySelector('#mobile-product-dropdown');
+
+        const showMenu = () => {
+            mobileMenu.classList.remove('hidden', 'translate-x-full');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const hideMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        };
+
+        mobileMenuBtn.addEventListener('click', showMenu);
+        closeMobileMenuBtn.addEventListener('click', hideMenu);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) hideMenu();
+        });
+
+        mobileDropdownBtn.addEventListener('click', () => {
+            mobileProductDropdown.classList.toggle('hidden');
+            mobileDropdownBtn.querySelector('svg').classList.toggle('rotate-180');
+        });
+
+        // Keep existing desktop dropdown functionality
         const dropdownBtn = this.querySelector('#dropdownBtn');
         const dropdown = this.querySelector('#productDropdown');
         const arrow = this.querySelector('#dropdownArrow');
-        const mobileMenuBtn = this.querySelector('#mobileMenuBtn');
-        const closeMenuBtn = this.querySelector('#closeMenuBtn');
-        const mobileMenu = this.querySelector('#mobileMenu');
-        const mobileDropdownBtn = this.querySelector('#mobileDropdownBtn');
-        const mobileProductDropdown = this.querySelector('#mobileProductDropdown');
         const nav = this.querySelector('nav');
 
         // Dropdown functionality
@@ -140,31 +184,6 @@ class MainNav extends HTMLElement {
             dropdown.classList.toggle('opacity-100');
             arrow.style.transform = isHidden ? 'rotate(180deg)' : '';
             dropdownBtn.setAttribute('aria-expanded', !isHidden);
-        });
-
-        // Mobile menu functionality
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('-translate-y-full');
-            mobileMenu.classList.toggle('opacity-0');
-            mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
-            document.body.style.overflow = isHidden ? 'hidden' : '';
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden', '-translate-y-full', 'opacity-0');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-
-        mobileDropdownBtn.addEventListener('click', () => {
-            const isExpanded = mobileProductDropdown.classList.contains('hidden');
-            mobileProductDropdown.classList.toggle('hidden');
-            mobileProductDropdown.classList.toggle('scale-95');
-            mobileProductDropdown.classList.toggle('opacity-0');
-            mobileDropdownBtn.setAttribute('aria-expanded', String(!isExpanded));
-            mobileDropdownBtn.querySelector('svg').classList.toggle('rotate-180');
         });
 
         // Close dropdown when clicking outside

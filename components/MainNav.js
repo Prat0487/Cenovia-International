@@ -72,6 +72,7 @@ class MainNav extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
+
                         <button id="mobile-menu-button" 
                                 class="md:hidden p-2"
                                 aria-label="Toggle Menu">
@@ -129,11 +130,13 @@ class MainNav extends HTMLElement {
                                     </a>
                                 </nav>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </nav>
         `;
+
 
         const mobileMenuBtn = this.querySelector('#mobile-menu-button');
         const mobileMenu = this.querySelector('#mobile-menu');
@@ -172,6 +175,8 @@ class MainNav extends HTMLElement {
         const dropdownBtn = this.querySelector('#dropdownBtn');
         const dropdown = this.querySelector('#productDropdown');
         const arrow = this.querySelector('#dropdownArrow');
+
+
         const nav = this.querySelector('nav');
 
         // Dropdown functionality
@@ -185,6 +190,8 @@ class MainNav extends HTMLElement {
             arrow.style.transform = isHidden ? 'rotate(180deg)' : '';
             dropdownBtn.setAttribute('aria-expanded', !isHidden);
         });
+
+
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {

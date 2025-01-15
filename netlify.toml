@@ -1,0 +1,29 @@
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/product-silvercraft"
+  to = "/product-silvercraft.html"
+  status = 200
+
+[[redirects]]
+  from = "/product-sportgoods"
+  to = "/product-sportgoods.html"
+  status = 200
+
+[[redirects]]
+  from = "/our-team"
+  to = "/our-team.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact-us.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

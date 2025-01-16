@@ -5,7 +5,7 @@ A modern, responsive website for Cenovia International, specializing in silvercr
 ## Website Structure
 
 ### Header Components
-- **Top Ribbon**: Features contact information (phone, email) and social media links
+- **Top Ribbon**: Feature contact information (phone, email) and social media links
 - **Main Navigation**: 
  - Responsive navbar with company logo
  - Desktop menu with dropdown functionality for Products

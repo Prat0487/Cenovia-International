@@ -5,11 +5,13 @@ class MainNav extends HTMLElement {
             <div class="bg-white py-4">
                 <div class="container mx-auto px-4 flex justify-center">
                     <a href="index.html">
+
                         <img src="Assets/others/your-logo.png"
                              alt="Company Logo"
                              class="h-32 md:h-40"
                              width="auto"
                              height="160"
+
                         >
                     </a>
                 </div>
@@ -19,6 +21,7 @@ class MainNav extends HTMLElement {
             <nav class="glass-effect sticky top-0 z-50 shadow-lg">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-20">
+
                         <!-- Desktop Menu -->
                         <div class="hidden md:flex space-x-4">
                             <a href="index.html"
@@ -83,9 +86,11 @@ class MainNav extends HTMLElement {
                                       stroke-linejoin="round"
                                       stroke-width="2"
                                       d="M4 6h16M4 12h16M4 18h16"/>
+
                             </svg>
                         </button>
                     </div>
+
 
                     <!-- Mobile Menu -->
                     <div class="md:hidden hidden" id="mobile-menu">
@@ -115,6 +120,7 @@ class MainNav extends HTMLElement {
                                       hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
                                 CONTACT US
                             </a>
+
                         </div>
                     </div>
                 </div>
@@ -129,6 +135,7 @@ class MainNav extends HTMLElement {
         const arrow = this.querySelector('#dropdownArrow');
         const mobileMenuBtn = this.querySelector('#mobile-menu-button');
         const mobileMenu = this.querySelector('#mobile-menu');
+
         const nav = this.querySelector('nav');
 
         // Dropdown functionality
@@ -172,6 +179,7 @@ class MainNav extends HTMLElement {
                 nav.classList.remove('-translate-y-full');
             }
             lastScroll = currentScroll;
+
         });
     }
 }

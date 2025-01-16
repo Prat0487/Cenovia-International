@@ -72,6 +72,7 @@ class MainNav extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
+
                         <button class="md:hidden p-2"
                                 id="mobile-menu-button"
                                 aria-label="Toggle menu">
@@ -83,9 +84,11 @@ class MainNav extends HTMLElement {
                                       stroke-linejoin="round"
                                       stroke-width="2"
                                       d="M4 6h16M4 12h16M4 18h16"/>
+
                             </svg>
                                         </button>
                                     </div>
+
 
                                     <!-- Mobile Menu -->
                                     <div class="md:hidden hidden fixed w-full bg-white left-0 z-50 mt-[80px]" id="mobile-menu">
@@ -115,6 +118,7 @@ class MainNav extends HTMLElement {
                                       hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
                                 CONTACT US
                             </a>
+
                         </div>
                     </div>
                 </div>
@@ -129,6 +133,7 @@ class MainNav extends HTMLElement {
         const arrow = this.querySelector('#dropdownArrow');
         const mobileMenuBtn = this.querySelector('#mobile-menu-button');
         const mobileMenu = this.querySelector('#mobile-menu');
+
         const nav = this.querySelector('nav');
 
         // Dropdown functionality
@@ -143,6 +148,7 @@ class MainNav extends HTMLElement {
             dropdownBtn.setAttribute('aria-expanded', !isHidden);
         });
 
+
         // Mobile menu functionality
         mobileMenuBtn.addEventListener('click', () => {
             const isHidden = mobileMenu.classList.contains('hidden');
@@ -151,6 +157,7 @@ class MainNav extends HTMLElement {
             mobileMenu.classList.toggle('opacity-0');
             mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
         });
+
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {

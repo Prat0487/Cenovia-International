@@ -72,63 +72,106 @@ class MainNav extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
-                        <button class="md:hidden p-2"
-                                id="mobile-menu-button"
-                                aria-label="Toggle menu">
-                            <svg class="w-6 h-6"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M4 6h16M4 12h16M4 18h16"/>
+                        <button id="mobile-menu-button" 
+                                class="md:hidden p-2"
+                                aria-label="Toggle Menu">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
+                        </button>
+
+                        <!-- Mobile Menu with Overlay -->
+                        <div id="mobile-menu" 
+                             class="fixed inset-0 z-50 hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+                            <!-- Overlay Background -->
+                            <div id="mobile-menu-overlay" 
+                                 class="absolute inset-0 bg-black bg-opacity-25 hidden">
+                            </div>
+
+                            <!-- Menu Content -->
+                            <div class="absolute right-0 top-0 w-3/4 max-w-xs bg-white h-full shadow-xl p-4">
+                                <button id="close-mobile-menu" 
+                                        class="absolute top-4 right-4 text-gray-700">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+
+                                <nav class="mt-12 space-y-4">
+                                    <a href="/" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        ABOUT US
+                                    </a>
+                                    
+                                    <!-- Products Dropdown -->
+                                    <div class="space-y-2">
+                                        <button id="mobile-dropdown-btn" 
+                                                class="flex items-center justify-between w-full text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                            PRODUCT
+                                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                            </svg>
                                         </button>
+                                        <div id="mobile-product-dropdown" class="hidden pl-4 space-y-2">
+                                            <a href="/product-silvercraft" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                                Silvercraft
+                                            </a>
+                                            <a href="/product-sportgoods" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                                Sport Goods
+                                            </a>
+                                        </div>
                                     </div>
 
-                                    <!-- Mobile Menu -->
-                                    <div class="md:hidden hidden fixed w-full bg-white left-0 z-50 mt-[80px]" id="mobile-menu">
-                        <div class="px-2 pt-2 pb-3 space-y-1">
-                            <a href="index.html"
-                               class="block px-3 py-2 rounded-md font-bold text-lg text-gray-700 bg-gray-200 
-                                      hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
-                                ABOUT US
-                            </a>
-                            <a href="product-silvercraft.html"
-                               class="block px-3 py-2 rounded-md font-bold text-lg text-gray-700 bg-gray-200 
-                                      hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
-                                SILVERCRAFT
-                            </a>
-                            <a href="product-sportgoods.html"
-                               class="block px-3 py-2 rounded-md font-bold text-lg text-gray-700 bg-gray-200
-                                      hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
-                                SPORT GOODS
-                            </a>
-                            <a href="our-team.html"
-                               class="block px-3 py-2 rounded-md font-bold text-lg text-gray-700 bg-gray-200
-                                      hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
-                                OUR TEAM
-                            </a>
-                            <a href="contact-us.html"
-                               class="block px-3 py-2 rounded-md font-bold text-lg text-gray-700 bg-gray-200
-                                      hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
-                                CONTACT US
-                            </a>
+                                    <a href="/our-team" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        OUR TEAM
+                                    </a>
+                                    <a href="/contact-us" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        CONTACT US
+                                    </a>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
         `;
-        this.initializeEventListeners();
-    }
 
-    initializeEventListeners() {
+        const mobileMenuBtn = this.querySelector('#mobile-menu-button');
+        const mobileMenu = this.querySelector('#mobile-menu');
+        const mobileMenuOverlay = this.querySelector('#mobile-menu-overlay');
+        const closeMobileMenuBtn = this.querySelector('#close-mobile-menu');
+        const mobileDropdownBtn = this.querySelector('#mobile-dropdown-btn');
+        const mobileProductDropdown = this.querySelector('#mobile-product-dropdown');
+
+        const showMenu = () => {
+            mobileMenu.classList.remove('hidden', 'translate-x-full');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const hideMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        };
+
+        mobileMenuBtn.addEventListener('click', showMenu);
+        closeMobileMenuBtn.addEventListener('click', hideMenu);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) hideMenu();
+        });
+
+        mobileDropdownBtn.addEventListener('click', () => {
+            mobileProductDropdown.classList.toggle('hidden');
+            mobileDropdownBtn.querySelector('svg').classList.toggle('rotate-180');
+        });
+
+        // Keep existing desktop dropdown functionality
         const dropdownBtn = this.querySelector('#dropdownBtn');
         const dropdown = this.querySelector('#productDropdown');
         const arrow = this.querySelector('#dropdownArrow');
-        const mobileMenuBtn = this.querySelector('#mobile-menu-button');
-        const mobileMenu = this.querySelector('#mobile-menu');
         const nav = this.querySelector('nav');
 
         // Dropdown functionality
@@ -141,15 +184,6 @@ class MainNav extends HTMLElement {
             dropdown.classList.toggle('opacity-100');
             arrow.style.transform = isHidden ? 'rotate(180deg)' : '';
             dropdownBtn.setAttribute('aria-expanded', !isHidden);
-        });
-
-        // Mobile menu functionality
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('-translate-y-full');
-            mobileMenu.classList.toggle('opacity-0');
-            mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
         });
 
         // Close dropdown when clicking outside

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+    <script src="components/TopRibbon.js"></script>
+    <script src="components/MainNav.js"></script>
+    <script src="components/SiteFooter.js"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <top-ribbon></top-ribbon>
+    <main-nav></main-nav>
+    <main class="flex-grow">
+        <div id="productDetail">
+            <!-- Product details will be loaded here -->
+        </div>
+    </main>
+    <site-footer></site-footer>
+    <script src="Assets/js/product-loader.js"></script>
+    <script src="Assets/js/product-detail.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadProductDetail);
+    </script>
+</body>
+</html>

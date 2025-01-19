@@ -107,7 +107,7 @@ class ProductSearch {
 
     getSilvercraftTemplate(product) {
         return `
-            <article class="product-card">
+            <div class="product-card">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
                 </div>
@@ -128,18 +128,23 @@ class ProductSearch {
                     </div>
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                        <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            Enquire now
+                        <a href="product-detail.html?id=${product.id}&type=silvercraft" 
+                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            More Details
+                        </a>
+                        <a href="contact-us.html" 
+                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Enquire Now
                         </a>
                     </div>
                 </div>
-            </article>
+            </div>
         `;
     }
 
     getSportsTemplate(product) {
         return `
-            <article class="product-card">
+            <div class="product-card">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
                 </div>
@@ -161,12 +166,17 @@ class ProductSearch {
                     </div>
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                        <a href="contact-us.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            Enquire now
+                         <a href="product-detail.html?id=${product.id}&type=sports" 
+                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            More Details
+                        </a>
+                         <a href="contact-us.html" 
+                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Enquire Now
                         </a>
                     </div>
                 </div>
-            </article>
+            </div>
         `;
     }
 

@@ -1,0 +1,60 @@
+{
+    "products": [
+        {
+            "id": "cricket-bat-001",
+            "name": "Professional Cricket Bat",
+            "description": "Premium English Willow Grade A",
+            "image": "Assets/Images/SportGoods/bat-25749_1920.png",
+            "price": "$299.99",
+            "colors": [
+                {
+                    "name": "Natural Wood",
+                    "code": "#DEB887",
+                    "image": "Assets/Images/SportGoods/bat-25749_1920.png"
+                },
+                {
+                    "name": "Dark Wood",
+                    "code": "#8B4513",
+                    "image": "Assets/Images/SportGoods/cricket_bat_dark.png"
+                }
+            ],
+            "sizes": ["Short Handle", "Long Handle"],
+            "attributes": {
+                "sportType": "Cricket",
+                "ageGroup": "Adult",
+                "skill_level": "Professional",
+                "warranty": "12 months"
+            }
+        },
+        {
+            "id": "tennis-tshirt-001",
+            "name": "Tennis Pro T-Shirt",
+            "description": "Professional grade breathable tennis t-shirt",
+            "price": "$49.99",
+            "colors": [
+                {
+                    "name": "Red",
+                    "code": "#FF0000",
+                    "image": "Assets/Images/SportGoods/tennis_tshirt_red.png"
+                },
+                {
+                    "name": "Blue",
+                    "code": "#0000FF",
+                    "image": "Assets/Images/SportGoods/tennis_tshirt_blue.png"
+                },
+                {
+                    "name": "White",
+                    "code": "#FFFFFF",
+                    "image": "Assets/Images/SportGoods/tennis_tshirt_white.png"
+                }
+            ],
+            "sizes": ["S", "M", "L", "XL", "XXL"],
+            "attributes": {
+                "sportType": "Tennis",
+                "ageGroup": "Adult",
+                "material": "Polyester",
+                "warranty": "3 months"
+            }
+        }
+    ]
+}

@@ -4,17 +4,34 @@ class ProductLoader {
     this.currentPage = 1;
   }
 
-  async loadProducts(category) {
-    const productFiles = {
-      'silvercraft': 'products-silvercraft.json',
-      'sports': 'products-sportgoods.json'
-    };
-    
-    console.log('Loading category:', category); // Debug log
-    const filename = productFiles[category];
-    const response = await fetch(`/Assets/data/${filename}`);
-    const data = await response.json();
-    return data.products;
+  async loadProducts(productType) {
+    console.log("Product type received:", productType);
+    let filePath;
+
+    if (productType === 'sports') {
+      filePath = 'Assets/data/products-sportgoods.json';
+    } else if (productType === 'silvercraft') {
+      filePath = 'Assets/data/products-silvercraft.json';
+    } else {
+      console.error("Invalid product type:", productType);
+      return []; // Return an empty array for invalid types
+    }
+
+    console.log("File path being used:", filePath);
+
+    try {
+      const response = await fetch(filePath);
+      if (!response.ok) {
+        console.error("Error loading data:", response.status, response.statusText);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Data loaded successfully:", data);
+      return data.products; // Assuming your JSON has a "products" array
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      throw error;
+    }
   }
 
   renderProducts(products, targetElement) {

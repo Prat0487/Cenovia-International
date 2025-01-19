@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Professional Cricket Bat",
-            "description": "Premium English Willow Grade A",
+            "description": "This premium cricket bat is crafted from the finest English Willow, Grade A, ensuring exceptional performance and durability. It features a perfectly balanced profile, a large sweet spot, and a comfortable handle for maximum control and power. Ideal for professional cricketers seeking top-tier equipment.",
             "price": "$299.99",
             "image": "Assets/Images/Sports/cricket_bat_1.png",
             "attributes": {
@@ -16,7 +16,7 @@
         {
             "id": 2,
             "name": "Competition Football",
-            "description": "FIFA Approved Match Ball",
+            "description": "This FIFA-approved match ball is designed for top-level competition. It features a seamless surface for consistent flight and touch, a high-quality bladder for excellent air retention, and a vibrant design for enhanced visibility. Perfect for professional matches and serious training sessions.",
             "price": "$89.99",
             "image": "Assets/Images/Sports/football_1.png",
             "attributes": {

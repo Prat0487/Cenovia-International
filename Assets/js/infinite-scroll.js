@@ -70,11 +70,7 @@ class InfiniteScroll {
                     <h3 class="font-bold text-lg mb-2">${product.name}</h3>
                     <p class="text-gray-700">${product.description.substring(0, 100)}...</p>
                     <p class="mt-2 font-semibold">${product.price}</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="product-detail.html?id=${product.id}&type=silvercraft" 
-                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            More Details
-                        </a>
+                     <div class="mt-4 flex justify-between items-center">
                         <a href="contact-us.html" 
                            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Enquire Now
@@ -109,9 +105,7 @@ class InfiniteScroll {
             </div>
         `;
     }
-}
-// Initialize infinite scroll
-document.addEventListener('DOMContentLoaded', () => {
+}document.addEventListener('DOMContentLoaded', () => {
   const infiniteScroll = new InfiniteScroll();
   infiniteScroll.init();
 });

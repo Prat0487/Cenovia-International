@@ -5,7 +5,11 @@ async function loadProductDetail() {
 
     const loader = new ProductLoader();
     const products = await loader.loadProducts(productType);
-    const product = products.find(p => p.id === productId);
+
+    // Convert productId to a number
+    const numericProductId = parseInt(productId, 10);
+
+    const product = products.find(p => p.id === numericProductId);
 
     if (product) {
         renderProductDetail(product);
@@ -13,7 +17,6 @@ async function loadProductDetail() {
         document.getElementById('productDetail').innerHTML = '<p>Product not found.</p>';
     }
 }
-
 function renderProductDetail(product) {
     const detailHTML = `
         <div class="max-w-5xl mx-auto py-8 px-4">

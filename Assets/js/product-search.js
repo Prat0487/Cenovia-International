@@ -128,10 +128,6 @@ class ProductSearch {
                     </div>
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                        <a href="product-detail.html?id=${product.id}&type=silvercraft" 
-                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            More Details
-                        </a>
                         <a href="contact-us.html" 
                            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Enquire Now

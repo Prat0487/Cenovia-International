@@ -1,57 +1,48 @@
 class ProductSearch {
-    constructor(productType = 'silvercraft') {
+    constructor(productType) {
         this.productType = productType;
         this.productLoader = new ProductLoader();
-        this.searchInput = document.querySelector('input[type="search"]');
+        this.productGrid = document.getElementById('productGrid');
+        this.searchBox = document.querySelector('input[type="search"]');
         this.categoryFilter = document.getElementById('categoryFilter');
         this.sortFilter = document.getElementById('sortFilter');
-        this.productGrid = document.getElementById('productGrid');
-        
-        // Initialize all features
+
         this.initializeSearch();
         this.initializeCategoryFilter();
         this.initializeSortFilter();
-        
-        // Load initial products
-        this.loadProducts();
-    }
-
-    async loadProducts() {
-        const products = await this.productLoader.loadProducts(this.productType);
-        const filteredProducts = this.filterByCategory(products);
-        const sortedProducts = this.sortProducts(filteredProducts);
-        this.renderSearchResults(sortedProducts);
     }
 
     initializeSearch() {
-        this.searchInput.addEventListener('input', this.debounce(async (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const products = await this.productLoader.loadProducts(this.productType);
-            const filteredProducts = this.filterProducts(products, searchTerm);
-            this.renderSearchResults(filteredProducts);
-        }, 300));
-    }
-
-    initializeCategoryFilter() {
-        if (this.categoryFilter) {
-            this.categoryFilter.addEventListener('change', async () => {
+        if (this.searchBox) {
+            this.searchBox.addEventListener('input', async () => {
                 const products = await this.productLoader.loadProducts(this.productType);
-                const filteredProducts = this.filterByCategory(products);
+                const filteredProducts = this.filterBySearch(products);
                 const sortedProducts = this.sortProducts(filteredProducts);
                 this.renderSearchResults(sortedProducts);
             });
         }
     }
 
-    initializeSortFilter() {
-        if (this.sortFilter) {
-            this.sortFilter.addEventListener('change', async () => {
-                const products = await this.productLoader.loadProducts(this.productType);
-                const filteredProducts = this.filterByCategory(products);
-                const sortedProducts = this.sortProducts(filteredProducts);
-                this.renderSearchResults(sortedProducts);
-            });
-        }
+    filterBySearch(products) {
+        const searchTerm = this.searchBox?.value?.toLowerCase() || '';
+        if (!searchTerm) return products;
+
+        return products.filter(product => {
+            return product.name.toLowerCase().includes(searchTerm);
+        });
+    }
+
+    sortProducts(products) {
+        if (!this.sortFilter?.value) return products;
+        const sortValue = this.sortFilter.value;
+        return [...products].sort((a, b) => {
+            if (sortValue === 'name-asc') {
+                return a.name.localeCompare(b.name);
+            } else if (sortValue === 'name-desc') {
+                return b.name.localeCompare(a.name);
+            }
+            return 0;
+        });
     }
 
     filterByCategory(products) {
@@ -69,73 +60,15 @@ class ProductSearch {
         });
     }
 
-    sortProducts(products) {
-        const sortType = this.sortFilter?.value;
-        if (!sortType) return products;
-
-        return [...products].sort((a, b) => {
-            if (sortType === 'weight-high') {
-                return b.attributes.weight - a.attributes.weight;
-            }
-            if (sortType === 'weight-low') {
-                return a.attributes.weight - b.attributes.weight;
-            }
-            return 0;
-        });
-    }
-
-    filterProducts(products, searchTerm) {
-        const categoryFiltered = this.filterByCategory(products);
-        const sortedProducts = this.sortProducts(categoryFiltered);
-        if (!searchTerm) return sortedProducts;
-
-        return sortedProducts.filter(product => 
-            product.name.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm)
-        );
-    }
-
-    renderSearchResults(products) {
-        this.productGrid.innerHTML = '';
-        products.forEach(product => {
-            const productHTML = this.productType === 'silvercraft' 
-                ? this.getSilvercraftTemplate(product)
-                : this.getSportsTemplate(product);
-            this.productGrid.insertAdjacentHTML('beforeend', productHTML);
-        });
-    }
-
-    getSilvercraftTemplate(product) {
-        return `
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
-                </div>
-                <div class="p-4">
-                    <div class="flex justify-between items-start mb-2">
-                        <div>
-                            <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
-                            <p class="text-gray-600">${product.description}</p>
-                        </div>
-                        <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
-                            <i class="far fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <div class="specifications text-sm text-gray-600 mt-2">
-                        <p>Material: ${product.attributes.material}</p>
-                        <p>Weight: ${product.attributes.weight}g</p>
-                        <p>Purity: ${product.attributes.purity}</p>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <span class="text-lg font-bold text-gray-900">${product.price}</span>
-                        <a href="contact-us.html" 
-                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                            Enquire Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        `;
+    initializeCategoryFilter() {
+        if (this.categoryFilter) {
+            this.categoryFilter.addEventListener('change', async () => {
+                const products = await this.productLoader.loadProducts(this.productType);
+                const filteredProducts = this.filterByCategory(products);
+                const sortedProducts = this.sortProducts(filteredProducts);
+                this.renderSearchResults(sortedProducts);
+            });
+        }
     }
 
     getSportsTemplate(product) {
@@ -148,20 +81,18 @@ class ProductSearch {
                     <div class="flex justify-between items-start mb-2">
                         <div>
                             <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
-                            <p class="text-gray-600">${product.description}</p>
                         </div>
                         <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
                             <i class="far fa-heart text-xl"></i>
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
-                        <p>Sport Type: ${product.attributes.sportType}</p>
-                        <p>Age Group: ${product.attributes.ageGroup}</p>
-                        <p>Skill Level: ${product.attributes.skill_level}</p>
-                        <p>Warranty: ${product.attributes.warranty}</p>
+                        <p>Size: ${product.attributes.size}</p>
+                        <p>Grammage: ${product.attributes.grammage}</p>
+                        <p>Fabric: ${product.attributes.fabric}</p>
+                        <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
-                        <span class="text-lg font-bold text-gray-900">${product.price}</span>
                          <a href="product-detail.html?id=${product.id}&type=sports" 
                            class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                             More Details
@@ -176,15 +107,55 @@ class ProductSearch {
         `;
     }
 
-    debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
+    getSilvercraftTemplate(product) {
+        return `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
+                        </div>
+                        <button class="text-gray-400 hover:text-red-500" aria-label="Add to wishlist">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="specifications text-sm text-gray-600 mt-2">
+                        <p>Material: ${product.attributes.material}</p>
+                        <p>Weight: ${product.attributes.weight}g</p>
+                        <p>Purity: ${product.attributes.purity}</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="contact-us.html" 
+                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    renderSearchResults(products) {
+        this.productGrid.innerHTML = '';
+        products.forEach(product => {
+            const productHTML = this.productType === 'silvercraft' 
+                ? this.getSilvercraftTemplate(product)
+                : this.getSportsTemplate(product);
+            this.productGrid.insertAdjacentHTML('beforeend', productHTML);
+        });
+    }
+
+    initializeSortFilter() {
+        if (this.sortFilter) {
+            this.sortFilter.addEventListener('change', async () => {
+                const products = await this.productLoader.loadProducts(this.productType);
+                const filteredProducts = this.filterByCategory(products);
+                const sortedProducts = this.sortProducts(filteredProducts);
+                this.renderSearchResults(sortedProducts);
+            });
+        }
     }
 }

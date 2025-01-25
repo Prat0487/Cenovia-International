@@ -3,183 +3,37 @@
         {
             "id": 1,
             "name": "Professional Cricket Bat",
-            "description": "This premium cricket bat is crafted from the finest English Willow, Grade A, ensuring exceptional performance and durability. It features a perfectly balanced profile, a large sweet spot, and a comfortable handle for maximum control and power. Ideal for professional cricketers seeking top-tier equipment.",
-            "price": "$299.99",
             "image": "Assets/Images/Sports/cricket_bat_1.png",
+            "detailImage": "Assets/Images/Sports/cricket_bat_detail.png",
             "attributes": {
-                "sportType": "Cricket",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "12 months"
+                "size": "Full Size",
+                "grammage": "1200g",
+                "fabric": "English Willow",
+                "composition": "100% Wood"
             }
         },
         {
             "id": 2,
             "name": "Competition Football",
-            "description": "This FIFA-approved match ball is designed for top-level competition. It features a seamless surface for consistent flight and touch, a high-quality bladder for excellent air retention, and a vibrant design for enhanced visibility. Perfect for professional matches and serious training sessions.",
-            "price": "$89.99",
             "image": "Assets/Images/Sports/football_1.png",
+            "detailImage": "Assets/Images/Sports/football_detail.png",
             "attributes": {
-                "sportType": "Football",
-                "ageGroup": "Professional",
-                "skill_level": "Advanced",
-                "warranty": "6 months"
+                "size": "Size 5",
+                "grammage": "450g",
+                "fabric": "Synthetic Leather",
+                "composition": "Polyurethane"
             }
         },
         {
             "id": 3,
-            "name": "Basketball Pro Series",
-            "description": "Official Size Tournament Ball",
-            "price": "$79.99",
+            "name": "Basketball",
             "image": "Assets/Images/Sports/basketball_1.png",
+            "detailImage": "Assets/Images/Sports/basketball_detail.png",
             "attributes": {
-                "sportType": "Basketball",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "6 months"
-            }
-        },
-        {
-            "id": 4,
-            "name": "Tennis Racquet Elite",
-            "description": "Professional Grade Carbon Fiber",
-            "price": "$199.99",
-            "image": "Assets/Images/Sports/tennis_1.png",
-            "attributes": {
-                "sportType": "Tennis",
-                "ageGroup": "Adult",
-                "skill_level": "Advanced",
-                "warranty": "12 months"
-            }
-        },
-        {
-            "id": 5,
-            "name": "Golf Club Set Pro",
-            "description": "Complete Professional Golf Set",
-            "price": "$999.99",
-            "image": "Assets/Images/Sports/golf_1.png",
-            "attributes": {
-                "sportType": "Golf",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "24 months"
-            }
-        },
-        {
-            "id": 6,
-            "name": "Volleyball Competition",
-            "description": "Professional Indoor Volleyball",
-            "price": "$69.99",
-            "image": "Assets/Images/Sports/volleyball_1.png",
-            "attributes": {
-                "sportType": "Volleyball",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "6 months"
-            }
-        },
-        {
-            "id": 7,
-            "name": "Hockey Stick Elite",
-            "description": "Carbon Composite Professional Stick",
-            "price": "$249.99",
-            "image": "Assets/Images/Sports/hockey_1.png",
-            "attributes": {
-                "sportType": "Hockey",
-                "ageGroup": "Adult",
-                "skill_level": "Advanced",
-                "warranty": "12 months"
-            }
-        },
-        {
-            "id": 8,
-            "name": "Rugby Ball Pro",
-            "description": "Official Match Rugby Ball",
-            "price": "$79.99",
-            "image": "Assets/Images/Sports/rugby_1.png",
-            "attributes": {
-                "sportType": "Rugby",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "6 months"
-            }
-        },
-        {
-            "id": 9,
-            "name": "Badminton Racquet Pro",
-            "description": "Professional Grade Graphite Racquet",
-            "price": "$159.99",
-            "image": "Assets/Images/Sports/badminton_1.png",
-            "attributes": {
-                "sportType": "Badminton",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "12 months"
-            }
-        },
-        {
-            "id": 10,
-            "name": "Table Tennis Paddle Elite",
-            "description": "Professional Competition Paddle",
-            "price": "$89.99",
-            "image": "Assets/Images/Sports/tabletennis_1.png",
-            "attributes": {
-                "sportType": "Table Tennis",
-                "ageGroup": "Adult",
-                "skill_level": "Advanced",
-                "warranty": "6 months"
-            }
-        },
-        {
-            "id": 11,
-            "name": "Boxing Gloves Pro",
-            "description": "Professional Boxing Leather Gloves",
-            "price": "$129.99",
-            "image": "Assets/Images/Sports/boxing_1.png",
-            "attributes": {
-                "sportType": "Boxing",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "12 months"
-            }
-        },
-        {
-            "id": 12,
-            "name": "Swimming Goggles Elite",
-            "description": "Professional Racing Goggles",
-            "price": "$49.99",
-            "image": "Assets/Images/Sports/swimming_1.png",
-            "attributes": {
-                "sportType": "Swimming",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "3 months"
-            }
-        },
-        {
-            "id": 13,
-            "name": "Baseball Bat Pro",
-            "description": "Professional Grade Aluminum Bat",
-            "price": "$199.99",
-            "image": "Assets/Images/Sports/baseball_1.png",
-            "attributes": {
-                "sportType": "Baseball",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "12 months"
-            }
-        },
-        {
-            "id": 14,
-            "name": "Cycling Helmet Pro",
-            "description": "Professional Racing Helmet",
-            "price": "$159.99",
-            "image": "Assets/Images/Sports/cycling_1.png",
-            "attributes": {
-                "sportType": "Cycling",
-                "ageGroup": "Adult",
-                "skill_level": "Professional",
-                "warranty": "12 months"
+                "size": "Size 7",
+                "grammage": "624g",
+                "fabric": "Composite Leather",
+                "composition": "Rubber"
             }
         }
     ]

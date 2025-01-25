@@ -18,10 +18,10 @@ const productTemplates = {
       <!-- Common product info -->
       <div class="product-details">
         <div class="specifications">
-          <p>Sport: ${product.attributes.sportType}</p>
-          <p>Age Group: ${product.attributes.ageGroup}</p>
-          <p>Skill Level: ${product.attributes.skill_level}</p>
-          <p>Warranty: ${product.attributes.warranty}</p>
+          <p>Size: ${product.attributes.size}</p>
+          <p>Grammage: ${product.attributes.grammage}</p>
+          <p>Fabric: ${product.attributes.fabric}</p>
+           <p>Composition: ${product.attributes.composition}</p>
         </div>
       </div>
     </article>

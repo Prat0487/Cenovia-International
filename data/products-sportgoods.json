@@ -6,10 +6,10 @@
             "image": "Assets/Images/Sports/R437.png",
             "detailImage": "Assets/Images/Sports/cricket_bat_detail.jpg",
             "attributes": {
-                "size": "Full Size",
-                "grammage": "1200g",
-                "fabric": "English Willow",
-                "composition": "100% Wood"
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "fabric": "Cloudy Pinhole",
+                "composition": "95% polyester 5% spandex"
             }
         },
         {
@@ -18,10 +18,10 @@
             "image": "Assets/Images/Sports/R438.png",
             "detailImage": "Assets/Images/Sports/R438_detail.png",
             "attributes": {
-                "size": "Size 5",
-                "grammage": "450g",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
                 "fabric": "Synthetic Leather",
-                "composition": "Polyurethane"
+                "composition": "69%nylon 18%polyester 13%spandex"
             }
         },
         {

@@ -54,7 +54,7 @@ class MainNav extends HTMLElement {
                                     <a href="product-sportgoods.html"
                                        class="block my-1 px-4 py-2 rounded-md font-bold text-gray-700 
                                               bg-gray-100 hover:bg-indigo-50 hover:scale-105 transition-transform duration-200">
-                                        Sport Goods
+                                        Sports Wear
                                     </a>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ class MainNav extends HTMLElement {
                                                 Silvercraft
                                             </a>
                                             <a href="/product-sportgoods" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
-                                                Sport Goods
+                                                Sports Wear
                                             </a>
                                         </div>
                                     </div>
@@ -217,4 +217,4 @@ class MainNav extends HTMLElement {
     }
 }
 
-customElements.define('main-nav', MainNav);
+customElements.define('main-nav', MainNav);customElements.define('main-nav', MainNav);

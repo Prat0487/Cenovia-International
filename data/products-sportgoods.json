@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Professional Cricket Bat",
             "image": "Assets/Images/Sports/cricket_bat_1.png",
-            "detailImage": "Assets/Images/Sports/cricket_bat_detail.png",
+            "detailImage": "Assets/Images/Sports/cricket_bat_detail.jpg",
             "attributes": {
                 "size": "Full Size",
                 "grammage": "1200g",
@@ -16,7 +16,7 @@
             "id": 2,
             "name": "Competition Football",
             "image": "Assets/Images/Sports/football_1.png",
-            "detailImage": "Assets/Images/Sports/football_detail.png",
+            "detailImage": "Assets/Images/Sports/football_detail.jpg",
             "attributes": {
                 "size": "Size 5",
                 "grammage": "450g",

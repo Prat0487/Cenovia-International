@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
+    <title>Product Detail - Cenovia International</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -20,15 +20,27 @@
     <top-ribbon></top-ribbon>
     <main-nav></main-nav>
     <main class="flex-grow">
-        <div id="productDetail">
-            <!-- Product details will be loaded here -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <img id="productImage" src="" alt="" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 id="productName" class="text-3xl font-bold mb-4"></h2>
+                    <div id="productAttributes" class="text-gray-700">
+                        <!-- Attributes will be loaded here -->
+                    </div>
+                    <div class="mt-6">
+                        <a href="contact-us.html" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <site-footer></site-footer>
     <script src="js/product-loader.js"></script>
     <script src="js/product-detail.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', loadProductDetail);
-    </script>
 </body>
 </html>

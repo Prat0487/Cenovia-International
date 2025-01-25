@@ -1,0 +1,104 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "C123",
+            "cardImage": "Assets/Images/Sports/1.jpg",
+            "details": {
+                "detailImage": "Assets/Images/Sports/2.jpg",
+                "additionalInfo": {
+                    "size": ["M", "L", "XL", "2XL", "3XL"],
+                    "grammage": "165g",
+                    "fabric": "Cloudy Pinhole",
+                    "composition": "95% polyester 5% spandex"
+                }
+            },
+            "attributes": {
+                "size": ["M", "L", "XL", "2XL", "3XL"],
+                "grammage": "165g",
+                "fabric": "Cloudy Pinhole",
+                "composition": "95% polyester 5% spandex"
+            }
+        },
+        {
+            "id": 2,
+            "name": "D456",
+            "cardImage": "Assets/Images/Sports/3.jpg",
+            "details": {
+                "detailImage": "Assets/Images/Sports/4.jpg",
+                "additionalInfo": {
+                    "size": ["S", "M", "L", "XL"],
+                    "grammage": "180g",
+                    "fabric": "Mesh",
+                    "composition": "100% polyester"
+                }
+            },
+            "attributes": {
+                "size": ["S", "M", "L", "XL"],
+                "grammage": "180g",
+                "fabric": "Mesh",
+                "composition": "100% polyester"
+            }
+        },
+        {
+            "id": 3,
+            "name": "E789",
+            "cardImage": "Assets/Images/Sports/5.jpg",
+            "details": {
+                "detailImage": "Assets/Images/Sports/6.jpg",
+                "additionalInfo": {
+                    "size": ["28", "30", "32", "34", "36"],
+                    "grammage": "200g",
+                    "fabric": "Cotton Blend",
+                    "composition": "60% cotton 40% polyester"
+                }
+            },
+            "attributes": {
+                "size": ["28", "30", "32", "34", "36"],
+                "grammage": "200g",
+                "fabric": "Cotton Blend",
+                "composition": "60% cotton 40% polyester"
+            }
+        },
+        {
+            "id": 4,
+            "name": "F012",
+            "cardImage": "Assets/Images/Sports/7.jpg",
+            "details": {
+                "detailImage": "Assets/Images/Sports/8.jpg",
+                "additionalInfo": {
+                    "size": ["One Size"],
+                    "grammage": "150g",
+                    "fabric": "Nylon",
+                    "composition": "100% nylon"
+                }
+            },
+            "attributes": {
+                "size": ["One Size"],
+                "grammage": "150g",
+                "fabric": "Nylon",
+                "composition": "100% nylon"
+            }
+        },
+        {
+            "id": 5,
+            "name": "G345",
+            "cardImage": "Assets/Images/Sports/9.jpg",
+            "details": {
+                "detailImage": "Assets/Images/Sports/10.jpg",
+                "additionalInfo": {
+                    "size": ["7", "8", "9", "10", "11"],
+                    "grammage": "220g",
+                    "fabric": "Leather",
+                    "composition": "100% leather"
+                }
+            },
+            "attributes": {
+                "size": ["7", "8", "9", "10", "11"],
+                "grammage": "220g",
+                "fabric": "Leather",
+                "composition": "100% leather"
+            }
+        }
+    ]
+}

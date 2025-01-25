@@ -96,6 +96,8 @@
   <script src="js/product-search.js"></script>
   <script>
       document.addEventListener('DOMContentLoaded', () => {
+          const infiniteScroll = new InfiniteScroll('silvercraft');
+          infiniteScroll.init();
           new ProductSearch('silvercraft');
       });
   </script>

@@ -1,55 +1,60 @@
-async function loadProductDetail() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    const productType = urlParams.get('type');
 
-    const loader = new ProductLoader();
-    const products = await loader.loadProducts(productType);
-
-    // Convert productId to a number
-    const numericProductId = parseInt(productId, 10);
-
-    const product = products.find(p => p.id === numericProductId);
-
-    if (product) {
-        renderProductDetail(product);
-    } else {
-        document.getElementById('productDetail').innerHTML = '<p>Product not found.</p>';
+class ProductDetail {
+    constructor() {
+        this.productImage = document.getElementById('productImage');
+        this.productName = document.getElementById('productName');
+        this.productAttributes = document.getElementById('productAttributes');
+        this.urlParams = new URLSearchParams(window.location.search);
+        this.productId = parseInt(this.urlParams.get('id'));
+        this.productType = this.urlParams.get('type');
+        this.productLoader = new ProductLoader();
+        this.init();
     }
-}
-function renderProductDetail(product) {
-    const detailHTML = `
-        <div class="max-w-5xl mx-auto py-8 px-4">
-            <h1 class="text-3xl font-bold mb-4">${product.name}</h1>
-            <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-1">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-96 object-cover">
-                </div>
-                <div class="flex-1">
-                    <p class="text-gray-600 mb-4">${product.description}</p>
-                    ${renderSpecifications(product)}
-                    <div class="mt-4">
-                        <span class="text-2xl font-bold text-gray-900">${product.price}</span>
-                        <a href="contact-us.html" class="ml-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            Enquire now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    document.getElementById('productDetail').innerHTML = detailHTML;
-}
 
-function renderSpecifications(product) {
-    if (product.specifications && Object.keys(product.specifications).length > 0) {
-        let specsHTML = '<h4 class="text-xl font-semibold mb-2">Specifications</h4><ul class="list-disc list-inside">';
-        for (const key in product.specifications) {
-            specsHTML += `<li><strong>${key}:</strong> ${product.specifications[key]}</li>`;
+    async init() {
+        if (!this.productId || !this.productType) {
+            console.error("Product ID or type missing in URL.");
+            return;
         }
-        specsHTML += '</ul>';
-        return specsHTML;
-    } else {
-        return '';
+        try {
+            const products = await this.productLoader.loadProducts(this.productType);
+            const product = products.find(p => p.id === this.productId);
+            if (product) {
+                this.renderProductDetails(product);
+            } else {
+                console.error("Product not found.");
+            }
+        } catch (error) {
+            console.error("Error loading product details:", error);
+        }
+    }
+
+    renderProductDetails(product) {
+        this.productImage.src = product.detailImage;
+        this.productImage.alt = product.name;
+        this.productName.textContent = product.name;
+        this.renderAttributes(product.attributes);
+    }
+    renderAttributes(attributes) {
+        this.productAttributes.innerHTML = '';
+        if (this.productType === 'sports') {
+            this.productAttributes.innerHTML = `
+                <p>Size: ${attributes.size}</p>
+                <p>Grammage: ${attributes.grammage}</p>
+                <p>Fabric: ${attributes.fabric}</p>
+                <p>Composition: ${attributes.composition}</p>
+            `;
+        } else if (this.productType === 'silvercraft') {
+            this.productAttributes.innerHTML = `
+                <p>Material: ${attributes.material}</p>
+                <p>Weight: ${attributes.weight}g</p>
+                <p>Purity: ${attributes.purity}</p>
+            `;
+        }
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    new ProductDetail();
+});
+

@@ -68,9 +68,12 @@ class InfiniteScroll {
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-lg mb-2">${product.name}</h3>
-                    <p class="text-gray-700">${product.description.substring(0, 100)}...</p>
-                    <p class="mt-2 font-semibold">${product.price}</p>
-                     <div class="mt-4 flex justify-between items-center">
+                     <div class="specifications text-sm text-gray-600 mt-2">
+                        <p>Material: ${product.attributes.material}</p>
+                        <p>Weight: ${product.attributes.weight}g</p>
+                        <p>Purity: ${product.attributes.purity}</p>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center">
                         <a href="contact-us.html" 
                            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Enquire Now
@@ -79,36 +82,35 @@ class InfiniteScroll {
                 </div>
             </div>
         `;
+    }    getSportsTemplate(product) {
+        return `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">${product.name}</h3>
+                    <div class="specifications text-sm text-gray-600 mt-2">
+                        <p>Size: ${product.attributes.size}</p>
+                        <p>Grammage: ${product.attributes.grammage}</p>
+                        <p>Fabric: ${product.attributes.fabric}</p>
+                        <p>Composition: ${product.attributes.composition}</p>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center">
+                        <a href="product-detail.html?id=${product.id}&type=sports" 
+                        class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            More Details
+                        </a>
+                        <a href="contact-us.html" 
+                        class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
     }
-      getSportsTemplate(product) {
-          return `
-              <div class="product-card">
-                  <div class="product-image">
-                      <img src="${product.image}" alt="${product.name}">
-                  </div>
-                  <div class="p-4">
-                      <h3 class="font-bold text-lg mb-2">${product.name}</h3>
-                     <div class="specifications text-sm text-gray-600 mt-2">
-                          <p>Size: ${product.attributes.size}</p>
-                          <p>Grammage: ${product.attributes.grammage}</p>
-                          <p>Fabric: ${product.attributes.fabric}</p>
-                          <p>Composition: ${product.attributes.composition}</p>
-                      </div>
-                      <div class="mt-4 flex justify-between items-center">
-                          <a href="product-detail.html?id=${product.id}&type=sports" 
-                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                              More Details
-                          </a>
-                          <a href="contact-us.html" 
-                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                              Enquire Now
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          `;
-      }
-    }document.addEventListener('DOMContentLoaded', () => {
+}document.addEventListener('DOMContentLoaded', () => {
   const infiniteScroll = new InfiniteScroll();
   infiniteScroll.init();
 });

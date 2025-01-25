@@ -35,15 +35,11 @@ class ProductSearch {
     sortProducts(products) {
         if (!this.sortFilter?.value) return products;
         const sortValue = this.sortFilter.value;
-         return [...products].sort((a, b) => {
+        return [...products].sort((a, b) => {
             if (sortValue === 'name-asc') {
                 return a.name.localeCompare(b.name);
             } else if (sortValue === 'name-desc') {
                 return b.name.localeCompare(a.name);
-            } else if (sortValue === 'weight-high') {
-                return parseFloat(b.attributes.weight) - parseFloat(a.attributes.weight);
-            } else if (sortValue === 'weight-low') {
-                 return parseFloat(a.attributes.weight) - parseFloat(b.attributes.weight);
             }
             return 0;
         });
@@ -156,7 +152,7 @@ class ProductSearch {
         if (this.sortFilter) {
             this.sortFilter.addEventListener('change', async () => {
                 const products = await this.productLoader.loadProducts(this.productType);
-                 const filteredProducts = this.filterByCategory(products);
+                const filteredProducts = this.filterByCategory(products);
                 const sortedProducts = this.sortProducts(filteredProducts);
                 this.renderSearchResults(sortedProducts);
             });

@@ -22,10 +22,10 @@
     <main class="flex-grow">
         <div class="container mx-auto px-4 py-8">
             <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2">
-                    <img id="productImage" src="" alt="" class="w-full h-auto rounded-lg shadow-md">
+                <div class="md:w-3/5 flex-grow">
+                    <img id="productImage" src="" alt="" class="w-full h-auto rounded-lg shadow-md object-contain">
                 </div>
-                <div class="md:w-1/2">
+                <div class="md:w-2/5">
                     <h2 id="productName" class="text-3xl font-bold mb-4"></h2>
                     <div id="productAttributes" class="text-gray-700">
                         <!-- Attributes will be loaded here -->
@@ -39,6 +39,9 @@
             </div>
         </div>
     </main>
+    <site-footer></site-footer>
+    <script src="js/product-loader.js"></script>
+    <script src="js/product-detail.js"></script>
     <site-footer></site-footer>
     <script src="js/product-loader.js"></script>
     <script src="js/product-detail.js"></script>

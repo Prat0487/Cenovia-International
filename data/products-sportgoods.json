@@ -2,8 +2,8 @@
     "products": [
         {
             "id": 1,
-            "name": "Professional Cricket Bat",
-            "image": "Assets/Images/Sports/cricket_bat_1.png",
+            "name": "R437",
+            "image": "Assets/Images/Sports/R437.png",
             "detailImage": "Assets/Images/Sports/cricket_bat_detail.jpg",
             "attributes": {
                 "size": "Full Size",
@@ -14,9 +14,9 @@
         },
         {
             "id": 2,
-            "name": "Competition Football",
-            "image": "Assets/Images/Sports/football_1.png",
-            "detailImage": "Assets/Images/Sports/football_detail.jpg",
+            "name": "R438",
+            "image": "Assets/Images/Sports/R438.png",
+            "detailImage": "Assets/Images/Sports/R438_detail.png",
             "attributes": {
                 "size": "Size 5",
                 "grammage": "450g",

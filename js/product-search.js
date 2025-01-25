@@ -63,7 +63,6 @@ class ProductSearch {
             return true;
         });
     }
-
     initializeCategoryFilter() {
         if (this.categoryFilter) {
             this.categoryFilter.addEventListener('change', async () => {
@@ -127,6 +126,7 @@ class ProductSearch {
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
+
                         <p>Material: ${product.attributes.material}</p>
                         <p>Weight: ${product.attributes.weight}g</p>
                         <p>Purity: ${product.attributes.purity}</p>
@@ -161,5 +161,6 @@ class ProductSearch {
                 this.renderSearchResults(sortedProducts);
             });
         }
+
     }
 }

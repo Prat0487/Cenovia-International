@@ -1,3 +1,4 @@
+
 class ProductDetail {
     constructor() {
         this.productImage = document.getElementById('productImage');
@@ -56,3 +57,4 @@ class ProductDetail {
 document.addEventListener('DOMContentLoaded', () => {
     new ProductDetail();
 });
+

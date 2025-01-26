@@ -5,7 +5,7 @@ class MainNav extends HTMLElement {
             <div class="bg-white py-4">
                 <div class="container mx-auto px-4 flex justify-center">
                     <a href="index.html">
-                        <img src="Assets/others/your-logo.png"
+                        <img src="Assets/others/logo_ci.png"
                              alt="Company Logo"
                              class="h-32 md:h-40"
                              width="auto"

@@ -54,11 +54,11 @@ class ProductSearch {
         if (!category) return products;
         
         return products.filter(product => {
-            if (category === 'fine') {
-                return product.attributes.material === 'Fine Silver';
+            if (category === 'Short Sleeve') {
+                return product.attributes.category === 'Short Sleeve';
             }
-            if (category === 'sterling') {
-                return product.attributes.material === 'Sterling Silver';
+            if (category === 'Jacket') {
+                return product.attributes.category === 'Jacket';
             }
             return true;
         });

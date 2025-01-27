@@ -67,55 +67,54 @@ class InfiniteScroll {
                   </div>
                   <div class="p-4">
                       <h3 class="font-bold text-lg mb-2">${product.name}</h3>
-                     <div class="specifications text-sm text-gray-600 mt-2">
-                          <p>Category: ${product.attributes.category}</p>
-                          <p>Size: ${product.attributes.size}</p>
-                          <p>Grammage: ${product.attributes.grammage}</p>
-                          <p>Composition: ${product.attributes.composition}</p>
+                   <div class="specifications text-sm text-gray-600 mt-2">
+                          <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
+                          <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
+                          <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
+                          <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
                       </div>
                       <div class="mt-4 flex justify-between items-center">
                           <a href="product-detail.html?id=${product.id}&type=women" 
-                          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                         class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                               More Details
-                            </a>
+                          </a>
                           <a href="contact-us.html" 
-                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                         class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                               Enquire Now
                           </a>
                       </div>
                   </div>
               </div>
           `;
-      
-    }    getMensWearTemplate(product) {
-        return `
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg mb-2">${product.name}</h3>
-                    <div class="specifications text-sm text-gray-600 mt-2">
-                        <p>Size: ${product.attributes.size}</p>
-                        <p>Grammage: ${product.attributes.grammage}</p>
-                        <p>Fabric: ${product.attributes.fabric}</p>
-                        <p>Composition: ${product.attributes.composition}</p>
-                    </div>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="product-detail.html?id=${product.id}&type=men" 
-                        class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            More Details
-                        </a>
-                        <a href="contact-us.html" 
-                        class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                            Enquire Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-}document.addEventListener('DOMContentLoaded', () => {
+      }
+      getMensWearTemplate(product) {
+          return `
+              <div class="product-card">
+                  <div class="product-image">
+                      <img src="${product.image}" alt="${product.name}">
+                  </div>
+                  <div class="p-4">
+                      <h3 class="font-bold text-lg mb-2">${product.name}</h3>
+                      <div class="specifications text-sm text-gray-600 mt-2">
+                          <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
+                          <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
+                          <p><span class="attribute-key">Fabric:</span> <span class="attribute-value">${product.attributes.fabric}</span></p>
+                          <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
+                      </div>
+                      <div class="mt-4 flex justify-between items-center">
+                          <a href="product-detail.html?id=${product.id}&type=men" 
+                          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                              More Details
+                          </a>
+                          <a href="contact-us.html" 
+                          class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                              Enquire Now
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          `;
+      }}document.addEventListener('DOMContentLoaded', () => {
   const infiniteScroll = new InfiniteScroll();
   infiniteScroll.init();
 });

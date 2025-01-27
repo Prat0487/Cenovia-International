@@ -5,3 +5,25 @@
 .text-black {
     color: black;
 }
+
+.attribute-key {
+    font-weight: bold;
+    color: #333; /* Dark gray */
+}
+
+.attribute-value {
+    font-family: sans-serif;
+    color: #555; /* Medium gray */
+}
+
+.detail-attribute-key {
+    font-weight: bold;
+    color: #333; /* Dark gray */
+    font-size: 1.2em; /* Larger font */
+}
+
+.detail-attribute-value {
+    font-family: sans-serif;
+    color: #555; /* Medium gray */
+    font-size: 1.1em; /* Slightly larger font */
+}

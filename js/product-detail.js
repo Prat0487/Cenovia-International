@@ -51,6 +51,7 @@ class ProductDetail {
                 <p><span class="detail-attribute-key">Size:</span> <span class="detail-attribute-value">${attributes.size}</span></p>
                 <p><span class="detail-attribute-key">Grammage:</span> <span class="detail-attribute-value">${attributes.grammage}</span></p>
                 <p><span class="detail-attribute-key">Composition:</span> <span class="detail-attribute-value">${attributes.composition}</span></p>
+
             `;
         }
     }

@@ -9,9 +9,9 @@ class ProductLoader {
       let filePath;
   
       if (productType === 'sports') {
-        filePath = 'data/products-sportgoods.json';
+        filePath = 'data/products-menswear.json';
       } else if (productType === 'silvercraft') {
-        filePath = 'data/products-silvercraft.json';
+        filePath = 'data/products-womenswear.json';
       } else {
         console.error("Invalid product type:", productType);
         return []; // Return an empty array for invalid types

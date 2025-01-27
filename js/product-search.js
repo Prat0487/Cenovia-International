@@ -74,7 +74,7 @@ class ProductSearch {
         }
     }
 
-    getSportsTemplate(product) {
+    getMensWearTemplate(product) {
         return `
             <div class="product-card">
                 <div class="product-image">
@@ -110,7 +110,7 @@ class ProductSearch {
         `;
     }
 
-    getSilvercraftTemplate(product) {
+    getWomensWearTemplate(product) {
         return `
             <div class="product-card">
                 <div class="product-image">
@@ -126,10 +126,10 @@ class ProductSearch {
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
-
-                        <p>Material: ${product.attributes.material}</p>
-                        <p>Weight: ${product.attributes.weight}g</p>
-                        <p>Purity: ${product.attributes.purity}</p>
+                        <p>Category: ${product.attributes.category}</p>
+                        <p>Size: ${product.attributes.size}</p>
+                        <p>Grammage: ${product.attributes.grammage}</p>
+                        <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
                         <a href="contact-us.html" 
@@ -146,8 +146,8 @@ class ProductSearch {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
             const productHTML = this.productType === 'silvercraft' 
-                ? this.getSilvercraftTemplate(product)
-                : this.getSportsTemplate(product);
+                ? this.getWomensWearTemplate(product)
+                : this.getMensWearTemplate(product);
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);
         });
     }

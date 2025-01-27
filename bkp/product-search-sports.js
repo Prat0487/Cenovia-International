@@ -71,7 +71,7 @@ class ProductSearch {
         }
     }
 
-    getSportsTemplate(product) {
+    getMensWearTemplate(product) {
         return `
             <div class="product-card">
                 <div class="product-image">
@@ -107,7 +107,7 @@ class ProductSearch {
         `;
     }
 
-    getSilvercraftTemplate(product) {
+    getWomensWearTemplate(product) {
         return `
             <div class="product-card">
                 <div class="product-image">
@@ -142,8 +142,8 @@ class ProductSearch {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
             const productHTML = this.productType === 'silvercraft' 
-                ? this.getSilvercraftTemplate(product)
-                : this.getSportsTemplate(product);
+                ? this.getWomensWearTemplate(product)
+                : this.getMensWearTemplate(product);
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);
         });
     }

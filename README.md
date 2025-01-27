@@ -73,8 +73,8 @@ A modern, responsive website for Cenovia International, specializing in silvercr
 
 ## Pages
 - index.html (About Us) - Company overview and main features
-- product-silvercraft.html - Detailed silvercraft product catalog
-- product-sportgoods.html - Sports equipment showcase
+- product-womenswear.html - Detailed silvercraft product catalog
+- product-menswear.html - Sports equipment showcase
 - our-team.html - Team profiles and expertise
 - contact-us.html - Interactive contact form and location map
 - blog.html - Company news and industry insights

@@ -3,9 +3,10 @@
         {
             "id": 1,
             "name": "R437",
-            "image": "Assets/Images/Sports/R437.png",
-            "detailImage": "Assets/Images/Sports/cricket_bat_detail.jpg",
+            "image": "Assets/Images/Men/R437.png",
+            "detailImage": "Assets/Images/Men/cricket_bat_detail.jpg",
             "attributes": {
+                "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
                 "grammage": "165g",
                 "fabric": "Cloudy Pinhole",
@@ -15,9 +16,10 @@
         {
             "id": 2,
             "name": "R438",
-            "image": "Assets/Images/Sports/R438.png",
-            "detailImage": "Assets/Images/Sports/R438_detail.png",
-            "attributes": {
+            "image": "Assets/Images/Men/R438.png",            
+            "detailImage": "Assets/Images/Men/R438_detail.png",
+            "attributes": {     
+                "category": "Short Sleeve",          
                 "size": "S/M/L/XL/2XL/3XL/4XL",
                 "grammage": "165g",
                 "fabric": "Synthetic Leather",
@@ -28,9 +30,10 @@
             "id": 3,
 
             "name": "Basketball",
-            "image": "Assets/Images/Sports/basketball_1.png",
-            "detailImage": "Assets/Images/Sports/basketball_detail.png",
+            "image": "Assets/Images/Men/basketball_1.png",
+            "detailImage": "Assets/Images/Men/basketball_detail.png",
             "attributes": {
+                "category": "Jacket",
                 "size": "Size 7",
                 "grammage": "624g",
                 "fabric": "Composite Leather",

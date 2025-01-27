@@ -1,0 +1,41 @@
+{
+  "products": [
+      {
+          "id": 1,
+          "name": "SSW01",
+          "image": "Assets/Images/Women/SSW01.jpg",
+          "detailImage": "Assets/Images/Women/SSW01-d.jpg",
+          "attributes": {
+              "category": "Short Sleeve",
+              "size": "S/M/L/XL",
+              "grammage": "220g",
+              "composition": "80%Nylon 20%Spandex"          
+          }
+      },
+      {
+          "id": 2,
+          "name": "SSW02",
+          "image": "Assets/Images/Women/SSW02.jpg",            
+          "detailImage": "Assets/Images/Women/SSW02-d.jpg",
+          "attributes": {     
+              "category": "Short Sleeve",          
+              "size": "S/M/L/XL/2XL/3XL/4XL",
+              "grammage": "165g",
+              "composition": "69%nylon 18%polyester 13%spandex"
+          }
+      },
+      {
+          "id": 3,
+
+          "name": "SSW03",
+          "image": "Assets/Images/Women/SSW03.jpg",
+          "detailImage": "Assets/Images/Women/SSW03-d.jpg",
+          "attributes": {
+              "category": "Jacket",
+              "size": "Size 7",
+              "grammage": "624g",
+              "composition": "Rubber"
+          }
+      }
+  ]
+}

@@ -7,15 +7,15 @@ class SiteFooter extends HTMLElement {
                         <div>
                             <h4 class="text-lg font-semibold mb-4">About Us</h4>
                             <p class="text-gray-600">
-                                Your trusted partner in silvercraft and sporting goods, delivering excellence since 2025.
+                                Your trusted partner in manufacturing and exporting sports apparel, delivering excellence since 2025.
                             </p>
                         </div>
                         <div>
                             <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                             <ul class="space-y-2">
                                 <li><a href="index.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">About Us</a></li>
-                                <li><a href="product-womenswear.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">women</a></li>
-                                <li><a href="product-menswear.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Sport Goods</a></li>
+                                <li><a href="product-womenswear.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Women's Wear</a></li>
+                                <li><a href="product-menswear.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Men's Wear</a></li>
                                 <li><a href="our-team.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Our Team</a></li>
                                 <li><a href="contact-us.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Contact Us</a></li>
                             </ul>

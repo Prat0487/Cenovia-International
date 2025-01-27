@@ -10,7 +10,7 @@ class ProductLoader {
   
       if (productType === 'sports') {
         filePath = 'data/products-menswear.json';
-      } else if (productType === 'silvercraft') {
+      } else if (productType === 'women') {
         filePath = 'data/products-womenswear.json';
       } else {
         console.error("Invalid product type:", productType);

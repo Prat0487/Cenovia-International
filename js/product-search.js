@@ -132,6 +132,10 @@ class ProductSearch {
                         <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
+                        <a href="product-detail.html?id=${product.id}&type=women" 
+                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            More Details
+                        </a>
                         <a href="contact-us.html" 
                            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Enquire Now
@@ -141,11 +145,10 @@ class ProductSearch {
             </div>
         `;
     }
-
     renderSearchResults(products) {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
-            const productHTML = this.productType === 'silvercraft' 
+            const productHTML = this.productType === 'women' 
                 ? this.getWomensWearTemplate(product)
                 : this.getMensWearTemplate(product);
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);

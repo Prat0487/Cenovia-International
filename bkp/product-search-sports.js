@@ -141,7 +141,7 @@ class ProductSearch {
     renderSearchResults(products) {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
-            const productHTML = this.productType === 'silvercraft' 
+            const productHTML = this.productType === 'women' 
                 ? this.getWomensWearTemplate(product)
                 : this.getMensWearTemplate(product);
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);

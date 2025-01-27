@@ -10,7 +10,7 @@ A modern, responsive website for Cenovia International, specializing in silvercr
  - Responsive navbar with company logo
  - Desktop menu with dropdown functionality for Products
  - Mobile-friendly hamburger menu with smooth animations
- - Navigation links: About Us, Products (Silvercraft, Sport Goods), Our Team, Contact Us
+ - Navigation links: About Us, Products (women, Sport Goods), Our Team, Contact Us
  - Search functionality with auto-suggestions
 
 ### Main Sections
@@ -73,7 +73,7 @@ A modern, responsive website for Cenovia International, specializing in silvercr
 
 ## Pages
 - index.html (About Us) - Company overview and main features
-- product-womenswear.html - Detailed silvercraft product catalog
+- product-womenswear.html - Detailed women product catalog
 - product-menswear.html - Sports equipment showcase
 - our-team.html - Team profiles and expertise
 - contact-us.html - Interactive contact form and location map

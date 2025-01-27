@@ -1,5 +1,5 @@
 const productTemplates = {
-  silvercraft: (product) => `
+  women: (product) => `
     <article class="product-card">
       <!-- Common product info -->
       <div class="product-details">

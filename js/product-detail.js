@@ -44,7 +44,7 @@ class ProductDetail {
                 <p>Fabric: ${attributes.fabric}</p>
                 <p>Composition: ${attributes.composition}</p>
             `;
-        } else if (this.productType === 'silvercraft') {
+        } else if (this.productType === 'women') {
             this.productAttributes.innerHTML = `
                 <p>Material: ${attributes.material}</p>
                 <p>Weight: ${attributes.weight}g</p>

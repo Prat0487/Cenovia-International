@@ -74,6 +74,10 @@ class InfiniteScroll {
                           <p>Composition: ${product.attributes.composition}</p>
                       </div>
                       <div class="mt-4 flex justify-between items-center">
+                          <a href="product-detail.html?id=${product.id}&type=women" 
+                          class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                              More Details
+                            </a>
                           <a href="contact-us.html" 
                            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                               Enquire Now

@@ -1,5 +1,5 @@
 const filterConfigs = {
-  silvercraft: {
+  women: {
     material: ['Sterling Silver', 'Fine Silver', 'Silver Plated'],
     purity: ['925', '999'],
     priceRange: [

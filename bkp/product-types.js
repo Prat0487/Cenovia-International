@@ -1,5 +1,5 @@
 const productStructures = {
-  silvercraft: {
+  women: {
     baseFields: ['id', 'name', 'price', 'image'],
     specificAttributes: {
       material: String,

@@ -49,7 +49,7 @@ class MainNav extends HTMLElement {
                                     <a href="product-womenswear.html"
                                        class="block my-1 px-4 py-2 rounded-md font-bold text-gray-700 
                                               bg-gray-100 hover:bg-indigo-50 hover:scale-105 transition-transform duration-200">
-                                        Silvercraft
+                                        women
                                     </a>
                                     <a href="product-menswear.html"
                                        class="block my-1 px-4 py-2 rounded-md font-bold text-gray-700 
@@ -113,7 +113,7 @@ class MainNav extends HTMLElement {
                                         </button>
                                         <div id="mobile-product-dropdown" class="hidden pl-4 space-y-2">
                                             <a href="/product-womenswear" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
-                                                Silvercraft
+                                                women
                                             </a>
                                             <a href="/product-menswear" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                                 Sport Goods

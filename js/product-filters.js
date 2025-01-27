@@ -1,5 +1,5 @@
 const filterConfigs = {
-  silvercraft: {
+  women: {
     material: ['Sterling Silver', 'Fine Silver', 'Silver Plated'],
     purity: ['925', '999'],
     priceRange: [
@@ -8,7 +8,7 @@ const filterConfigs = {
     ]
   },
   
-  sports: {
+  men: {
     sportType: ['Cricket', 'Football', 'Basketball'],
     ageGroup: ['Junior', 'Adult', 'Professional'],
     skill_level: ['Beginner', 'Intermediate', 'Advanced']

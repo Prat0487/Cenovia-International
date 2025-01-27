@@ -4,13 +4,13 @@
   status = 200
 
 [[redirects]]
-  from = "/product-silvercraft"
-  to = "/product-silvercraft.html"
+  from = "/product-womenswear"
+  to = "/product-womenswear.html"
   status = 200
 
 [[redirects]]
-  from = "/product-sportgoods"
-  to = "/product-sportgoods.html"
+  from = "/product-menswear"
+  to = "/product-menswear.html"
   status = 200
 
 [[redirects]]

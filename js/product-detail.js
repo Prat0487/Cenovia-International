@@ -37,18 +37,20 @@ class ProductDetail {
     }
     renderAttributes(attributes) {
         this.productAttributes.innerHTML = '';
-        if (this.productType === 'sports') {
+        if (this.productType === 'men') {
             this.productAttributes.innerHTML = `
+                <p>Category: ${attributes.category}</p>
                 <p>Size: ${attributes.size}</p>
                 <p>Grammage: ${attributes.grammage}</p>
                 <p>Fabric: ${attributes.fabric}</p>
                 <p>Composition: ${attributes.composition}</p>
             `;
-        } else if (this.productType === 'silvercraft') {
+        } else if (this.productType === 'women') {
             this.productAttributes.innerHTML = `
-                <p>Material: ${attributes.material}</p>
-                <p>Weight: ${attributes.weight}g</p>
-                <p>Purity: ${attributes.purity}</p>
+                <p>Category: ${attributes.category}</p>
+                <p>Size: ${attributes.size}</p>
+                <p>Grammage: ${attributes.grammage}</p>
+                <p>Composition: ${attributes.composition}</p>
             `;
         }
     }

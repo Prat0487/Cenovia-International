@@ -74,7 +74,7 @@ class ProductSearch {
         }
     }
 
-    getSportsTemplate(product) {
+    getMensWearTemplate(product) {
         return `
             <div class="product-card">
                 <div class="product-image">
@@ -96,7 +96,7 @@ class ProductSearch {
                         <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
-                         <a href="product-detail.html?id=${product.id}&type=sports" 
+                         <a href="product-detail.html?id=${product.id}&type=men" 
                            class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                             More Details
                         </a>
@@ -110,7 +110,7 @@ class ProductSearch {
         `;
     }
 
-    getSilvercraftTemplate(product) {
+    getWomensWearTemplate(product) {
         return `
             <div class="product-card">
                 <div class="product-image">
@@ -126,12 +126,16 @@ class ProductSearch {
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
-
-                        <p>Material: ${product.attributes.material}</p>
-                        <p>Weight: ${product.attributes.weight}g</p>
-                        <p>Purity: ${product.attributes.purity}</p>
+                        <p>Category: ${product.attributes.category}</p>
+                        <p>Size: ${product.attributes.size}</p>
+                        <p>Grammage: ${product.attributes.grammage}</p>
+                        <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
+                        <a href="product-detail.html?id=${product.id}&type=women" 
+                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            More Details
+                        </a>
                         <a href="contact-us.html" 
                            class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Enquire Now
@@ -141,13 +145,12 @@ class ProductSearch {
             </div>
         `;
     }
-
     renderSearchResults(products) {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
-            const productHTML = this.productType === 'silvercraft' 
-                ? this.getSilvercraftTemplate(product)
-                : this.getSportsTemplate(product);
+            const productHTML = this.productType === 'women' 
+                ? this.getWomensWearTemplate(product)
+                : this.getMensWearTemplate(product);
             this.productGrid.insertAdjacentHTML('beforeend', productHTML);
         });
     }

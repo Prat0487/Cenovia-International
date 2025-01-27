@@ -28,7 +28,19 @@ class ProductSearch {
         if (!searchTerm) return products;
 
         return products.filter(product => {
-            return product.name.toLowerCase().includes(searchTerm);
+            if (product.name.toLowerCase().includes(searchTerm)) {
+                return true; // Match found in product name
+            }
+
+            for (const key in product.attributes) {
+                if (product.attributes.hasOwnProperty(key)) {
+                    const attributeValue = String(product.attributes[key]).toLowerCase();
+                    if (attributeValue.includes(searchTerm)) {
+                        return true; // Match found in attribute value
+                    }
+                }
+            }
+            return false; // No match found
         });
     }
 

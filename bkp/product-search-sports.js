@@ -93,7 +93,7 @@ class ProductSearch {
                         <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
-                         <a href="product-detail.html?id=${product.id}&type=sports" 
+                         <a href="product-detail.html?id=${product.id}&type=men" 
                            class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                             More Details
                         </a>

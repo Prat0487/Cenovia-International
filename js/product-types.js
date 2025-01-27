@@ -14,7 +14,7 @@ const productStructures = {
     }
   },
   
-  sports: {
+  men: {
     baseFields: ['id', 'name', 'price', 'image'],
     specificAttributes: {
       sportType: String,

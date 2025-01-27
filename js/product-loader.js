@@ -8,7 +8,7 @@ class ProductLoader {
       console.log("Product type received:", productType);
       let filePath;
   
-      if (productType === 'sports') {
+      if (productType === 'men') {
         filePath = 'data/products-menswear.json';
       } else if (productType === 'women') {
         filePath = 'data/products-womenswear.json';

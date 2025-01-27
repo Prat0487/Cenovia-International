@@ -13,7 +13,7 @@ const productTemplates = {
     </article>
   `,
   
-  sports: (product) => `
+  men: (product) => `
     <article class="product-card">
       <!-- Common product info -->
       <div class="product-details">

@@ -37,7 +37,7 @@ class ProductDetail {
     }
     renderAttributes(attributes) {
         this.productAttributes.innerHTML = '';
-        if (this.productType === 'sports') {
+        if (this.productType === 'men') {
             this.productAttributes.innerHTML = `
                 <p>Size: ${attributes.size}</p>
                 <p>Grammage: ${attributes.grammage}</p>

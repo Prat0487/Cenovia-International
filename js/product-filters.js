@@ -8,7 +8,7 @@ const filterConfigs = {
     ]
   },
   
-  sports: {
+  men: {
     sportType: ['Cricket', 'Football', 'Basketball'],
     ageGroup: ['Junior', 'Adult', 'Professional'],
     skill_level: ['Beginner', 'Intermediate', 'Advanced']

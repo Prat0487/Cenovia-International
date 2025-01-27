@@ -39,6 +39,7 @@ class ProductDetail {
         this.productAttributes.innerHTML = '';
         if (this.productType === 'men') {
             this.productAttributes.innerHTML = `
+                <p><span class="detail-attribute-key">Category:</span> <span class="detail-attribute-value">${attributes.category}</span></p>
                 <p><span class="detail-attribute-key">Size:</span> <span class="detail-attribute-value">${attributes.size}</span></p>
                 <p><span class="detail-attribute-key">Grammage:</span> <span class="detail-attribute-value">${attributes.grammage}</span></p>
                 <p><span class="detail-attribute-key">Fabric:</span> <span class="detail-attribute-value">${attributes.fabric}</span></p>
@@ -52,9 +53,9 @@ class ProductDetail {
                 <p><span class="detail-attribute-key">Composition:</span> <span class="detail-attribute-value">${attributes.composition}</span></p>
             `;
         }
-    }}
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     new ProductDetail();
 });
-

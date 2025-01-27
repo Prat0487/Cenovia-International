@@ -96,6 +96,7 @@ class InfiniteScroll {
                   <div class="p-4">
                       <h3 class="font-bold text-lg mb-2">${product.name}</h3>
                       <div class="specifications text-sm text-gray-600 mt-2">
+                          <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
                           <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
                           <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
                           <p><span class="attribute-key">Fabric:</span> <span class="attribute-value">${product.attributes.fabric}</span></p>
@@ -114,7 +115,10 @@ class InfiniteScroll {
                   </div>
               </div>
           `;
-      }}document.addEventListener('DOMContentLoaded', () => {
-  const infiniteScroll = new InfiniteScroll();
-  infiniteScroll.init();
+      }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const infiniteScroll = new InfiniteScroll();
+    infiniteScroll.init();
 });

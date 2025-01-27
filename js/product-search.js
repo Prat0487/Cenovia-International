@@ -90,6 +90,7 @@ class ProductSearch {
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
+                        <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
                         <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
                         <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
                         <p><span class="attribute-key">Fabric:</span> <span class="attribute-value">${product.attributes.fabric}</span></p>
@@ -109,7 +110,6 @@ class ProductSearch {
             </div>
         `;
     }
-
     getWomensWearTemplate(product) {
         return `
             <div class="product-card">

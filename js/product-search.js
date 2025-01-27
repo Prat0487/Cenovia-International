@@ -28,7 +28,19 @@ class ProductSearch {
         if (!searchTerm) return products;
 
         return products.filter(product => {
-            return product.name.toLowerCase().includes(searchTerm);
+            if (product.name.toLowerCase().includes(searchTerm)) {
+                return true; // Match found in product name
+            }
+
+            for (const key in product.attributes) {
+                if (product.attributes.hasOwnProperty(key)) {
+                    const attributeValue = String(product.attributes[key]).toLowerCase();
+                    if (attributeValue.includes(searchTerm)) {
+                        return true; // Match found in attribute value
+                    }
+                }
+            }
+            return false; // No match found
         });
     }
 
@@ -40,15 +52,14 @@ class ProductSearch {
                 return a.name.localeCompare(b.name);
             } else if (sortValue === 'name-desc') {
                 return b.name.localeCompare(a.name);
-            } else if (sortValue === 'weight-high') {
-                return parseFloat(b.attributes.weight) - parseFloat(a.attributes.weight);
-            } else if (sortValue === 'weight-low') {
-                 return parseFloat(a.attributes.weight) - parseFloat(b.attributes.weight);
+            } else if (sortValue === 'grammage-high') {
+                return parseFloat(b.attributes.grammage) - parseFloat(a.attributes.grammage);
+            } else if (sortValue === 'grammage-low') {
+                 return parseFloat(a.attributes.grammage) - parseFloat(b.attributes.grammage);
             }
             return 0;
         });
     }
-
     filterByCategory(products) {
         const category = this.categoryFilter?.value;
         if (!category) return products;

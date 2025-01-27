@@ -54,11 +54,11 @@ class ProductSearch {
         if (!category) return products;
         
         return products.filter(product => {
-            if (category === 'fine') {
-                return product.attributes.material === 'Fine Silver';
+            if (category === 'Short Sleeve') {
+                return product.attributes.category === 'Short Sleeve';
             }
-            if (category === 'sterling') {
-                return product.attributes.material === 'Sterling Silver';
+            if (category === 'Jacket') {
+                return product.attributes.category === 'Jacket';
             }
             return true;
         });
@@ -90,10 +90,11 @@ class ProductSearch {
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
-                        <p>Size: ${product.attributes.size}</p>
-                        <p>Grammage: ${product.attributes.grammage}</p>
-                        <p>Fabric: ${product.attributes.fabric}</p>
-                        <p>Composition: ${product.attributes.composition}</p>
+                        <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
+                        <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
+                        <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
+                        <p><span class="attribute-key">Fabric:</span> <span class="attribute-value">${product.attributes.fabric}</span></p>
+                        <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
                          <a href="product-detail.html?id=${product.id}&type=men" 
@@ -109,7 +110,6 @@ class ProductSearch {
             </div>
         `;
     }
-
     getWomensWearTemplate(product) {
         return `
             <div class="product-card">
@@ -126,10 +126,10 @@ class ProductSearch {
                         </button>
                     </div>
                     <div class="specifications text-sm text-gray-600 mt-2">
-                        <p>Category: ${product.attributes.category}</p>
-                        <p>Size: ${product.attributes.size}</p>
-                        <p>Grammage: ${product.attributes.grammage}</p>
-                        <p>Composition: ${product.attributes.composition}</p>
+                        <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
+                        <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
+                        <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
+                        <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
                     </div>
                     <div class="flex justify-between items-center mt-4">
                         <a href="product-detail.html?id=${product.id}&type=women" 

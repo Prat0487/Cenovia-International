@@ -12,8 +12,21 @@
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.9);
         }
+        /* Added styles for image zoom */
+        .image-container {
+            overflow: hidden; /* Prevent zoomed image from overflowing */
+        }
+        #productImage {
+            transition: transform 0.3s ease; /* Smooth transition for zoom */
+        }
+        #productImage:hover,
+        #productImage:active {
+            transform: scale(1.1); /* Zoom in on hover/touch */
+        }
     </style>
     <script src="components/TopRibbon.js"></script>
+    <script src="components/MainNav.js"></script>
+    <script src="components/SiteFooter.js"></script>
     <script src="components/MainNav.js"></script>
     <script src="components/SiteFooter.js"></script>
 </head>

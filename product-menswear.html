@@ -34,6 +34,17 @@
       .product-image img {
           @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
       }
+      /* Added styles for image zoom */
+      .image-container {
+          overflow: hidden; /* Prevent zoomed image from overflowing */
+      }
+      .product-image img {
+          transition: transform 0.3s ease; /* Smooth transition for zoom */
+      }
+      .product-image img:hover,
+      .product-image img:active {
+          transform: scale(1.1); /* Zoom in on hover/touch */
+      }
   </style>
     
   <!-- Web Components -->

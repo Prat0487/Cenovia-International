@@ -71,6 +71,9 @@ class ProductSearch {
             if (category === 'Undershirt') {
                 return product.attributes.category === 'Undershirt';
             }
+            if (category === 'Shorts') {
+                return product.attributes.category === 'Shorts';
+            }
             return true;
         });
     }

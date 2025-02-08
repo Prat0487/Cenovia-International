@@ -68,8 +68,8 @@ class ProductSearch {
             if (category === 'Short Sleeve') {
                 return product.attributes.category === 'Short Sleeve';
             }
-            if (category === 'Jacket') {
-                return product.attributes.category === 'Jacket';
+            if (category === 'Undershirt') {
+                return product.attributes.category === 'Undershirt';
             }
             return true;
         });

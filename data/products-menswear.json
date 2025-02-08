@@ -4,7 +4,7 @@
             "id": 1,
             "name": "SS01",
             "image": "Assets/Images/Men/SS01.jpg",
-            "detailImage": "Assets/Images/Men/SS01-d.jpg",
+            "detailImage": "Assets/Images/Men/SS01-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
@@ -16,7 +16,7 @@
             "id": 2,
             "name": "SS02",
             "image": "Assets/Images/Men/SS02.jpg",
-            "detailImage": "Assets/Images/Men/SS02-d.png",
+            "detailImage": "Assets/Images/Men/SS02-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",
@@ -28,7 +28,7 @@
             "id": 3,
             "name": "SS03",
             "image": "Assets/Images/Men/SS03.jpg",
-            "detailImage": "Assets/Images/Men/SS03-d.jpg",
+            "detailImage": "Assets/Images/Men/SS03-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",
@@ -40,7 +40,7 @@
             "id": 4,
             "name": "SS04",
             "image": "Assets/Images/Men/SS04.jpg",
-            "detailImage": "Assets/Images/Men/SS04-d.jpg",
+            "detailImage": "Assets/Images/Men/SS04-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
@@ -52,7 +52,7 @@
             "id": 5,
             "name": "SS05",
             "image": "Assets/Images/Men/SS05.jpg",
-            "detailImage": "Assets/Images/Men/SS05-d.jpg",
+            "detailImage": "Assets/Images/Men/SS05-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
@@ -64,7 +64,7 @@
             "id": 6,
             "name": "SS06",
             "image": "Assets/Images/Men/SS06.jpg",
-            "detailImage": "Assets/Images/Men/SS06-d.jpg",
+            "detailImage": "Assets/Images/Men/SS06-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
@@ -76,7 +76,7 @@
             "id": 7,
             "name": "SS07",
             "image": "Assets/Images/Men/SS07.jpg",
-            "detailImage": "Assets/Images/Men/SS07-d.jpg",
+            "detailImage": "Assets/Images/Men/SS07-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",
@@ -88,7 +88,7 @@
             "id": 8,
             "name": "SS08",
             "image": "Assets/Images/Men/SS08.jpg",
-            "detailImage": "Assets/Images/Men/SS08-d.jpg",
+            "detailImage": "Assets/Images/Men/SS08-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",
@@ -100,7 +100,7 @@
             "id": 9,
             "name": "SS09",
             "image": "Assets/Images/Men/SS09.jpg",
-            "detailImage": "Assets/Images/Men/SS09-d.jpg",
+            "detailImage": "Assets/Images/Men/SS09-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",

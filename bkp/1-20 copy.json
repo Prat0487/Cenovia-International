@@ -1,0 +1,100 @@
+{
+    "products": [
+        {
+            "id": 16,
+            "name": "SHM01",
+            "image": "Assets/Images/Men/SH/SHM01.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM01-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "XS/S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "160g",
+                "composition": "92% Polyester 8% Spandex"
+            }
+        },
+        {
+            "id": 17,
+            "name": "SHM02",
+            "image": "Assets/Images/Men/SH/SHM02.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM02-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "130g",
+                "composition": "92% Polyester 8% Spandex"
+            }
+        },
+        {
+            "id": 18,
+            "name": "SHM03",
+            "image": "Assets/Images/Men/SH/SHM03.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM03-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "S/M/L/XL/2XL/3XL",
+                "grammage": "150g",
+                "composition": "90% Polyester 10% Spandex"
+            }
+        },
+        {
+            "id": 19,
+            "name": "SHM04",
+            "image": "Assets/Images/Men/SH/SHM04.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM04-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "150g",
+                "composition": "90% Nylon 10% Spandex"
+            }
+        },
+        {
+            "id": 20,
+            "name": "SHM05",
+            "image": "Assets/Images/Men/SH/SHM05.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM05-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "150g",
+                "composition": "90% Nylon 10% Spandex"
+            }
+        },
+        {
+            "id": 21,
+            "name": "SHM06",
+            "image": "Assets/Images/Men/SH/SHM06.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM06-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "150g",
+                "composition": "90% Nylon 10% Spandex"
+            }
+        },
+        {
+            "id": 22,
+            "name": "SHM07",
+            "image": "Assets/Images/Men/SH/SHM07.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM07-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "150g",
+                "composition": "90% Nylon 10% Spandex"
+            }
+        },
+        {
+            "id": 23,
+            "name": "SHM08",
+            "image": "Assets/Images/Men/SH/SHM08.jpg",
+            "detailImage": "Assets/Images/Men/SH/SHM08-d.jpg",
+            "attributes": {
+                "category": "Shorts",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "77% Nylon 23% Spandex"
+            }
+        }
+    ]
+}

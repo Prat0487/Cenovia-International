@@ -2,42 +2,182 @@
     "products": [
         {
             "id": 1,
-            "name": "R437",
-            "image": "Assets/Images/Men/R437.png",
-            "detailImage": "Assets/Images/Men/cricket_bat_detail.jpg",
+            "name": "SSM01",
+            "image": "Assets/Images/Men/SS/SS01.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS01-D.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
                 "grammage": "165g",
-                "fabric": "Cloudy Pinhole",
                 "composition": "95% polyester 5% spandex"
             }
         },
         {
             "id": 2,
-            "name": "R438",
-            "image": "Assets/Images/Men/R438.png",            
-            "detailImage": "Assets/Images/Men/R438_detail.png",
-            "attributes": {     
-                "category": "Short Sleeve",          
+            "name": "SSM02",
+            "image": "Assets/Images/Men/SS/SS02.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS02-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",
                 "grammage": "165g",
-                "fabric": "Synthetic Leather",
-                "composition": "69%nylon 18%polyester 13%spandex"
+                "composition": "69% nylon 18% polyester 13% spandex"
             }
         },
         {
             "id": 3,
-
-            "name": "Basketball",
-            "image": "Assets/Images/Men/basketball_1.png",
-            "detailImage": "Assets/Images/Men/basketball_detail.png",
+            "name": "SSM03",
+            "image": "Assets/Images/Men/SS/SS03.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS03-D.jpg",
             "attributes": {
-                "category": "Jacket",
-                "size": "Size 7",
-                "grammage": "624g",
-                "fabric": "Composite Leather",
-                "composition": "Rubber"
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 4,
+            "name": "SSM04",
+            "image": "Assets/Images/Men/SS/SS04.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS04-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 5,
+            "name": "SSM05",
+            "image": "Assets/Images/Men/SS/SS05.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS05-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 6,
+            "name": "SSM06",
+            "image": "Assets/Images/Men/SS/SS06.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS06-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 7,
+            "name": "SSM07",
+            "image": "Assets/Images/Men/SS/SS07.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS07-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 8,
+            "name": "SSM08",
+            "image": "Assets/Images/Men/SS/SS08.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS08-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "69% nylon 18% polyester 13% spandex"
+            }
+        },
+        {
+            "id": 9,
+            "name": "SSM09",
+            "image": "Assets/Images/Men/SS/SS09.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS09-D.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "88% nylon 12% spandex"
+            }
+        },
+        {
+            "id": 10,
+            "name": "SSM10",
+            "image": "Assets/Images/Men/SS/SS10.jpg",
+            "detailImage": "Assets/Images/Men/SS/SS10-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "130g",
+                "composition": "85% polyester 15% spandex"
+            }
+        },
+        {
+            "id": 11,
+            "name": "USM01",
+            "image": "Assets/Images/Men/USM/USM01.jpg",
+            "detailImage": "Assets/Images/Men/USM/USM01-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "95% polyester 5% spandex"
+            }
+        },
+        {
+            "id": 12,
+            "name": "USM02",
+            "image": "Assets/Images/Men/USM/USM02.jpg",
+            "detailImage": "Assets/Images/Men/USM/USM02-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "92% polyester 8% spandex"
+            }
+        },
+        {
+            "id": 13,
+            "name": "USM03",
+            "image": "Assets/Images/Men/USM/USM03.jpg",
+            "detailImage": "Assets/Images/Men/USM/USM03-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "100% cotton"
+            }
+        },
+        {
+            "id": 14,
+            "name": "USM04",
+            "image": "Assets/Images/Men/USM/USM04.jpg",
+            "detailImage": "Assets/Images/Men/USM/USM04-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "100% cotton"
+            }
+        },
+        {
+            "id": 15,
+            "name": "USM05",
+            "image": "Assets/Images/Men/USM/USM05.jpg",
+            "detailImage": "Assets/Images/Men/USM/USM05-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "160g",
+                "composition": "100% polyester"
             }
         }
     ]

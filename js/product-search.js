@@ -68,8 +68,8 @@ class ProductSearch {
             if (category === 'Short Sleeve') {
                 return product.attributes.category === 'Short Sleeve';
             }
-            if (category === 'Jacket') {
-                return product.attributes.category === 'Jacket';
+            if (category === 'Undershirt') {
+                return product.attributes.category === 'Undershirt';
             }
             return true;
         });
@@ -104,7 +104,6 @@ class ProductSearch {
                         <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
                         <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
                         <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
-                        <p><span class="attribute-key">Fabric:</span> <span class="attribute-value">${product.attributes.fabric}</span></p>
                         <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
                     </div>
                     <div class="flex justify-between items-center mt-4">

@@ -1,0 +1,96 @@
+{
+    "products": [
+    {
+    "name": "R437",
+    "size": ["M", "L", "XL", "2XL", "3XL"],
+    "grammage": "165g",
+    "fabric": "Cloudy Pinhole",
+    "composition": {
+    "polyester": "95%",
+    "spandex": "5%"
+    }
+    },
+    {
+    "name": "R438",
+    "size": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "grammage": "165g",
+    "fabric": "brocade jacquard",
+    "composition": {
+    "nylon": "69%",
+    "polyester": "18%",
+    "spandex": "13%"
+    }
+    },
+    {
+    "name": "R439",
+    "size": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "grammage": "165g",
+    "fabric": "Copper spandex sun protection jacquard",
+    "composition": {
+    "polyester": "90%",
+    "spandex": "10%"
+    }
+    },
+    {
+    "name": "R450",
+    "size": ["M", "L", "XL", "2XL", "3XL"],
+    "grammage": "165g",
+    "fabric": "Copper spandex sun protection jacquard",
+    "composition": {
+    "polyester": "90%",
+    "spandex": "10%"
+    }
+    },
+    {
+    "name": "R451",
+    "size": ["M", "L", "XL", "2XL", "3XL"],
+    "grammage": "165g",
+    "fabric": "N/A",
+    "composition": {
+    "polyester": "90%",
+    "spandex": "10%"
+    }
+    },
+    {
+    "name": "R452",
+    "size": ["M", "L", "XL", "2XL", "3XL"],
+    "grammage": "165g",
+    "fabric": "N/A",
+    "composition": {
+    "polyester": "90%",
+    "spandex": "10%"
+    }
+    },
+    {
+    "name": "R510",
+    "size": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "grammage": "165g",
+    "fabric": "Copper spandex sun protection jacquard",
+    "composition": {
+    "polyester": "90%",
+    "spandex": "10%"
+    }
+    },
+    {
+    "name": "R511",
+    "size": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "grammage": "165g",
+    "fabric": "Nylon jacquard",
+    "composition": {
+    "nylon": "69%",
+    "polyester": "18%",
+    "spandex": "13%"
+    }
+    },
+    {
+    "name": "R513",
+    "size": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "grammage": "165g",
+    "fabric": "N/A",
+    "composition": {
+    "nylon": "88%",
+    "spandex": "12%"
+    }
+    }
+    ]
+    }

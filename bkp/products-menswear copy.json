@@ -1,0 +1,76 @@
+{
+    "products": [
+        {
+            "id": 10,
+            "name": "SS10",
+            "image": "Assets/Images/Men/SS10.jpg",
+            "detailImage": "Assets/Images/Men/SS10-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "130g",
+                "composition": "85% polyester 15% spandex"
+            }
+        },
+        {
+            "id": 11,
+            "name": "US01",
+            "image": "Assets/Images/Men/US01.jpg",
+            "detailImage": "Assets/Images/Men/US01-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "95% polyester 5% spandex"
+            }
+        },
+        {
+            "id": 12,
+            "name": "US02",
+            "image": "Assets/Images/Men/US02.jpg",
+            "detailImage": "Assets/Images/Men/US02-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "92% polyester 8% spandex"
+            }
+        },
+        {
+            "id": 13,
+            "name": "US03",
+            "image": "Assets/Images/Men/US03.jpg",
+            "detailImage": "Assets/Images/Men/US03-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "100% cotton"
+            }
+        },
+        {
+            "id": 14,
+            "name": "US04",
+            "image": "Assets/Images/Men/US04.jpg",
+            "detailImage": "Assets/Images/Men/US04-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "100% cotton"
+            }
+        },
+        {
+            "id": 15,
+            "name": "US05",
+            "image": "Assets/Images/Men/US05.jpg",
+            "detailImage": "Assets/Images/Men/US05-d.jpg",
+            "attributes": {
+                "category": "Undershirt",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "160g",
+                "composition": "100% polyester"
+            }
+        }
+    ]
+}

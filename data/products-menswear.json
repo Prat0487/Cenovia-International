@@ -2,42 +2,110 @@
     "products": [
         {
             "id": 1,
-            "name": "R437",
-            "image": "Assets/Images/Men/R437.png",
-            "detailImage": "Assets/Images/Men/cricket_bat_detail.jpg",
+            "name": "SS01",
+            "image": "Assets/Images/Men/SS01.jpg",
+            "detailImage": "Assets/Images/Men/SS01-d.jpg",
             "attributes": {
                 "category": "Short Sleeve",
                 "size": "M/L/XL/2XL/3XL",
                 "grammage": "165g",
-                "fabric": "Cloudy Pinhole",
                 "composition": "95% polyester 5% spandex"
             }
         },
         {
             "id": 2,
-            "name": "R438",
-            "image": "Assets/Images/Men/R438.png",            
-            "detailImage": "Assets/Images/Men/R438_detail.png",
-            "attributes": {     
-                "category": "Short Sleeve",          
+            "name": "SS02",
+            "image": "Assets/Images/Men/SS02.jpg",
+            "detailImage": "Assets/Images/Men/SS02-d.png",
+            "attributes": {
+                "category": "Short Sleeve",
                 "size": "S/M/L/XL/2XL/3XL/4XL",
                 "grammage": "165g",
-                "fabric": "Synthetic Leather",
-                "composition": "69%nylon 18%polyester 13%spandex"
+                "composition": "69% nylon 18% polyester 13% spandex"
             }
         },
         {
             "id": 3,
-
-            "name": "Basketball",
-            "image": "Assets/Images/Men/basketball_1.png",
-            "detailImage": "Assets/Images/Men/basketball_detail.png",
+            "name": "SS03",
+            "image": "Assets/Images/Men/SS03.jpg",
+            "detailImage": "Assets/Images/Men/SS03-d.jpg",
             "attributes": {
-                "category": "Jacket",
-                "size": "Size 7",
-                "grammage": "624g",
-                "fabric": "Composite Leather",
-                "composition": "Rubber"
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 4,
+            "name": "SS04",
+            "image": "Assets/Images/Men/SS04.jpg",
+            "detailImage": "Assets/Images/Men/SS04-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 5,
+            "name": "SS05",
+            "image": "Assets/Images/Men/SS05.jpg",
+            "detailImage": "Assets/Images/Men/SS05-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 6,
+            "name": "SS06",
+            "image": "Assets/Images/Men/SS06.jpg",
+            "detailImage": "Assets/Images/Men/SS06-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 7,
+            "name": "SS07",
+            "image": "Assets/Images/Men/SS07.jpg",
+            "detailImage": "Assets/Images/Men/SS07-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 8,
+            "name": "SS08",
+            "image": "Assets/Images/Men/SS08.jpg",
+            "detailImage": "Assets/Images/Men/SS08-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "69% nylon 18% polyester 13% spandex"
+            }
+        },
+        {
+            "id": 9,
+            "name": "SS09",
+            "image": "Assets/Images/Men/SS09.jpg",
+            "detailImage": "Assets/Images/Men/SS09-d.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "88% nylon 12% spandex"
             }
         }
     ]

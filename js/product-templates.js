@@ -20,7 +20,6 @@ const productTemplates = {
         <div class="specifications">
           <p>Size: ${product.attributes.size}</p>
           <p>Grammage: ${product.attributes.grammage}</p>
-          <p>Fabric: ${product.attributes.fabric}</p>
            <p>Composition: ${product.attributes.composition}</p>
         </div>
       </div>

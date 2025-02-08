@@ -1,0 +1,42 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "R437",
+            "image": "Assets/Images/Men/R437.png",
+            "detailImage": "Assets/Images/Men/cricket_bat_detail.jpg",
+            "attributes": {
+                "category": "Short Sleeve",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "95% polyester 5% spandex"
+            }
+        },
+        {
+            "id": 2,
+            "name": "R438",
+            "image": "Assets/Images/Men/R438.png",            
+            "detailImage": "Assets/Images/Men/R438_detail.png",
+            "attributes": {     
+                "category": "Short Sleeve",          
+                "size": "S/M/L/XL/2XL/3XL/4XL",
+                "grammage": "165g",
+                "composition": "69%nylon 18%polyester 13%spandex"
+            }
+        },
+        {
+            "id": 3,
+
+            "name": "Basketball",
+            "image": "Assets/Images/Men/basketball_1.png",
+            "detailImage": "Assets/Images/Men/basketball_detail.png",
+            "attributes": {
+                "category": "Jacket",
+                "size": "Size 7",
+                "grammage": "624g",
+                "fabric": "Composite Leather",
+                "composition": "Rubber"
+            }
+        }
+    ]
+}

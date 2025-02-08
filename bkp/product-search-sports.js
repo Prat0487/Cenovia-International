@@ -89,7 +89,6 @@ class ProductSearch {
                     <div class="specifications text-sm text-gray-600 mt-2">
                         <p>Size: ${product.attributes.size}</p>
                         <p>Grammage: ${product.attributes.grammage}</p>
-                        <p>Fabric: ${product.attributes.fabric}</p>
                         <p>Composition: ${product.attributes.composition}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4">

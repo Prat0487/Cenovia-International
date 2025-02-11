@@ -4,7 +4,7 @@ class TopRibbon extends HTMLElement {
             <div class="bg-custom-beige py-3">
                 <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
                     <div class="flex items-center space-x-4 mb-2 sm:mb-0">
-                        <a href="tel:+919727444678" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
+                        <a href="tel:+916360817265" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
                             <i class="fas fa-phone text-black" aria-hidden="true"></i>
                             <span>+91 6360817265</span>
                         </a>

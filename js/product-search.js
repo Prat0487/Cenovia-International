@@ -74,6 +74,12 @@ class ProductSearch {
             if (category === 'Shorts') {
                 return product.attributes.category === 'Shorts';
             }
+            if (category === 'Jackets') {
+                return product.attributes.category === 'Jackets';
+            }
+            if (category === 'Pants') {
+                return product.attributes.category === 'Pants';
+            }
             return true;
         });
     }

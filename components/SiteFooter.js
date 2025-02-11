@@ -29,7 +29,7 @@ class SiteFooter extends HTMLElement {
                                 </li>
                                 <li class="flex items-center text-gray-600">
                                     <i class="fas fa-phone w-6"></i>
-                                    <span class="ml-2">+91 63608 17265</span>
+                                    <span class="ml-2">+91 6360817265</span>
                                 </li>
                             </ul>
                         </div>

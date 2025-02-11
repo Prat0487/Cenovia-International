@@ -6,7 +6,7 @@ class TopRibbon extends HTMLElement {
                     <div class="flex items-center space-x-4 mb-2 sm:mb-0">
                         <a href="tel:+919727444678" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
                             <i class="fas fa-phone text-black" aria-hidden="true"></i>
-                            <span>+91 63608 17265</span>
+                            <span>+91 6360817265</span>
                         </a>
                         <a href="mailto:support@cenoviainternational.com" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
                             <i class="fas fa-envelope text-black" aria-hidden="true"></i>

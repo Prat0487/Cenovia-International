@@ -31,6 +31,12 @@ class SiteFooter extends HTMLElement {
                                     <i class="fas fa-phone w-6"></i>
                                     <span class="ml-2">+91 6360817265</span>
                                 </li>
+                                <li class="flex items-start text-gray-600">
+                                    <i class="fas fa-map-marker-alt w-6 mt-1"></i>
+                                    <span class="ml-2">324, 2nd Main Extension Road,<br>
+                                    KR Puram, Bengaluru,<br>
+                                    Karnataka 560049</span>
+                                </li>
                             </ul>
                         </div>
                         <div>
@@ -59,5 +65,4 @@ class SiteFooter extends HTMLElement {
         `;
     }
 }
-
 customElements.define('site-footer', SiteFooter);

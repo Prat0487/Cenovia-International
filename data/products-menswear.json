@@ -275,6 +275,102 @@
                 "grammage": "165g",
                 "composition": "77% Nylon 23% Spandex"
             }
-        }
+        },
+        {
+            "id": 24,
+            "name": "PNM01",
+            "image": "Assets/Images/Men/PNM/PNM01.jpg",
+            "detailImage": "Assets/Images/Men/PNM/PNM01-D.jpg",
+            "attributes": {
+                "category": "Pants",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "165g",
+                "composition": "77% nylon 23% spandex"
+            }
+        },
+        {
+            "id": 25,
+            "name": "PNM02",
+            "image": "Assets/Images/Men/PNM/PNM02.jpg",
+            "detailImage": "Assets/Images/Men/PNM/PNM02-D.jpg",
+            "attributes": {
+                "category": "Pants",
+                "size": "M/L/XL/2XL/3XL/4XL",
+                "grammage": "120g",
+                "composition": "90% nylon 10% spandex"
+            }
+        },
+        {
+            "id": 26,
+            "name": "PNM03",
+            "image": "Assets/Images/Men/PNM/PNM03.jpg",
+            "detailImage": "Assets/Images/Men/PNM/PNM03-D.jpg",
+            "attributes": {
+                "category": "Pants",
+                "size": "M/L/XL/2XL/3XL/4XL",
+                "grammage": "120g",
+                "composition": "90% nylon 10% spandex"
+            }
+        },
+        {
+            "id": 27,
+            "name": "PNM04",
+            "image": "Assets/Images/Men/PNM/PNM04.jpg",
+            "detailImage": "Assets/Images/Men/PNM/PNM04-D.jpg",
+            "attributes": {
+                "category": "Pants",
+                "size": "M/L/XL/2XL/3XL/4XL",
+                "grammage": "120g",
+                "composition": "90% nylon 10% spandex"
+            }
+        },
+        {
+            "id": 28,
+            "name": "PNM05",
+            "image": "Assets/Images/Men/PNM/PNM05.jpg",
+            "detailImage": "Assets/Images/Men/PNM/PNM05-D.jpg",
+            "attributes": {
+                "category": "Pants",
+                "size": "M/L/XL/2XL/3XL",
+                "grammage": "260g",
+                "composition": "90% polyester 10% spandex"
+            }
+        },
+        {
+            "id": 29,
+            "name": "JKM01",
+            "image": "Assets/Images/Men/JKM/JKM01.jpg",
+            "detailImage": "Assets/Images/Men/JKM/JKM01-d.jpg",
+            "attributes": {
+              "category": "Jackets",
+              "size": "M/L/XL/2XL/3XL/4XL",
+              "grammage": "140g",
+              "composition": "90% nylon 10% spandex"
+            }
+          },
+          {
+            "id": 30,
+            "name": "JKM02",
+            "image": "Assets/Images/Men/JKM/JKM02.jpg",
+            "detailImage": "Assets/Images/Men/JKM/JKM02-d.jpg",
+            "attributes": {
+              "category": "Jackets",
+              "size": "M/L/XL/2XL/3XL",
+              "grammage": "260g",
+              "composition": "90% polyester 10% spandex"
+            }
+          },
+          {
+            "id": 31,
+            "name": "JKM03",
+            "image": "Assets/Images/Men/JKM/JKM03.jpg",
+            "detailImage": "Assets/Images/Men/JKM/JKM03-d.jpg",
+            "attributes": {
+              "category": "Jackets",
+              "size": "M/L/XL/2XL/3XL",
+              "grammage": "260g",
+              "composition": "90% polyester 10% spandex"
+            }
+          }
     ]
 }

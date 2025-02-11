@@ -25,11 +25,11 @@ class SiteFooter extends HTMLElement {
                             <ul class="space-y-2">
                                 <li class="flex items-center text-gray-600">
                                     <i class="fas fa-envelope w-6"></i>
-                                    <span class="ml-2">example@email.com</span>
+                                    <span class="ml-2">support@cenoviainternational.com</span>
                                 </li>
                                 <li class="flex items-center text-gray-600">
                                     <i class="fas fa-phone w-6"></i>
-                                    <span class="ml-2">+91 97274 44678</span>
+                                    <span class="ml-2">+91 6360817265</span>
                                 </li>
                             </ul>
                         </div>

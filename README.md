@@ -1,136 +1,87 @@
 # Cenovia International
 
-A modern, responsive website for Cenovia International, specializing in silvercraft and sporting goods manufacturing.
+A modern, responsive website for Cenovia International, specializing in premium menswear and womenswear.
 
 ## Website Structure
 
 ### Header Components
-- **Top Ribbon**: Feature contact information (phone, email) and social media links
 - **Main Navigation**: 
- - Responsive navbar with company logo
- - Desktop menu with dropdown functionality for Products
- - Mobile-friendly hamburger menu with smooth animations
- - Navigation links: About Us, Products (women, Sport Goods), Our Team, Contact Us
- - Search functionality with auto-suggestions
+  - Responsive navbar with company logo
+  - Desktop menu with dropdown functionality for Products
+  - Mobile-friendly hamburger menu
+  - Navigation links: About Us, Products (Menswear, Womenswear), Contact Us
+  - Product search functionality
 
 ### Main Sections
 
 1. **Hero Section**
-  - Dynamic gradient background with parallax effect
-  - Compelling company introduction with multilingual support
-  - Interactive call-to-action "Learn More" button
-  - Fully responsive design with optimized breakpoints
-  - Background video option for nice desktop view
+  - Dynamic gradient background
+  - Company introduction
+  - Interactive call-to-action buttons
+  - Fully responsive design
+  - Background video for desktop view
 
+2. **Product Sections**
+  - Menswear collection
+  - Womenswear collection
+  - Advanced filtering and sorting options
+  - Infinite scroll product loading
+  - Detailed product views
 
+3. **About Section**
+  - Company overview
+  - Mission and Vision statements
+  - Brand story
+  - Customer focus
 
-2. **About Section**
-  - Comprehensive company overview and history
-  - Interactive Mission and Vision statements in hover-animated cards
-  - Timeline of company milestones
-  - Team highlights and achievements
-  - Customer testimonials carousel
+### Product Features
+- Dynamic product grid layout
+- Advanced search functionality
+- Category filtering
+- Sort by name (ascending/descending)
+- Detailed product pages with specifications
+- Responsive product images
+- Attribute-based filtering
 
-### Footer Structure
-- Responsive four-column layout with:
- - Company description and brand story
- - Quick navigation links with hover effects
- - Contact information with interactive maps
- - Social media links with real-time feed integration
-- Newsletter subscription form
-- Copyright information with dynamic year update
-- Privacy policy and terms of service links
+### Technical Features
 
-## Technical Features
+#### Styling
+- Tailwind CSS implementation
+- Responsive design
+- Glass effect navigation
+- Dynamic loading animations
+- Interactive hover effects
 
-### Styling
-- Utilizes Tailwind CSS with custom configuration
-- Advanced animations and micro-interactions
-- Glass effect navigation with backdrop blur
-- Dynamic gradient backgrounds with color schemes
-- Interactive hover effects with CSS variables
-- Dark mode support
-- Custom color schemes for different sections
+#### JavaScript Functionality
+- Product search and filtering system
+- Infinite scroll implementation
+- Dynamic product loading
+- Responsive image handling
+- Mobile menu functionality
 
-### JavaScript Functionality
-- Enhanced mobile menu with gesture support
-- Smooth scroll behavior with progress indication
-- Advanced dropdown menu with mega menu option
-- Lazy loading for images and components
-- Form validation and submission handling
-- Intersection Observer for scroll animations
-- Local storage for user preferences
-
-### Performance Optimizations
-- Progressive image loading with blur effect
-- Resource hints (preconnect, prefetch)
-- Font optimization with swap strategy
-- Code splitting for better load times
-- Browser caching implementation
-- Minified assets
-- WebP image format with fallbacks
-- Critical CSS extraction
+#### Performance Optimizations
+- Lazy loading images
+- Progressive loading
+- Optimized asset delivery
+- Responsive images
+- Efficient data handling
 
 ## Pages
-- index.html (About Us) - Company overview and main features
-- product-womenswear.html - Detailed women product catalog
-- product-menswear.html - Sports equipment showcase
-- our-team.html - Team profiles and expertise
-- contact-us.html - Interactive contact form and location map
-- blog.html - Company news and industry insights
-- careers.html - Job opportunities and company culture
-
-## Browser Compatibility
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Legacy browser fallbacks
-- Progressive enhancement approach
-- Mobile-first responsive design
-- Touch-friendly interface
-- Cross-browser testing implementation
+- index.html - Homepage and company overview
+- product-womenswear.html - Women's fashion catalog
+- product-menswear.html - Men's fashion catalog
+- contact-us.html - Contact information and form
 
 ## Development
-- Semantic HTML5 markup
-- Tailwind CSS with custom plugins
-- Modular JavaScript with ES6+ features
-- Automated testing setup
-- Git workflow with branching strategy
-- Code documentation using JSDoc
-- Accessibility compliance (WCAG 2.1)
+- Semantic HTML5
+- Tailwind CSS
+- Modern JavaScript (ES6+)
+- Mobile-first approach
+- Accessibility compliance
 - SEO optimization
 
 ## Getting Started
 1. Clone the repository
-   
-  git clone https://github.com/your-username/cenovia-international.git
-   
-2. Install development dependencies (optional)
-   
-  npm install
-   
-3. Open index.html in a web browser
-4. For development, run local server
-   
-  npm run dev
-   
 
-## Dependencies
-- Tailwind CSS v3.x (via CDN)
-- Font Awesome 6.0.0 (via CDN)
-- Alpine.js for interactive components
-- Swiper.js for carousels
-- AOS for scroll animations
+git clone https://github.com/Prat0487/Cenovia-International.git
 
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-MIT License - see LICENSE.md for details
-
-## Support
-- Documentation: /docs
-- Issues: GitHub Issues
-- Email: support@cenovia-international.com

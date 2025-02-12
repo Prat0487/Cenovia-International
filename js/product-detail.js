@@ -30,14 +30,8 @@ class ProductDetail {
     }
 
     renderProductDetails(product) {
-        const mainImage = this.renderProductImage(product, true);
-        const container = document.getElementById('productImageContainer');
-        container.innerHTML = mainImage;
-        
-        // Add srcset for responsive images
-        const img = container.querySelector('img');
-        img.sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
-
+        this.productImage.src = product.detailImage;
+        this.productImage.alt = product.name;
         this.productName.textContent = product.name;
         this.renderAttributes(product.attributes);
     }

@@ -1,0 +1,77 @@
+# Global search engines
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /product-womenswear.html
+Allow: /product-menswear.html
+Allow: /contact-us.html
+Allow: /Assets/
+Disallow: /bkp/
+Disallow: /js/
+Sitemap: https://cenovia-international.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Yandex (Russian)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+# Baidu (Chinese)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+# Sogou (Chinese)
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 3
+
+# 360Spider (Chinese)
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 3
+
+# Naver (Korean)
+User-agent: Naverbot
+Allow: /
+Crawl-delay: 3
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# Qwant (European)
+User-agent: Qwantify
+Allow: /
+Crawl-delay: 2
+
+# Common directives for all bots
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Block common spam bots
+User-agent: *bot
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search
+Disallow: /*?*

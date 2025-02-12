@@ -1,34 +1,33 @@
 class ImageOptimizer {
     static processImage(imagePath, options = {}) {
-        const baseUrl = '/Assets/';
-        const defaultOptions = {
-            width: 800,
-            quality: 80,
-            format: 'webp'
-        };
-        
-        const settings = { ...defaultOptions, ...options };
+        const pathParts = imagePath.split('/');
+        const fileName = pathParts.pop();
+        const dirPath = pathParts.join('/');
+        const baseName = fileName.replace(/\.[^/.]+$/, '');
         
         return `
             <picture>
-                <!-- WebP format -->
                 <source
-                    srcset="${baseUrl}${imagePath}-${settings.width}.webp"
+                    media="(max-width: 640px)"
+                    srcset="${dirPath}/processed/${baseName}-320.webp"
                     type="image/webp"
-                >
-                <!-- Fallback JPG -->
+                    fetchpriority="high">
                 <source
-                    srcset="${baseUrl}${imagePath}-${settings.width}.jpg"
-                    type="image/jpeg"
-                >
-                <!-- Default image -->
+                    media="(max-width: 1024px)"
+                    srcset="${dirPath}/processed/${baseName}-640.webp"
+                    type="image/webp">
+                <source
+                    srcset="${dirPath}/processed/${baseName}-1024.webp"
+                    type="image/webp">
                 <img 
-                    src="${baseUrl}${imagePath}-${settings.width}.jpg"
-                    width="${settings.width}"
-                    loading="lazy"
+                    src="${dirPath}/processed/${baseName}-640.jpg"
                     alt="${options.alt || ''}"
                     class="${options.className || ''}"
-                >
+                    loading="lazy"
+                    width="${options.width || ''}"
+                    height="${options.height || ''}"
+                    title="${options.title || options.alt || ''}"
+                    decoding="async">
             </picture>
         `;
     }

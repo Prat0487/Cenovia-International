@@ -21,3 +21,23 @@ const getProducts = (page, limit) => {
     };
   });
 };
+
+class ProductRenderer {
+    renderProductImage(product) {
+        return ImageOptimizer.processImage(product.image, {
+            width: 400,
+            quality: 85,
+            alt: product.name,
+            className: 'product-image rounded-lg shadow-md'
+        });
+    }
+
+    renderProductGrid(products) {
+        return products.map(product => `
+            <div class="product-card">
+                ${this.renderProductImage(product)}
+                <h3>${product.name}</h3>
+            </div>
+        `).join('');
+    }
+}

@@ -21,3 +21,40 @@ const getProducts = (page, limit) => {
     };
   });
 };
+
+class ProductRenderer {
+    renderProductImage(product, isDetail = false) {
+        const structuredData = {
+            "@context": "https://schema.org/",
+            "@type": "ImageObject",
+            "contentUrl": product.image,
+            "name": product.name,
+            "description": `Product image of ${product.name}`,
+            "width": isDetail ? "1024" : "640",
+            "height": isDetail ? "1024" : "640"
+        };
+
+        const scriptTag = `
+            <script type="application/ld+json">
+                ${JSON.stringify(structuredData)}
+            </script>
+        `;
+
+        return scriptTag + ImageOptimizer.processImage(product.image, {
+            width: isDetail ? 1024 : 640,
+            height: isDetail ? 1024 : 640,
+            alt: `${product.name} - ${product.attributes.category}`,
+            title: product.name,
+            className: isDetail ? 'product-detail-image' : 'product-grid-image'
+        });
+    }
+
+    renderProductGrid(products) {
+        return products.map(product => `
+            <div class="product-card">
+                ${this.renderProductImage(product)}
+                <h3>${product.name}</h3>
+            </div>
+        `).join('');
+    }
+}

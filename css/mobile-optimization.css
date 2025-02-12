@@ -1,0 +1,20 @@
+/* Improve mobile tap targets */
+.nav-link {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px;
+    margin: 8px;
+}
+
+/* Optimize mobile text readability */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin: 16px 0;
+    }
+}

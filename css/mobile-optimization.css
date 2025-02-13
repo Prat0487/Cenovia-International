@@ -1,5 +1,5 @@
 
-/* Enhanced mobile optimizations */
+/* Keep only the actively used classes */
 .nav-link {
     min-height: 48px;
     min-width: 48px;
@@ -7,7 +7,6 @@
     margin: 8px;
 }
 
-/* Responsive images */
 .product-image {
     width: 100%;
     height: auto;
@@ -15,30 +14,8 @@
     object-fit: cover;
 }
 
-/* Mobile-first grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
-}
-
-/* Touch-friendly controls */
-.carousel-control {
-    min-width: 44px;
-    min-height: 44px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
-}
-
-/* Optimize mobile text readability */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-    
-    h1 {
-        font-size: 24px;
-        margin: 16px 0;
-    }
 }

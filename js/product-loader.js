@@ -37,7 +37,11 @@ class ProductLoader {
     renderProducts(products, targetElement) {
       const productGrid = document.getElementById(targetElement);
       products.forEach(product => {
-        productGrid.innerHTML += productTemplates[product.category](product);
+        productGrid.innerHTML += `
+          <img src="${product.image}" 
+               class="product-image" 
+               alt="${product.name}">
+        `;
       });
     }
   }

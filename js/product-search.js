@@ -65,20 +65,33 @@ class ProductSearch {
         if (!category) return products;
         
         return products.filter(product => {
-            if (category === 'Short Sleeve') {
-                return product.attributes.category === 'Short Sleeve';
+            // Men's categories
+            if (this.productType === 'men') {
+                if (category === 'Short Sleeve') {
+                    return product.attributes.category === 'Short Sleeve';
+                }
+                if (category === 'Undershirt') {
+                    return product.attributes.category === 'Undershirt';
+                }
+                if (category === 'Shorts') {
+                    return product.attributes.category === 'Shorts';
+                }
+                if (category === 'Jackets') {
+                    return product.attributes.category === 'Jackets';
+                }
+                if (category === 'Pants') {
+                    return product.attributes.category === 'Pants';
+                }
             }
-            if (category === 'Undershirt') {
-                return product.attributes.category === 'Undershirt';
-            }
-            if (category === 'Shorts') {
-                return product.attributes.category === 'Shorts';
-            }
-            if (category === 'Jackets') {
-                return product.attributes.category === 'Jackets';
-            }
-            if (category === 'Pants') {
-                return product.attributes.category === 'Pants';
+            
+            // Women's categories
+            if (this.productType === 'women') {
+                if (category === 'Sports Bra') {
+                    return product.attributes.category === 'Sports Bra';
+                }
+                if (category === 'Sports Top') {
+                    return product.attributes.category === 'Sports Top';
+                }
             }
             return true;
         });

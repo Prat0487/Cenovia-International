@@ -1,9 +1,32 @@
-/* Improve mobile tap targets */
+/* Enhanced mobile optimizations */
 .nav-link {
     min-height: 48px;
     min-width: 48px;
     padding: 12px;
     margin: 8px;
+}
+
+/* Responsive images */
+.product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* Mobile-first grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+/* Touch-friendly controls */
+.carousel-control {
+    min-width: 44px;
+    min-height: 44px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
 }
 
 /* Optimize mobile text readability */

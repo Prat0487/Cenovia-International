@@ -1,23 +1,40 @@
-const getProducts = (page, limit) => {
-  return new Promise((resolve) => {
-    const db = request.result;
-    const transaction = db.transaction(['products'], 'readonly');
-    const store = transaction.objectStore('products');
-    
-    const start = (page - 1) * limit;
-    const end = start + limit;
-    
-    const products = [];
-    store.openCursor().onsuccess = (event) => {
-      const cursor = event.target.result;
-      if (cursor && products.length < end) {
-        if (products.length >= start) {
-          products.push(cursor.value);
-        }
-        cursor.continue();
-      } else {
-        resolve(products);
+class ProductRenderer {
+  constructor() {
+      this.cache = new Map();
+      this.pageSize = 12;
+  }
+
+  async getProducts(page, category) {
+      const cacheKey = `${category}-${page}`;
+        
+      // Check cache first
+      if (this.cache.has(cacheKey)) {
+          return this.cache.get(cacheKey);
       }
-    };
-  });
-};
+
+      const start = (page - 1) * this.pageSize;
+      const products = await this.fetchProducts(category, start, this.pageSize);
+        
+      // Cache the results
+      this.cache.set(cacheKey, products);
+        
+      // Clear old cache entries
+      if (this.cache.size > 10) {
+          const firstKey = this.cache.keys().next().value;
+          this.cache.delete(firstKey);
+      }
+
+      return products;
+  }
+
+  renderProducts(products, container) {
+      const fragment = document.createDocumentFragment();
+        
+      products.forEach(product => {
+          const element = this.createProductElement(product);
+          fragment.appendChild(element);
+      });
+
+      container.appendChild(fragment);
+  }
+}

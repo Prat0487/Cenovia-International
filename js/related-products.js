@@ -1,15 +1,41 @@
 class RelatedProducts {
-    generateRelatedLinks(product) {
-        const category = product.attributes.category;
-        return this.products
-            .filter(p => p.attributes.category === category && p.id !== product.id)
-            .slice(0, 4)
-            .map(p => `
-                <a href="/product-detail.html?id=${p.id}&type=${p.type}" 
-                   class="related-product"
-                   data-category="${p.attributes.category}">
-                    ${p.name}
-                </a>
-            `).join('');
+    constructor() {
+        this.viewHistory = new Set();
+        this.productScores = new Map();
+    }
+
+    trackProductView(productId) {
+        this.viewHistory.add(productId);
+        this.updateLocalStorage();
+    }
+
+    async getRelatedProducts(currentProduct, limit = 4) {
+        const relatedProducts = await this.fetchRelatedProducts(
+            currentProduct.category,
+            currentProduct.id
+        );
+
+        // Score products based on attributes match
+        return this.rankProducts(relatedProducts, currentProduct)
+            .slice(0, limit);
+    }
+
+    rankProducts(products, currentProduct) {
+        return products.sort((a, b) => {
+            const scoreA = this.calculateRelevanceScore(a, currentProduct);
+            const scoreB = this.calculateRelevanceScore(b, currentProduct);
+            return scoreB - scoreA;
+        });
+    }
+
+    calculateRelevanceScore(product, currentProduct) {
+        let score = 0;
+        // Category match
+        if (product.category === currentProduct.category) score += 5;
+        // Price range match
+        if (Math.abs(product.price - currentProduct.price) < 50) score += 3;
+        // Style match
+        if (product.style === currentProduct.style) score += 4;
+        return score;
     }
 }

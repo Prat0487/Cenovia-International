@@ -111,7 +111,11 @@ class ProductSearch {
         return `
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                    <img src="${product.image}"
+                         alt="Premium ${product.name} - ${product.attributes.category} - Export Quality Menswear"
+                         class="w-full h-64 object-cover"
+                         loading="lazy"
+                         decoding="async">
                 </div>
                 <div class="p-4">
                     <div class="flex justify-between items-start mb-2">
@@ -146,7 +150,14 @@ class ProductSearch {
         return `
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                    <img src="${product.image}" 
+                         alt="Premium ${product.name} - Export Quality Womenswear"
+                         class="w-full h-64 object-cover"
+                         width="400"
+                         height="400"
+                         loading="lazy"
+                         decoding="async"
+                         onerror="this.src='Assets/placeholder.jpg'">
                 </div>
                 <div class="p-4">
                     <div class="flex justify-between items-start mb-2">
@@ -176,8 +187,7 @@ class ProductSearch {
                 </div>
             </div>
         `;
-    }
-    renderSearchResults(products) {
+    }    renderSearchResults(products) {
         this.productGrid.innerHTML = '';
         products.forEach(product => {
             const productHTML = this.productType === 'women' 

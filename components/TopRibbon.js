@@ -14,7 +14,11 @@ class TopRibbon extends HTMLElement {
                         </a>
                     </div>
                     <div class="flex space-x-6">
-                        <a href="#" class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" aria-label="Facebook">
+                        <a href="https://www.facebook.com/CenoviaInternational" 
+                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                           aria-label="Follow us on Facebook"
+                           target="_blank"
+                           rel="noopener noreferrer">
                             <i class="fab fa-facebook text-lg"></i>
                         </a>
                         <a href="#" class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" aria-label="Twitter">
@@ -33,4 +37,5 @@ class TopRibbon extends HTMLElement {
     }
 }
 
+customElements.define('top-ribbon', TopRibbon);
 customElements.define('top-ribbon', TopRibbon);

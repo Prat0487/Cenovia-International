@@ -38,25 +38,32 @@ class SiteFooter extends HTMLElement {
                                     Karnataka 560049</span>
                                 </li>
                             </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-200" aria-label="Facebook">
-                                    <i class="fab fa-facebook text-lg"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-200" aria-label="Twitter">
-                                    <i class="fab fa-twitter text-lg"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-200" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin text-lg"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-200" aria-label="Instagram">
-                                    <i class="fab fa-instagram text-lg"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                         </div>
+                         <div class="flex space-x-6">
+                             <a href="https://www.facebook.com/CenoviaInternational" 
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Follow Cenovia International on Facebook">
+                                 <i class="fab fa-facebook text-lg"></i>
+                             </a>
+                             <a href="#" 
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                                aria-label="Twitter">
+                                 <i class="fab fa-twitter text-lg"></i>
+                             </a>
+                             <a href="#" 
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                                aria-label="LinkedIn">
+                                 <i class="fab fa-linkedin text-lg"></i>
+                             </a>
+                             <a href="#" 
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                                aria-label="Instagram">
+                                 <i class="fab fa-instagram text-lg"></i>
+                             </a>
+                         </div>
+                     </div>
                     <div class="text-center mt-8 text-gray-600">
                         <p>© 2025 Cenovia International. All rights reserved.</p>
                     </div>
@@ -65,4 +72,5 @@ class SiteFooter extends HTMLElement {
         `;
     }
 }
-customElements.define('site-footer', SiteFooter);
+
+customElements.define('site-footer', SiteFooter);customElements.define('site-footer', SiteFooter);

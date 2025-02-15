@@ -65,7 +65,23 @@ class ProductSearch {
         if (!category) return products;
         
         return products.filter(product => {
-            // Men's categories
+            // Women's categories
+            if (this.productType === 'women') {
+                if (category === 'Sports Bra') {
+                    return product.attributes.category === 'Sports Bra';
+                }
+                if (category === 'Sports Top') {
+                    return product.attributes.category === 'Sports Top';
+                }
+                if (category === 'Compression Shorts') {
+                    return product.attributes.category === 'Compression Shorts';
+                }
+                if (category === 'Yoga Pants') {
+                    return product.attributes.category === 'Yoga Pants';
+                }
+            }
+            
+            // Men's categories remain unchanged
             if (this.productType === 'men') {
                 if (category === 'Short Sleeve') {
                     return product.attributes.category === 'Short Sleeve';
@@ -83,20 +99,9 @@ class ProductSearch {
                     return product.attributes.category === 'Pants';
                 }
             }
-            
-            // Women's categories
-            if (this.productType === 'women') {
-                if (category === 'Sports Bra') {
-                    return product.attributes.category === 'Sports Bra';
-                }
-                if (category === 'Sports Top') {
-                    return product.attributes.category === 'Sports Top';
-                }
-            }
             return true;
         });
-    }
-    initializeCategoryFilter() {
+    }    initializeCategoryFilter() {
         if (this.categoryFilter) {
             this.categoryFilter.addEventListener('change', async () => {
                 const products = await this.productLoader.loadProducts(this.productType);

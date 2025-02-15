@@ -1,137 +1,256 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "SBW01",
-        "image": "Assets/Images/Women/SBW/SBW01.jpg",
-        "detailImage": "Assets/Images/Women/SBW/SBW01-d.jpg",
-        "attributes": {
-          "category": "Sports Bra",
-          "size": "S/M/L/XL",
-          "grammage": "220g",
-          "composition": "80% nylon 20% spandex"
-        }
-      },
-      {
-        "id": 2,
-        "name": "SBW02",
-        "image": "Assets/Images/Women/SBW/SBW02.jpg",
-        "detailImage": "Assets/Images/Women/SBW/SBW02-d.jpg",
-        "attributes": {
-          "category": "Sports Bra",
-          "size": "S/M/L/XL",
-          "grammage": "220g",
-          "composition": "75% nylon 25% spandex"
-        }
-      },
-      {
-        "id": 3,
-        "name": "SBW03",
-        "image": "Assets/Images/Women/SBW/SBW03.jpg",
-        "detailImage": "Assets/Images/Women/SBW/SBW03-d.jpg",
-        "attributes": {
-          "category": "Sports Bra",
-          "size": "S/M/L/XL",
-          "grammage": "180g",
-          "composition": "72% nylon 28% spandex"
-        }
-      },
-      {
-        "id": 4,
-        "name": "SBW04",
-        "image": "Assets/Images/Women/SBW/SBW04.jpg",
-        "detailImage": "Assets/Images/Women/SBW/SBW04-d.jpg",
-        "attributes": {
-          "category": "Sports Bra",
-          "size": "S/M/L/XL",
-          "grammage": "180g",
-          "composition": "72% nylon 28% spandex"
-        }
-      },
-      {
-        "id": 5,
-        "name": "STW01",
-        "image": "Assets/Images/Women/STW/STW01.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW01-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "S/M/L/XL",
-          "grammage": "230g",
-          "composition": "80% nylon 20% spandex"
-        }
-      },
-      {
-        "id": 6,
-        "name": "STW02",
-        "image": "Assets/Images/Women/STW/STW02.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW02-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "M/L/XL",
-          "grammage": "170g",
-          "composition": "88% nylon 12% spandex"
-        }
-      },
-      {
-        "id": 7,
-        "name": "STW03",
-        "image": "Assets/Images/Women/STW/STW03.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW03-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "S/M/L/XL",
-          "grammage": "180g",
-          "composition": "87% polyester 13% spandex"
-        }
-      },
-      {
-        "id": 8,
-        "name": "STW04",
-        "image": "Assets/Images/Women/STW/STW04.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW04-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "S/M/L/XL/2XL",
-          "grammage": "180g",
-          "composition": "87% polyester 13% spandex"
-        }
-      },
-      {
-        "id": 9,
-        "name": "STW05",
-        "image": "Assets/Images/Women/STW/STW05.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW05-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "M/L/XL",
-          "grammage": "170g",
-          "composition": "88% nylon 12% spandex"
-        }
-      },
-      {
-        "id": 10,
-        "name": "STW06",
-        "image": "Assets/Images/Women/STW/STW06.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW06-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "S/M/L/XL",
-          "grammage": "200g",
-          "composition": "86% polyester 14% spandex"
-        }
-      },
-      {
-        "id": 11,
-        "name": "STW07",
-        "image": "Assets/Images/Women/STW/STW07.jpg",
-        "detailImage": "Assets/Images/Women/STW/STW07-d.jpg",
-        "attributes": {
-          "category": "Sports Top",
-          "size": "S/M/L/XL",
-          "grammage": "200g",
-          "composition": "82% polyester 18% spandex"
-        }
+  "products": [
+    {
+      "id": 1,
+      "name": "SBW01",
+      "image": "Assets/Images/Women/SBW/SBW01.jpg",
+      "detailImage": "Assets/Images/Women/SBW/SBW01-D.jpg",
+      "attributes": {
+        "category": "Sports Bra",
+        "size": "S/M/L/XL",
+        "grammage": "220g",
+        "composition": "80% nylon 20% spandex"
       }
-    ]
+    },
+    {
+      "id": 2,
+      "name": "SBW02",
+      "image": "Assets/Images/Women/SBW/SBW02.jpg",
+      "detailImage": "Assets/Images/Women/SBW/SBW02-D.jpg",
+      "attributes": {
+        "category": "Sports Bra",
+        "size": "S/M/L/XL",
+        "grammage": "220g",
+        "composition": "75% nylon 25% spandex"
+      }
+    },
+    {
+      "id": 3,
+      "name": "SBW03",
+      "image": "Assets/Images/Women/SBW/SBW03.jpg",
+      "detailImage": "Assets/Images/Women/SBW/SBW03-D.jpg",
+      "attributes": {
+        "category": "Sports Bra",
+        "size": "S/M/L/XL",
+        "grammage": "180g",
+        "composition": "72% nylon 28% spandex"
+      }
+    },
+    {
+      "id": 4,
+      "name": "SBW04",
+      "image": "Assets/Images/Women/SBW/SBW04.jpg",
+      "detailImage": "Assets/Images/Women/SBW/SBW04-D.jpg",
+      "attributes": {
+        "category": "Sports Bra",
+        "size": "S/M/L/XL",
+        "grammage": "180g",
+        "composition": "72% nylon 28% spandex"
+      }
+    },
+    {
+      "id": 5,
+      "name": "STW01",
+      "image": "Assets/Images/Women/STW/STW01.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW01-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "S/M/L/XL",
+        "grammage": "230g",
+        "composition": "80% nylon 20% spandex"
+      }
+    },
+    {
+      "id": 6,
+      "name": "STW02",
+      "image": "Assets/Images/Women/STW/STW02.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW02-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "M/L/XL",
+        "grammage": "170g",
+        "composition": "88% nylon 12% spandex"
+      }
+    },
+    {
+      "id": 7,
+      "name": "STW03",
+      "image": "Assets/Images/Women/STW/STW03.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW03-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "S/M/L/XL",
+        "grammage": "180g",
+        "composition": "87% polyester 13% spandex"
+      }
+    },
+    {
+      "id": 8,
+      "name": "STW04",
+      "image": "Assets/Images/Women/STW/STW04.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW04-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "S/M/L/XL/2XL",
+        "grammage": "180g",
+        "composition": "87% polyester 13% spandex"
+      }
+    },
+    {
+      "id": 9,
+      "name": "STW05",
+      "image": "Assets/Images/Women/STW/STW05.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW05-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "M/L/XL",
+        "grammage": "170g",
+        "composition": "88% nylon 12% spandex"
+      }
+    },
+    {
+      "id": 10,
+      "name": "STW06",
+      "image": "Assets/Images/Women/STW/STW06.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW06-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "S/M/L/XL",
+        "grammage": "200g",
+        "composition": "86% polyester 14% spandex"
+      }
+    },
+    {
+      "id": 11,
+      "name": "STW07",
+      "image": "Assets/Images/Women/STW/STW07.jpg",
+      "detailImage": "Assets/Images/Women/STW/STW07-D.jpg",
+      "attributes": {
+        "category": "Sports Top",
+        "size": "S/M/L/XL",
+        "grammage": "200g",
+        "composition": "82% polyester 18% spandex"
+      }
+    },
+    {
+      "id": 11,
+      "name": "CSW01",
+      "image": "Assets/Images/Women/CSW/CSW01.jpg",
+      "detailImage": "Assets/Images/Women/CSW/CSW01-D.jpg",
+      "attributes": {
+        "category": "Compression Shorts",
+        "size": "S/M/L/XL",
+        "grammage": "225g",
+        "composition": "80% nylon 20% spandex"
+      }
+    },
+    {
+      "id": 12,
+      "name": "CSW02",
+      "image": "Assets/Images/Women/CSW/CSW02.jpg",
+      "detailImage": "Assets/Images/Women/CSW/CSW02-D.jpg",
+      "attributes": {
+        "category": "Compression Shorts",
+        "size": "S/M/L/XL",
+        "grammage": "230g",
+        "composition": "80% nylon 20% spandex"
+      }
+    },
+    {
+      "id": 13,
+      "name": "CSW03",
+      "image": "Assets/Images/Women/CSW/CSW03.jpg",
+      "detailImage": "Assets/Images/Women/CSW/CSW03-D.jpg",
+      "attributes": {
+        "category": "Compression Shorts",
+        "size": "S/M/L/XL",
+        "grammage": "220g",
+        "composition": "72% nylon 28% spandex"
+      }
+    },
+    {
+      "id": 14,
+      "name": "CSW04",
+      "image": "Assets/Images/Women/CSW/CSW04.jpg",
+      "detailImage": "Assets/Images/Women/CSW/CSW04-D.jpg",
+      "attributes": {
+        "category": "Compression Shorts",
+        "size": "S/M/L/XL",
+        "grammage": "Lining Pants-200g / Outer Pants-220g",
+        "composition": "Outer-75% nylon 25% spandex + 95% polyester 5% spandex; Lining-95% polyester 5% spandex"
+      }
+    },
+    {
+      "id": 15,
+      "name": "CSW05",
+      "image": "Assets/Images/Women/CSW/CSW05.jpg",
+      "detailImage": "Assets/Images/Women/CSW/CSW05-D.jpg",
+      "attributes": {
+        "category": "Compression Shorts",
+        "size": "S/M/L/XL/2XL",
+        "grammage": "Lining Pants-200g / Outer Pants-140g",
+        "composition": "Outer-95% polyester 5% spandex; Lining-87% polyester 13% spandex"
+      }
+    },
+    {
+      "id": 16,
+      "name": "YPW01",
+      "image": "Assets/Images/Women/YPW/YPW01.jpg",
+      "detailImage": "Assets/Images/Women/YPW/YPW01-D.jpg",
+      "attributes": {
+        "category": "Yoga Pants",
+        "size": "M/L/XL",
+        "grammage": "230g",
+        "composition": "80% nylon 20% spandex"
+      }
+    },
+    {
+      "id": 17,
+      "name": "YPW02",
+      "image": "Assets/Images/Women/YPW/YPW02.jpg",
+      "detailImage": "Assets/Images/Women/YPW/YPW02-D.jpg",
+      "attributes": {
+        "category": "Yoga Pants",
+        "size": "S/M/L/XL",
+        "grammage": "230g",
+        "composition": "80% nylon 20% spandex"
+      }
+    },
+    {
+      "id": 18,
+      "name": "YPW03",
+      "image": "Assets/Images/Women/YPW/YPW03.jpg",
+      "detailImage": "Assets/Images/Women/YPW/YPW03-D.jpg",
+      "attributes": {
+        "category": "Yoga Pants",
+        "size": "S/M/L/XL",
+        "grammage": "220g",
+        "composition": "75% nylon 25% spandex"
+      }
+    },
+    {
+      "id": 19,
+      "name": "YPW04",
+      "image": "Assets/Images/Women/YPW/YPW04.jpg",
+      "detailImage": "Assets/Images/Women/YPW/YPW04-D.jpg",
+      "attributes": {
+        "category": "Yoga Pants",
+        "size": "S/M/L/XL",
+        "grammage": "200g",
+        "composition": "82% polyester 18% spandex"
+      }
+    },
+    {
+      "id": 20,
+      "name": "YPW05",
+      "image": "Assets/Images/Women/YPW/YPW05.jpg",
+      "detailImage": "Assets/Images/Women/YPW/YPW05-D.jpg",
+      "attributes": {
+        "category": "Yoga Pants",
+        "size": "S/M/L/XL",
+        "grammage": "200g",
+        "composition": "72% nylon 28% spandex"
+      }
+    }
+  ]
 }
-  

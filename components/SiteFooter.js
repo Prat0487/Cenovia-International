@@ -52,10 +52,12 @@ class SiteFooter extends HTMLElement {
                                 aria-label="Twitter">
                                  <i class="fab fa-twitter text-lg"></i>
                              </a>
-                             <a href="#" 
+                             <a href="https://www.linkedin.com/company/cenovia-international" 
                                 class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
-                                aria-label="LinkedIn">
-                                 <i class="fab fa-linkedin text-lg"></i>
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Follow Cenovia International on LinkedIn">
+                                <i class="fab fa-linkedin text-lg"></i>
                              </a>
                              <a href="https://www.instagram.com/cenovia_international/" 
                                 class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 

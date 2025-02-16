@@ -24,7 +24,11 @@ class TopRibbon extends HTMLElement {
                         <a href="#" class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" aria-label="Twitter">
                             <i class="fab fa-twitter text-lg"></i>
                         </a>
-                        <a href="#" class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/company/cenovia-international" 
+                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                           aria-label="Follow us on LinkedIn"
+                           target="_blank"
+                           rel="noopener noreferrer">
                             <i class="fab fa-linkedin text-lg"></i>
                         </a>
                        <a href="https://instagram.com/cenovia_international" 

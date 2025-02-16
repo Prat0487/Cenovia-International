@@ -47,11 +47,13 @@ class SiteFooter extends HTMLElement {
                                 aria-label="Follow Cenovia International on Facebook">
                                  <i class="fab fa-facebook text-lg"></i>
                              </a>
-                             <a href="#" 
+                             <a href="https://x.com/CenoviaInterNat" 
                                 class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
-                                aria-label="Twitter">
-                                 <i class="fab fa-twitter text-lg"></i>
-                             </a>
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Follow us on X">
+                                    <i class="fab fa-x text-lg"></i>
+                            </a>
                              <a href="https://www.linkedin.com/company/cenovia-international" 
                                 class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
                                 target="_blank"

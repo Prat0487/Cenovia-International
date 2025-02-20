@@ -1,0 +1,6 @@
+# Redirect all traffic from http://www to canonical https domain
+http://www.cenoviainternational.com/* https://cenoviainternational.com/:splat 301!
+# Redirect all traffic from http:// to https
+http://cenoviainternational.com/* https://cenoviainternational.com/:splat 301!
+# If you also have https://www, redirect that as well
+https://www.cenoviainternational.com/* https://cenoviainternational.com/:splat 301!

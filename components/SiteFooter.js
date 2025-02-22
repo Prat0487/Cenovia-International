@@ -24,45 +24,56 @@ class SiteFooter extends HTMLElement {
                             <h4 class="text-lg font-semibold mb-4">Contact</h4>
                             <ul class="space-y-2">
                                 <li class="flex items-center text-gray-600">
-                                    <i class="fas fa-envelope w-6"></i>
-                                    <span class="ml-2">support@cenoviainternational.com</span>
+                                    <a href="mailto:support@cenoviainternational.com"
+                                       class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg flex items-center">
+                                        <i class="fas fa-envelope w-6"></i>
+                                        <span class="ml-2">support@cenoviainternational.com</span>
+                                    </a>
                                 </li>
                                 <li class="flex items-center text-gray-600">
-                                    <i class="fas fa-phone w-6"></i>
-                                    <span class="ml-2">+91 6360817265</span>
+                                    <a href="tel:+916360817265"
+                                       class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg flex items-center">
+                                        <i class="fas fa-phone w-6"></i>
+                                        <span class="ml-2">+91 6360817265</span>
+                                    </a>
                                 </li>
                                 <li class="flex items-start text-gray-600">
-                                    <i class="fas fa-map-marker-alt w-6 mt-1"></i>
-                                    <span class="ml-2">324, 2nd Main Extension Road,<br>
-                                    KR Puram, Bengaluru,<br>
-                                    Karnataka 560049</span>
+                                    <a href="https://maps.google.com/?q=324, 2nd Main Extension Road, KR Puram, Bengaluru, Karnataka 560049"
+                                       class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg flex"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        <i class="fas fa-map-marker-alt w-6 mt-1"></i>
+                                        <span class="ml-2">324, 2nd Main Extension Road,<br>
+                                        KR Puram, Bengaluru,<br>
+                                        Karnataka 560049</span>
+                                    </a>
                                 </li>
                             </ul>
                          </div>
                          <div class="flex space-x-6">
-                             <a href="https://www.facebook.com/CenoviaInternational" 
-                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                             <a href="https://www.facebook.com/CenoviaInternational"
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Follow Cenovia International on Facebook">
                                  <i class="fab fa-facebook text-lg"></i>
                              </a>
-                             <a href="https://x.com/CenoviaInterNat" 
-                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                             <a href="https://x.com/CenoviaInterNat"
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Follow us on X">
-                                    <i class="fab fa-x text-lg"></i>
-                            </a>
-                             <a href="https://www.linkedin.com/company/cenovia-international" 
-                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                                 <i class="fab fa-x text-lg"></i>
+                             </a>
+                             <a href="https://www.linkedin.com/company/cenovia-international"
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Follow Cenovia International on LinkedIn">
                                 <i class="fab fa-linkedin text-lg"></i>
                              </a>
-                             <a href="https://www.instagram.com/cenovia_international/" 
-                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                             <a href="https://www.instagram.com/cenovia_international/"
+                                class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram">
@@ -79,4 +90,4 @@ class SiteFooter extends HTMLElement {
     }
 }
 
-customElements.define('site-footer', SiteFooter);customElements.define('site-footer', SiteFooter);
+customElements.define('site-footer', SiteFooter);

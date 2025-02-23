@@ -24,6 +24,15 @@ class SiteFooter extends HTMLElement {
                             <h4 class="text-lg font-semibold mb-4">Contact</h4>
                             <ul class="space-y-2">
                                 <li class="flex items-center text-gray-600">
+                                    <a href="https://wa.me/916360817265"
+                                       class="text-gray-600 hover:text-gray-800 transition-colors duration-200 flex items-center"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        <i class="fab fa-whatsapp w-6"></i>
+                                        <span class="ml-2">WhatsApp</span>
+                                    </a>
+                                </li>
+                                <li class="flex items-center text-gray-600">
                                     <a
                                         href="mailto:support@cenoviainternational.com"
                                         class="text-gray-600 hover:text-gray-800 transition-colors duration-200 flex items-center"

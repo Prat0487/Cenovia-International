@@ -8,6 +8,13 @@ class TopRibbon extends HTMLElement {
                             <i class="fas fa-phone text-black" aria-hidden="true"></i>
                             <span>+91 6360817265</span>
                         </a>
+                        <a href="https://wa.me/916360817265"
+                           class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp text-black" aria-hidden="true"></i>
+                            <span>WhatsApp</span>
+                        </a>
                         <a href="mailto:support@cenoviainternational.com" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
                             <i class="fas fa-envelope text-black" aria-hidden="true"></i>
                             <span>support@cenoviainternational.com</span>

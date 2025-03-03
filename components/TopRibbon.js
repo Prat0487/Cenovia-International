@@ -11,9 +11,9 @@ class TopRibbon extends HTMLElement {
                         <a href="https://wa.me/916360817265"
                            class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg"
                            target="_blank"
-                           rel="noopener noreferrer">
+                           rel="noopener noreferrer"
+                           aria-label="WhatsApp">
                             <i class="fab fa-whatsapp text-black" aria-hidden="true"></i>
-                            <span>WhatsApp</span>
                         </a>
                         <a href="mailto:support@cenoviainternational.com" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
                             <i class="fas fa-envelope text-black" aria-hidden="true"></i>

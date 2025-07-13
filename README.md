@@ -22,6 +22,8 @@ A modern, responsive website for Cenovia International, specializing in silvercr
   - Fully responsive design with optimized breakpoints
   - Background video option for nice desktop view
 
+
+
 2. **About Section**
   - Comprehensive company overview and history
   - Interactive Mission and Vision statements in hover-animated cards

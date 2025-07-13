@@ -72,11 +72,17 @@ class MainNav extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
-                        <button id="mobile-menu-button" 
-                                class="md:hidden p-2"
-                                aria-label="Toggle Menu">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <button class="md:hidden p-2"
+                                id="mobile-menu-button"
+                                aria-label="Toggle menu">
+                            <svg class="w-6 h-6"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
 
@@ -172,6 +178,9 @@ class MainNav extends HTMLElement {
         const dropdownBtn = this.querySelector('#dropdownBtn');
         const dropdown = this.querySelector('#productDropdown');
         const arrow = this.querySelector('#dropdownArrow');
+        const mobileMenuBtn = this.querySelector('#mobile-menu-button');
+        const mobileMenu = this.querySelector('#mobile-menu');
+
         const nav = this.querySelector('nav');
 
         // Dropdown functionality
@@ -184,6 +193,15 @@ class MainNav extends HTMLElement {
             dropdown.classList.toggle('opacity-100');
             arrow.style.transform = isHidden ? 'rotate(180deg)' : '';
             dropdownBtn.setAttribute('aria-expanded', !isHidden);
+        });
+
+        // Mobile menu functionality
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('-translate-y-full');
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
         });
 
         // Close dropdown when clicking outside

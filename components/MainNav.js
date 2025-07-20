@@ -5,7 +5,7 @@ class MainNav extends HTMLElement {
             <div class="bg-white py-4">
                 <div class="container mx-auto px-4 flex justify-center">
                     <a href="index.html">
-                        <img src="Assets/others/your-logo.png"
+                        <img src="Assets/others/logo_ci.png"
                              alt="Company Logo"
                              class="h-32 md:h-40"
                              width="auto"
@@ -46,15 +46,15 @@ class MainNav extends HTMLElement {
                                 <!-- Dropdown Menu -->
                                 <div id="productDropdown"
                                      class="absolute z-50 hidden bg-white shadow-lg mt-2 rounded-lg min-w-[200px] p-2">
-                                    <a href="product-silvercraft.html"
+                                    <a href="product-womenswear.html"
                                        class="block my-1 px-4 py-2 rounded-md font-bold text-gray-700 
                                               bg-gray-100 hover:bg-indigo-50 hover:scale-105 transition-transform duration-200">
-                                        Silvercraft
+                                        Women
                                     </a>
-                                    <a href="product-sportgoods.html"
+                                    <a href="product-menswear.html"
                                        class="block my-1 px-4 py-2 rounded-md font-bold text-gray-700 
                                               bg-gray-100 hover:bg-indigo-50 hover:scale-105 transition-transform duration-200">
-                                        Sport Goods
+                                        Men
                                     </a>
                                 </div>
                             </div>
@@ -72,17 +72,12 @@ class MainNav extends HTMLElement {
                         </div>
 
                         <!-- Mobile Menu Button -->
-                        <button class="md:hidden p-2"
-                                id="mobile-menu-button"
-                                aria-label="Toggle menu">
-                            <svg class="w-6 h-6"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M4 6h16M4 12h16M4 18h16"/>
+
+                        <button id="mobile-menu-button" 
+                                class="md:hidden p-2"
+                                aria-label="Toggle Menu">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
 
@@ -118,11 +113,11 @@ class MainNav extends HTMLElement {
                                             </svg>
                                         </button>
                                         <div id="mobile-product-dropdown" class="hidden pl-4 space-y-2">
-                                            <a href="/product-silvercraft" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
-                                                Silvercraft
+                                            <a href="/product-womenswear" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                                Women
                                             </a>
-                                            <a href="/product-sportgoods" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
-                                                Sport Goods
+                                            <a href="/product-menswear" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                                Men
                                             </a>
                                         </div>
                                     </div>
@@ -135,11 +130,13 @@ class MainNav extends HTMLElement {
                                     </a>
                                 </nav>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </nav>
         `;
+
 
         const mobileMenuBtn = this.querySelector('#mobile-menu-button');
         const mobileMenu = this.querySelector('#mobile-menu');
@@ -178,8 +175,7 @@ class MainNav extends HTMLElement {
         const dropdownBtn = this.querySelector('#dropdownBtn');
         const dropdown = this.querySelector('#productDropdown');
         const arrow = this.querySelector('#dropdownArrow');
-        const mobileMenuBtn = this.querySelector('#mobile-menu-button');
-        const mobileMenu = this.querySelector('#mobile-menu');
+
 
         const nav = this.querySelector('nav');
 
@@ -195,14 +191,7 @@ class MainNav extends HTMLElement {
             dropdownBtn.setAttribute('aria-expanded', !isHidden);
         });
 
-        // Mobile menu functionality
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('-translate-y-full');
-            mobileMenu.classList.toggle('opacity-0');
-            mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
-        });
+
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
@@ -229,3 +218,4 @@ class MainNav extends HTMLElement {
 }
 
 customElements.define('main-nav', MainNav);
+customElements.define('main-nav', MainNav);customElements.define('main-nav', MainNav);

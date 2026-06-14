@@ -4,6 +4,7 @@ class ProductDetail {
         this.productImage = document.getElementById('productImage');
         this.productName = document.getElementById('productName');
         this.productAttributes = document.getElementById('productAttributes');
+        this.productInquiryLink = document.getElementById('productInquiryLink');
         this.urlParams = new URLSearchParams(window.location.search);
         this.productId = parseInt(this.urlParams.get('id'));
         this.productType = this.urlParams.get('type');
@@ -34,6 +35,14 @@ class ProductDetail {
         this.productImage.alt = product.name;
         this.productName.textContent = product.name;
         this.renderAttributes(product.attributes);
+        if (this.productInquiryLink) {
+            const params = new URLSearchParams({
+                product: product.name,
+                type: this.productType,
+                category: product.attributes.category || ''
+            });
+            this.productInquiryLink.href = `contact-us.html?${params.toString()}`;
+        }
     }
     renderAttributes(attributes) {
         this.productAttributes.innerHTML = '';

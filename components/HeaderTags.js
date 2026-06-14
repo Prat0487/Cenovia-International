@@ -13,4 +13,6 @@ class HeaderTags extends HTMLElement {
     }
 }
 
-customElements.define('header-tags', HeaderTags);
+if (!customElements.get('header-tags')) {
+    customElements.define('header-tags', HeaderTags);
+}

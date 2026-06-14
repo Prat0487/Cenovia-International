@@ -34,6 +34,27 @@
     padding: 16px;
 }
 
+button,
+a,
+input,
+select,
+textarea {
+    min-height: 44px;
+}
+
+top-ribbon a,
+site-footer a {
+    overflow-wrap: anywhere;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.specifications {
+    overflow-wrap: anywhere;
+}
+
 /* Image optimization styles */
 .product-image img {
     aspect-ratio: 1;

@@ -18,6 +18,7 @@ class SiteFooter extends HTMLElement {
                                 <li><a href="product-menswear.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Men's Wear</a></li>
                                 <li><a href="our-team.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Our Team</a></li>
                                 <li><a href="contact-us.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Contact Us</a></li>
+                                <li><a href="saved-products.html" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Saved Products</a></li>
                             </ul>
                         </div>
                         <div>
@@ -115,5 +116,6 @@ class SiteFooter extends HTMLElement {
     }
 }
 
-customElements.define('site-footer', SiteFooter);
-customElements.define('site-footer', SiteFooter);
+if (!customElements.get('site-footer')) {
+    customElements.define('site-footer', SiteFooter);
+}

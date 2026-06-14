@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <header-tags></header-tags>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://cenoviainternational.com/saved-products.html">
+  <meta name="description" content="Review saved sportswear products from Cenovia International.">
+  <title>Saved Products - Cenovia International</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="css/custom.css" rel="stylesheet">
+  <script src="components/TopRibbon.js"></script>
+  <script src="components/MainNav.js"></script>
+  <script src="components/SiteFooter.js"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+  <top-ribbon></top-ribbon>
+  <main-nav></main-nav>
+
+  <main class="flex-grow">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
+          <div class="container mx-auto px-4">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4">Saved Products</h1>
+              <p class="text-lg text-gray-200 max-w-2xl">Review shortlisted styles before sending an inquiry.</p>
+          </div>
+      </div>
+
+      <div class="container mx-auto px-4 py-10">
+          <div id="savedProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+      </div>
+  </main>
+
+  <site-footer></site-footer>
+  <script src="js/product-loader.js"></script>
+  <script src="js/saved-products.js"></script>
+</body>
+</html>

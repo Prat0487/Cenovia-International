@@ -69,6 +69,11 @@ class MainNav extends HTMLElement {
                                       hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
                                 CONTACT US
                             </a>
+                            <a href="saved-products.html"
+                               class="inline-block px-4 py-2 bg-gray-200 rounded-md text-lg font-bold text-gray-700 
+                                      hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
+                                SAVED
+                            </a>
                         </div>
 
                         <!-- Mobile Menu Button -->
@@ -99,7 +104,7 @@ class MainNav extends HTMLElement {
                                 </button>
 
                                 <nav class="mt-12 space-y-4">
-                                    <a href="/" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <a href="index.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                         ABOUT US
                                     </a>
                                     
@@ -113,20 +118,23 @@ class MainNav extends HTMLElement {
                                             </svg>
                                         </button>
                                         <div id="mobile-product-dropdown" class="hidden pl-4 space-y-2">
-                                            <a href="/product-womenswear" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                            <a href="product-womenswear.html" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                                 Women
                                             </a>
-                                            <a href="/product-menswear" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                            <a href="product-menswear.html" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                                 Men
                                             </a>
                                         </div>
                                     </div>
 
-                                    <a href="/our-team" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <a href="our-team.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                         OUR TEAM
                                     </a>
-                                    <a href="/contact-us" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <a href="contact-us.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
                                         CONTACT US
+                                    </a>
+                                    <a href="saved-products.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        SAVED
                                     </a>
                                 </nav>
                             </div>
@@ -217,5 +225,6 @@ class MainNav extends HTMLElement {
     }
 }
 
-customElements.define('main-nav', MainNav);
-customElements.define('main-nav', MainNav);customElements.define('main-nav', MainNav);
+if (!customElements.get('main-nav')) {
+    customElements.define('main-nav', MainNav);
+}

@@ -24,6 +24,11 @@
   status = 200
 
 [[redirects]]
+  from = "/saved-products"
+  to = "/saved-products.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

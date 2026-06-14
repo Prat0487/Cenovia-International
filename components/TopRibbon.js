@@ -2,8 +2,8 @@ class TopRibbon extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <div class="bg-custom-beige py-3">
-                <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-                    <div class="flex items-center space-x-4 mb-2 sm:mb-0">
+                <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-3">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 mb-2 lg:mb-0 text-center lg:text-left">
                         <a href="tel:+916360817265" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
                             <i class="fas fa-phone text-black" aria-hidden="true"></i>
                             <span>+91 6360817265</span>
@@ -56,5 +56,6 @@ class TopRibbon extends HTMLElement {
     }
 }
 
-customElements.define('top-ribbon', TopRibbon);
-customElements.define('top-ribbon', TopRibbon);
+if (!customElements.get('top-ribbon')) {
+    customElements.define('top-ribbon', TopRibbon);
+}

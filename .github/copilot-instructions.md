@@ -62,4 +62,4 @@ CI: GitHub Actions workflow (added)
 - Workflow: .github/workflows/playwright.yml
 - Trigger: pull_request on main or master
 - What it does: checks out the repo, sets up Node.js, installs dependencies, installs Playwright browsers (with deps), and runs the Playwright suite headless on Ubuntu.
-- To run locally the same way: npm ci && npm run playwright:install && npm test
+- To run locally the same way: npm install && npm run playwright:install && npm test

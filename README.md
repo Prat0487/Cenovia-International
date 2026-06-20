@@ -85,3 +85,32 @@ A modern, responsive website for Cenovia International, specializing in premium 
 
 git clone https://github.com/Prat0487/Cenovia-International.git
 
+## Quickstart / Local preview
+- Preview with Python: `python -m http.server 8000` then open http://localhost:8000/index.html
+- Preview with Node: `npx http-server -p 8000` or use `npm run preview` (provided in package.json)
+
+## Running Playwright tests (added)
+- Install dev deps: `npm install`
+- Install Playwright browsers: `npm run playwright:install` (or `npx playwright install --with-deps`)
+- Run full suite: `npm test` (runs `npx playwright test`)
+- Run a single test file: `npm run test:single`
+
+CI: GitHub Actions workflow runs Playwright on pull requests (see .github/workflows/playwright.yml).
+
+## Project structure (short)
+- Root HTML pages: index.html, product-menswear.html, product-womenswear.html, contact-us.html
+- components/: Web Components (TopRibbon.js, MainNav.js, SiteFooter.js)
+- js/: Client-side logic (product-loader.js, product-search.js, product-detail.js, infinite-scroll.js)
+- data/: JSON product catalogs consumed by ProductLoader (`products-menswear.json`, `products-womenswear.json`)
+- Assets/: Images and compiled CSS used by the site
+
+## Deployment
+- netlify.toml present for clean URL routing and a catch-all redirect to index.html. Deploy to Netlify or any static hosting provider.
+
+## Copilot and tests
+- Repository includes .github/copilot-instructions.md with guidance for Copilot sessions.
+- Playwright tests are in tests/playwright/ and CI is configured to run them on PRs.
+
+## Changelog & Contributing
+- See CHANGELOG.md for recent changes. Open a PR against the `main` branch and include test updates for behavior changes.
+

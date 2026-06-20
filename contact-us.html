@@ -58,8 +58,19 @@
                           type="text" 
                           name="name" 
                           id="name"
+                          autocomplete="name"
                           class="w-full border border-gray-300 rounded px-3 py-2"
                           required
+                      />
+                  </div>
+                  <div class="mb-4">
+                      <label class="block font-semibold mb-2">Company</label>
+                      <input
+                          type="text"
+                          name="company"
+                          id="company"
+                          autocomplete="organization"
+                          class="w-full border border-gray-300 rounded px-3 py-2"
                       />
                   </div>
                   <div class="mb-4">
@@ -67,6 +78,8 @@
                       <input 
                           type="tel" 
                           name="phone" 
+                          autocomplete="tel"
+                          inputmode="tel"
                           class="w-full border border-gray-300 rounded px-3 py-2"
                           required
                       />
@@ -76,9 +89,33 @@
                       <input 
                           type="email" 
                           name="email" 
+                          autocomplete="email"
                           class="w-full border border-gray-300 rounded px-3 py-2"
                           required
                       />
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div class="mb-4">
+                          <label class="block font-semibold mb-2">Country / Region</label>
+                          <input
+                              type="text"
+                              name="country"
+                              id="country"
+                              autocomplete="country-name"
+                              class="w-full border border-gray-300 rounded px-3 py-2"
+                          />
+                      </div>
+                      <div class="mb-4">
+                          <label class="block font-semibold mb-2">Estimated Quantity</label>
+                          <input
+                              type="text"
+                              name="quantity"
+                              id="quantity"
+                              inputmode="numeric"
+                              placeholder="e.g. 500 pieces"
+                              class="w-full border border-gray-300 rounded px-3 py-2"
+                          />
+                      </div>
                   </div>
                   <div class="mb-4">
                       <label class="block font-semibold mb-2">Message</label>
@@ -89,6 +126,9 @@
                           rows="4"
                       ></textarea>
                   </div>
+                  <input type="hidden" name="product" id="productField">
+                  <input type="hidden" name="product_type" id="productTypeField">
+                  <input type="hidden" name="product_category" id="productCategoryField">
                   <p id="formStatus" class="hidden mb-4 text-sm"></p>
                   <button 
                       id="submitButton"
@@ -124,6 +164,9 @@
       const submitButton = document.getElementById('submitButton');
       const productContext = document.getElementById('productContext');
       const messageField = document.getElementById('message');
+      const productField = document.getElementById('productField');
+      const productTypeField = document.getElementById('productTypeField');
+      const productCategoryField = document.getElementById('productCategoryField');
 
       function initializeProductContext() {
           const params = new URLSearchParams(window.location.search);
@@ -136,7 +179,10 @@
           const typeLabel = type === 'women' ? "Women's" : type === 'men' ? "Men's" : 'Selected';
           productContext.textContent = `${typeLabel} inquiry: ${product}${category ? ` (${category})` : ''}`;
           productContext.classList.remove('hidden');
-          messageField.value = `I am interested in ${product}${category ? ` from the ${category} category` : ''}. Please share more details about customization, MOQ, pricing, and export timelines.`;
+          productField.value = product;
+          productTypeField.value = type || '';
+          productCategoryField.value = category || '';
+          messageField.value = `I am interested in ${product}${category ? ` from the ${category} category` : ''}. Please share more details about customization, MOQ, pricing, export timelines, and available branding options.`;
       }
 
       function setFormStatus(message, type) {

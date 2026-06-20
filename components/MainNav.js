@@ -78,65 +78,69 @@ class MainNav extends HTMLElement {
 
                         <!-- Mobile Menu Button -->
 
-                        <button id="mobile-menu-button" 
-                                class="md:hidden p-2"
-                                aria-label="Toggle Menu">
+                        <button id="mobile-menu-button"
+                                class="mobile-menu-trigger md:hidden p-2"
+                                aria-label="Open Menu"
+                                aria-expanded="false">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
 
                         <!-- Mobile Menu with Overlay -->
-                        <div id="mobile-menu" 
-                             class="fixed inset-0 z-50 hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <div id="mobile-menu"
+                             class="mobile-menu-shell md:hidden"
+                             aria-hidden="true">
                             <!-- Overlay Background -->
-                            <div id="mobile-menu-overlay" 
-                                 class="absolute inset-0 bg-black bg-opacity-25 hidden">
+                            <div id="mobile-menu-overlay"
+                                 class="mobile-menu-overlay">
                             </div>
 
                             <!-- Menu Content -->
-                            <div class="absolute right-0 top-0 w-3/4 max-w-xs bg-white h-full shadow-xl p-4">
-                                <button id="close-mobile-menu" 
-                                        class="absolute top-4 right-4 text-gray-700">
+                            <div class="mobile-menu-panel">
+                                <button id="close-mobile-menu"
+                                        class="mobile-menu-close"
+                                        aria-label="Close Menu">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                                     </svg>
                                 </button>
 
-                                <nav class="mt-12 space-y-4">
-                                    <a href="index.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                <div class="mobile-menu-links">
+                                    <a href="index.html" class="mobile-menu-link">
                                         ABOUT US
                                     </a>
                                     
                                     <!-- Products Dropdown -->
-                                    <div class="space-y-2">
-                                        <button id="mobile-dropdown-btn" 
-                                                class="flex items-center justify-between w-full text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <div class="mobile-menu-group">
+                                        <button id="mobile-dropdown-btn"
+                                                class="mobile-menu-link mobile-menu-product-button"
+                                                aria-expanded="false">
                                             PRODUCT
                                             <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                             </svg>
                                         </button>
-                                        <div id="mobile-product-dropdown" class="hidden pl-4 space-y-2">
-                                            <a href="product-womenswear.html" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                        <div id="mobile-product-dropdown" class="mobile-submenu hidden">
+                                            <a href="product-womenswear.html" class="mobile-submenu-link">
                                                 Women
                                             </a>
-                                            <a href="product-menswear.html" class="block text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                            <a href="product-menswear.html" class="mobile-submenu-link">
                                                 Men
                                             </a>
                                         </div>
                                     </div>
 
-                                    <a href="our-team.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <a href="our-team.html" class="mobile-menu-link">
                                         OUR TEAM
                                     </a>
-                                    <a href="contact-us.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <a href="contact-us.html" class="mobile-menu-link">
                                         CONTACT US
                                     </a>
-                                    <a href="saved-products.html" class="block text-lg font-bold text-gray-700 hover:bg-gray-200 px-3 py-2 rounded transition">
+                                    <a href="saved-products.html" class="mobile-menu-link">
                                         SAVED
                                     </a>
-                                </nav>
+                                </div>
                             </div>
 
                         </div>
@@ -154,18 +158,17 @@ class MainNav extends HTMLElement {
         const mobileProductDropdown = this.querySelector('#mobile-product-dropdown');
 
         const showMenu = () => {
-            mobileMenu.classList.remove('hidden', 'translate-x-full');
-            mobileMenuOverlay.classList.remove('hidden');
+            mobileMenu.classList.add('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         };
 
         const hideMenu = () => {
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenuOverlay.classList.add('hidden');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
         };
 
         mobileMenuBtn.addEventListener('click', showMenu);
@@ -177,6 +180,10 @@ class MainNav extends HTMLElement {
         mobileDropdownBtn.addEventListener('click', () => {
             mobileProductDropdown.classList.toggle('hidden');
             mobileDropdownBtn.querySelector('svg').classList.toggle('rotate-180');
+            mobileDropdownBtn.setAttribute(
+                'aria-expanded',
+                String(!mobileProductDropdown.classList.contains('hidden'))
+            );
         });
 
         // Keep existing desktop dropdown functionality
@@ -214,6 +221,9 @@ class MainNav extends HTMLElement {
         // Hide/Show on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
+            if (mobileMenu.classList.contains('is-open')) {
+                return;
+            }
             const currentScroll = window.pageYOffset;
             if (currentScroll > lastScroll && currentScroll > 100) {
                 nav.classList.add('-translate-y-full');

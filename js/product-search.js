@@ -7,13 +7,14 @@ class ProductSearch {
         this.categoryFilter = document.getElementById('categoryFilter');
         this.sizeFilter = document.getElementById('sizeFilter');
         this.compositionFilter = document.getElementById('compositionFilter');
+        this.grammageFilter = document.getElementById('grammageFilter');
         this.sortFilter = document.getElementById('sortFilter');
         this.clearFiltersButton = document.getElementById('clearFilters');
         this.filterSummary = document.getElementById('filterSummary');
+        this.filterChips = document.getElementById('filterChips');
         this.compareTray = document.getElementById('compareTray');
         this.products = [];
         this.compareSelections = new Set();
-        this.wishlistKey = 'cenoviaWishlist';
 
         this.init();
     }
@@ -31,6 +32,7 @@ class ProductSearch {
     populateDynamicFilters() {
         this.populateSelect(this.sizeFilter, this.products.map(product => product.attributes.size));
         this.populateSelect(this.compositionFilter, this.products.map(product => product.attributes.composition));
+        this.populateSelect(this.grammageFilter, this.products.map(product => product.attributes.grammage));
     }
 
     populateSelect(selectElement, values) {
@@ -52,7 +54,7 @@ class ProductSearch {
     }
 
     bindControls() {
-        [this.searchBox, this.categoryFilter, this.sizeFilter, this.compositionFilter, this.sortFilter]
+        [this.searchBox, this.categoryFilter, this.sizeFilter, this.compositionFilter, this.grammageFilter, this.sortFilter]
             .filter(Boolean)
             .forEach(control => {
                 const eventName = control === this.searchBox ? 'input' : 'change';
@@ -61,12 +63,24 @@ class ProductSearch {
 
         if (this.clearFiltersButton) {
             this.clearFiltersButton.addEventListener('click', () => {
-                [this.searchBox, this.categoryFilter, this.sizeFilter, this.compositionFilter, this.sortFilter]
+                [this.searchBox, this.categoryFilter, this.sizeFilter, this.compositionFilter, this.grammageFilter, this.sortFilter]
                     .filter(Boolean)
                     .forEach(control => {
                         control.value = '';
                     });
                 this.applyFilters();
+            });
+        }
+
+        if (this.filterChips) {
+            this.filterChips.addEventListener('click', event => {
+                const chip = event.target.closest('[data-filter]');
+                if (!chip) return;
+                const control = document.getElementById(chip.dataset.filter);
+                if (control) {
+                    control.value = '';
+                    this.applyFilters();
+                }
             });
         }
     }
@@ -117,10 +131,12 @@ class ProductSearch {
                 .filter(product => this.matchesSelectedValue(product, this.categoryFilter, 'category'))
                 .filter(product => this.matchesSelectedValue(product, this.sizeFilter, 'size'))
                 .filter(product => this.matchesSelectedValue(product, this.compositionFilter, 'composition'))
+                .filter(product => this.matchesSelectedValue(product, this.grammageFilter, 'grammage'))
         );
 
         this.renderSearchResults(filteredProducts);
         this.updateSummary(filteredProducts.length);
+        this.renderFilterChips();
     }
 
     matchesSearch(product) {
@@ -243,15 +259,11 @@ class ProductSearch {
     }
 
     getWishlist() {
-        try {
-            return JSON.parse(localStorage.getItem(this.wishlistKey)) || [];
-        } catch (error) {
-            return [];
-        }
+        return BuyerUtils.getWishlist();
     }
 
     saveWishlist(wishlist) {
-        localStorage.setItem(this.wishlistKey, JSON.stringify(wishlist));
+        BuyerUtils.saveWishlist(wishlist);
     }
 
     updateWishlistButtons() {
@@ -355,6 +367,31 @@ class ProductSearch {
 
         const label = this.productType === 'women' ? "women's" : "men's";
         this.filterSummary.textContent = `Showing ${count} of ${this.products.length} ${label} products.`;
+    }
+
+    renderFilterChips() {
+        if (!this.filterChips) return;
+
+        const chips = [
+            { id: 'categoryFilter', label: 'Category', value: this.categoryFilter?.value },
+            { id: 'sizeFilter', label: 'Size', value: this.sizeFilter?.value },
+            { id: 'compositionFilter', label: 'Fabric', value: this.compositionFilter?.value },
+            { id: 'grammageFilter', label: 'Grammage', value: this.grammageFilter?.value }
+        ].filter(chip => chip.value);
+
+        if (!chips.length) {
+            this.filterChips.innerHTML = '';
+            this.filterChips.classList.add('hidden');
+            return;
+        }
+
+        this.filterChips.classList.remove('hidden');
+        this.filterChips.innerHTML = chips.map(chip => `
+            <button type="button" class="filter-chip" data-filter="${chip.id}" aria-label="Remove ${chip.label} filter ${chip.value}">
+                ${chip.label}: ${chip.value}
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `).join('');
     }
 
     showCompareLimit() {

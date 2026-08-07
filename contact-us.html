@@ -129,6 +129,7 @@
                   <input type="hidden" name="product" id="productField">
                   <input type="hidden" name="product_type" id="productTypeField">
                   <input type="hidden" name="product_category" id="productCategoryField">
+                  <input type="hidden" name="shortlist" id="shortlistField">
                   <p id="formStatus" class="hidden mb-4 text-sm"></p>
                   <button 
                       id="submitButton"
@@ -158,6 +159,10 @@
   <site-footer></site-footer>
 
   <!-- Scripts -->
+  <script src="js/buyer-utils.js"></script>
+  <script src="js/product-loader.js"></script>
+  <script src="js/global-search.js"></script>
+  <script src="js/buyer-bar.js"></script>
   <script>
       const leadForm = document.getElementById('leadForm');
       const formStatus = document.getElementById('formStatus');
@@ -167,9 +172,31 @@
       const productField = document.getElementById('productField');
       const productTypeField = document.getElementById('productTypeField');
       const productCategoryField = document.getElementById('productCategoryField');
+      const shortlistField = document.getElementById('shortlistField');
 
-      function initializeProductContext() {
+      async function initializeProductContext() {
           const params = new URLSearchParams(window.location.search);
+          const shortlist = params.get('shortlist');
+
+          if (shortlist) {
+              shortlistField.value = shortlist;
+              const keys = BuyerUtils.decodeShortlist(shortlist);
+              const products = await BuyerUtils.resolveProducts(keys);
+              if (products.length) {
+                  const summary = products.map(product => {
+                      const typeLabel = product.productType === 'women' ? "Women's" : "Men's";
+                      return `${product.name} (${typeLabel}, ${product.attributes.category})`;
+                  }).join('; ');
+                  productContext.innerHTML = `<strong>Shortlist inquiry (${products.length} products):</strong> ${summary}`;
+                  productContext.classList.remove('hidden');
+                  productField.value = products.map(product => product.name).join(', ');
+                  productTypeField.value = products.map(product => product.productType).join(', ');
+                  productCategoryField.value = products.map(product => product.attributes.category || '').join(', ');
+                  messageField.value = `I would like to inquire about the following shortlisted products:\n\n${products.map(product => `- ${product.name} (${product.productType === 'women' ? "Women's" : "Men's"}, ${product.attributes.category}, ${product.attributes.grammage}, ${product.attributes.composition})`).join('\n')}\n\nPlease share MOQ, pricing, customization options, sampling timelines, and export lead times.`;
+              }
+              return;
+          }
+
           const product = params.get('product');
           const type = params.get('type');
           const category = params.get('category');

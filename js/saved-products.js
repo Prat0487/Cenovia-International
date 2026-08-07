@@ -1,8 +1,8 @@
 class SavedProducts {
     constructor() {
         this.grid = document.getElementById('savedProductsGrid');
+        this.actionsBar = document.getElementById('savedActionsBar');
         this.loader = new ProductLoader();
-        this.wishlistKey = 'cenoviaWishlist';
         this.init();
     }
 
@@ -15,26 +15,35 @@ class SavedProducts {
             ...menProducts.map(product => ({ ...product, productType: 'men' })),
             ...womenProducts.map(product => ({ ...product, productType: 'women' }))
         ];
+
+        const params = new URLSearchParams(window.location.search);
+        const sharedKeys = BuyerUtils.decodeShortlist(params.get('shortlist'));
+        if (sharedKeys.length) {
+            BuyerUtils.saveWishlist(sharedKeys);
+        }
+
         this.render();
+        this.bindActions();
     }
 
     getWishlist() {
-        try {
-            return JSON.parse(localStorage.getItem(this.wishlistKey)) || [];
-        } catch (error) {
-            return [];
-        }
+        return BuyerUtils.getWishlist();
     }
 
     saveWishlist(wishlist) {
-        localStorage.setItem(this.wishlistKey, JSON.stringify(wishlist));
+        BuyerUtils.saveWishlist(wishlist);
+    }
+
+    getSavedProducts() {
+        const wishlist = this.getWishlist();
+        return this.products.filter(product => wishlist.includes(`${product.productType}:${product.id}`));
     }
 
     render() {
-        const wishlist = this.getWishlist();
-        const savedProducts = this.products.filter(product => wishlist.includes(`${product.productType}:${product.id}`));
+        const savedProducts = this.getSavedProducts();
 
         if (!savedProducts.length) {
+            if (this.actionsBar) this.actionsBar.classList.add('hidden');
             this.grid.innerHTML = `
                 <div class="col-span-full bg-white border border-gray-200 rounded-lg p-8 text-center">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-3">No saved products yet</h2>
@@ -48,6 +57,11 @@ class SavedProducts {
             return;
         }
 
+        if (this.actionsBar) {
+            this.actionsBar.classList.remove('hidden');
+            this.actionsBar.querySelector('#savedCount').textContent = `${savedProducts.length} product${savedProducts.length === 1 ? '' : 's'} shortlisted`;
+        }
+
         this.grid.innerHTML = savedProducts.map(product => this.getCard(product)).join('');
         this.grid.querySelectorAll('.remove-saved').forEach(button => {
             button.addEventListener('click', () => {
@@ -56,6 +70,37 @@ class SavedProducts {
                 this.render();
             });
         });
+    }
+
+    bindActions() {
+        document.getElementById('sendInquiryBtn')?.addEventListener('click', () => {
+            const keys = this.getWishlist();
+            window.location.href = BuyerUtils.buildInquiryUrl(keys);
+        });
+
+        document.getElementById('shareShortlistBtn')?.addEventListener('click', async () => {
+            const keys = this.getWishlist();
+            const url = BuyerUtils.buildShortlistUrl(keys);
+            try {
+                await navigator.clipboard.writeText(url);
+                this.showActionStatus('Shortlist link copied to clipboard.');
+            } catch {
+                prompt('Copy this shortlist link:', url);
+            }
+        });
+
+        document.getElementById('exportCsvBtn')?.addEventListener('click', () => {
+            BuyerUtils.exportCsv(this.getSavedProducts());
+            this.showActionStatus('Shortlist exported as CSV.');
+        });
+    }
+
+    showActionStatus(message) {
+        const status = document.getElementById('savedActionStatus');
+        if (!status) return;
+        status.textContent = message;
+        status.classList.remove('hidden');
+        window.setTimeout(() => status.classList.add('hidden'), 2500);
     }
 
     getCard(product) {

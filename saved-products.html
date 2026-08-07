@@ -27,12 +27,27 @@
       </div>
 
       <div class="container mx-auto px-4 py-10">
+          <div id="savedActionsBar" class="hidden saved-actions-bar mb-8">
+              <div>
+                  <p class="text-lg font-semibold text-gray-800" id="savedCount">0 products shortlisted</p>
+                  <p class="text-sm text-gray-600">Send your shortlist to sales, share it with your team, or export specs.</p>
+                  <p id="savedActionStatus" class="text-sm text-green-700 mt-2 hidden"></p>
+              </div>
+              <div class="saved-actions-bar__buttons">
+                  <button type="button" id="sendInquiryBtn" class="saved-action-btn saved-action-btn--primary">Send inquiry</button>
+                  <button type="button" id="shareShortlistBtn" class="saved-action-btn">Share link</button>
+                  <button type="button" id="exportCsvBtn" class="saved-action-btn">Export CSV</button>
+              </div>
+          </div>
           <div id="savedProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
       </div>
   </main>
 
   <site-footer></site-footer>
+  <script src="js/buyer-utils.js"></script>
   <script src="js/product-loader.js"></script>
+  <script src="js/global-search.js"></script>
   <script src="js/saved-products.js"></script>
+  <script src="js/buyer-bar.js"></script>
 </body>
 </html>

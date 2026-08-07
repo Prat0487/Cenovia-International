@@ -1,6 +1,7 @@
 {
   "name": "Cenovia International",
   "install": "npm install && npx playwright install --with-deps",
+  "start": "npm install",
   "terminals": [
     {
       "name": "preview",

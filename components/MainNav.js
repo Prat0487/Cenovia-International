@@ -20,7 +20,16 @@ class MainNav extends HTMLElement {
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-20">
                         <!-- Desktop Menu -->
-                        <div class="hidden md:flex space-x-4">
+                        <div class="hidden md:flex items-center space-x-4 flex-1">
+                            <div class="global-search hidden lg:block" id="globalSearch">
+                                <label class="sr-only" for="globalSearchInput">Search all products</label>
+                                <div class="global-search__field">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                    <input type="search" id="globalSearchInput" placeholder="Search all products..." autocomplete="off">
+                                </div>
+                                <div id="globalSearchResults" class="global-search__results hidden"></div>
+                            </div>
+                            <div class="flex space-x-4 ml-auto">
                             <a href="index.html"
                                class="inline-block px-4 py-2 bg-gray-200 rounded-md text-lg font-bold text-gray-700 
                                       hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
@@ -74,6 +83,7 @@ class MainNav extends HTMLElement {
                                       hover:bg-indigo-100 hover:scale-105 transition-transform duration-200">
                                 SAVED
                             </a>
+                            </div>
                         </div>
 
                         <!-- Mobile Menu Button -->
@@ -107,6 +117,14 @@ class MainNav extends HTMLElement {
                                 </button>
 
                                 <div class="mobile-menu-links">
+                                    <div class="global-search global-search--mobile">
+                                        <label class="sr-only" for="globalSearchInputMobile">Search all products</label>
+                                        <div class="global-search__field">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                            <input type="search" id="globalSearchInputMobile" placeholder="Search all products..." autocomplete="off">
+                                        </div>
+                                        <div class="global-search__results hidden"></div>
+                                    </div>
                                     <a href="index.html" class="mobile-menu-link">
                                         ABOUT US
                                     </a>
@@ -232,6 +250,8 @@ class MainNav extends HTMLElement {
             }
             lastScroll = currentScroll;
         });
+
+        document.dispatchEvent(new CustomEvent('cenovia:nav-ready'));
     }
 }
 

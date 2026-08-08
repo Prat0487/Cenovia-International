@@ -1,0 +1,7 @@
+# Prateek Portfolio
+.DS_Store
+node_modules/
+.netlify/
+*.log
+.env
+.env.*

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Résumé · Prateek Rastogi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .resume {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: calc(var(--header-h) + 2rem) 1.25rem 4rem;
+    }
+    .resume h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.03em;
+    }
+    .resume .lede { color: var(--muted); margin: 0 0 1.5rem; }
+    .resume h2 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin: 2rem 0 0.75rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.35rem;
+    }
+    .resume h3 { margin: 1rem 0 0.25rem; font-size: 1.05rem; }
+    .resume .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; }
+    .resume ul { margin: 0.35rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+    .resume .back { display: inline-block; margin-bottom: 1.5rem; }
+    @media print {
+      .site-header, .site-footer, .back { display: none !important; }
+      .resume { padding-top: 0; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header is-scrolled">
+    <a class="brand" href="../">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Prateek Rastogi</span>
+    </a>
+  </header>
+
+  <main class="resume">
+    <a class="back text-link" href="../">← Portfolio</a>
+    <h1>Prateek Rastogi</h1>
+    <p class="lede">DevOps &amp; Cloud Engineer · Bengaluru · Open to USA &amp; Europe contracts</p>
+    <p>
+      <a href="mailto:rastogiprateek36@gmail.com">rastogiprateek36@gmail.com</a> ·
+      <a href="tel:+918307282810">+91 83072 82810</a> ·
+      <a href="https://linkedin.com/in/prateekdevops">LinkedIn</a> ·
+      <a href="https://github.com/Prat0487">GitHub</a> ·
+      <a href="Prateek_Rastogi_Senior_Devops.pdf">PDF résumé</a>
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      DevOps &amp; Cloud Engineer with 7+ years across AWS, Azure, and GCP in enterprise environments.
+      Strengths in Kubernetes platforms, CI/CD, Terraform, serverless on AWS, and observability
+      for large microservice estates. Seeking high-impact freelance and contract engagements.
+    </p>
+
+    <h2>Experience</h2>
+
+    <h3>Lead DevOps Engineer — AIRBUS</h3>
+    <p class="meta">Feb 2023 – Present · Bengaluru</p>
+    <ul>
+      <li>AWS IaC with Terraform/CloudFormation; Node.js &amp; Java delivery pipelines</li>
+      <li>Serverless architectures: Lambda, ECS Fargate, Glue, API Gateway, EventBridge, Step Functions</li>
+      <li>Container platforms: Docker, Jenkins, Artifactory, ECR, ECS/EKS; OpenShift → EKS migrations</li>
+      <li>Observability with Prometheus, Grafana, Loki, ELK, Splunk, Jaeger, Datadog, New Relic</li>
+      <li>Automation in Python/Bash across 100+ microservices</li>
+    </ul>
+
+    <h3>Senior DevOps Engineer — IBM India (GBS)</h3>
+    <p class="meta">Jul 2021 – Jan 2023 · Bengaluru</p>
+    <ul>
+      <li>EKS platforms, Terraform, GitLab CI/CD</li>
+      <li>Harness/Spinnaker blue-green and canary releases; Kafka/RabbitMQ; Splunk/ELK; on-call</li>
+    </ul>
+
+    <h3>Senior Software Engineer – DevOps &amp; Cloud — GlobalLogic (Hitachi)</h3>
+    <p class="meta">Nov 2020 – Jul 2021 · Noida</p>
+    <ul>
+      <li>GKE, Helm, Kong Ingress, GitLab CI / Cloud Build, GCR/Artifact Registry</li>
+      <li>Harness CD, GCP Pub/Sub, Secret Manager/IAM, ELK/Splunk/Cloud Monitoring</li>
+    </ul>
+
+    <h3>System Administrator – Cloud &amp; DevOps — NTT DATA</h3>
+    <p class="meta">Oct 2017 – Dec 2019 · Bengaluru</p>
+    <ul>
+      <li>EC2/RDS/VPC/Route 53/ASG, Ansible, Terraform (AWS/Azure/GCP)</li>
+      <li>Azure DevOps / Cloud Build; BMC Remedy / ServiceNow</li>
+    </ul>
+
+    <h2>Education</h2>
+    <h3>MBA, Business Management — NMIMS, Mumbai</h3>
+    <p class="meta">2021</p>
+    <h3>B.Tech, Information Technology — AKTU, Lucknow</h3>
+    <p class="meta">2017</p>
+
+    <h2>Certifications</h2>
+    <ul>
+      <li>AWS Solutions Architect – Associate (2025)</li>
+      <li>AWS SysOps Administrator – Associate (2022)</li>
+      <li>AWS Cloud Practitioner (2021)</li>
+      <li>Microsoft Azure Fundamentals AZ-900 (2021)</li>
+    </ul>
+
+    <h2>Selected GitHub work</h2>
+    <ul>
+      <li><a href="https://github.com/Prat0487/CICD-Demo">CICD-Demo</a> — FastAPI + Helm + EKS + GitHub Actions</li>
+      <li><a href="https://github.com/Prat0487/aws-infra">aws-infra</a> — Terraform AWS foundations</li>
+      <li><a href="https://github.com/Prat0487/StockSage">StockSage</a> — Next.js + Genkit AI</li>
+      <li><a href="https://github.com/Prat0487/Cenovia-International">Cenovia-International</a> — commerce storefront</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span data-year></span> Prateek Rastogi</p>
+    <p><a href="../">Back to portfolio</a></p>
+  </footer>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

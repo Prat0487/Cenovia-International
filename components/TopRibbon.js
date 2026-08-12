@@ -1,58 +1,59 @@
 class TopRibbon extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <div class="bg-custom-beige py-3">
+            <div class="bg-custom-beige py-2.5 border-b border-[hsl(var(--border))]">
                 <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-3">
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 mb-2 lg:mb-0 text-center lg:text-left">
-                        <a href="tel:+916360817265" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
-                            <i class="fas fa-phone text-black" aria-hidden="true"></i>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-center lg:text-left">
+                        <a href="tel:+916360817265" class="inline-flex items-center gap-2 text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-sm sm:text-base">
+                            <i data-lucide="phone" aria-hidden="true"></i>
                             <span>+91 6360817265</span>
                         </a>
                         <a href="https://wa.me/916360817265"
-                           class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg"
+                           class="inline-flex items-center gap-2 text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-sm sm:text-base"
                            target="_blank"
                            rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp text-black" aria-hidden="true"></i>
+                            <i data-lucide="message-circle" aria-hidden="true"></i>
                             <span>WhatsApp</span>
                         </a>
-                        <a href="mailto:support@cenoviainternational.com" class="text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-base sm:text-lg">
-                            <i class="fas fa-envelope text-black" aria-hidden="true"></i>
+                        <a href="mailto:support@cenoviainternational.com" class="inline-flex items-center gap-2 text-black hover:text-gray-700 transition-colors duration-200 font-semibold text-sm sm:text-base">
+                            <i data-lucide="mail" aria-hidden="true"></i>
                             <span>support@cenoviainternational.com</span>
                         </a>
                     </div>
-                    <div class="flex space-x-6">
-                        <a href="https://www.facebook.com/CenoviaInternational" 
-                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                    <div class="flex space-x-5">
+                        <a href="https://www.facebook.com/CenoviaInternational"
+                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                            aria-label="Follow us on Facebook"
                            target="_blank"
                            rel="noopener noreferrer">
-                            <i class="fab fa-facebook text-lg"></i>
+                            <i data-lucide="facebook"></i>
                         </a>
                         <a href="https://x.com/CenoviaInterNat"
                             class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                             aria-label="Follow us on Twitter"
                             target="_blank"
                             rel="noopener noreferrer">
-                            <i class="fab fa-x text-lg"></i>
+                            <i data-lucide="twitter"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/cenovia-international" 
-                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                        <a href="https://www.linkedin.com/company/cenovia-international"
+                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                            aria-label="Follow us on LinkedIn"
                            target="_blank"
                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin text-lg"></i>
+                            <i data-lucide="linkedin"></i>
                         </a>
-                       <a href="https://instagram.com/cenovia_international" 
-                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110" 
+                       <a href="https://instagram.com/cenovia_international"
+                           class="text-black hover:text-blue-700 transition-all duration-300 hover:scale-110"
                            aria-label="Follow us on Instagram"
                            target="_blank"
                            rel="noopener noreferrer">
-                           <i class="fab fa-instagram text-lg"></i>
+                           <i data-lucide="instagram"></i>
                        </a>
                    </div>
                </div>
             </div>
         `;
+        window.CenoviaUI?.refreshIcons(this);
     }
 }
 

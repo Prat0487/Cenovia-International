@@ -47,6 +47,8 @@ A modern, responsive website for Cenovia International, specializing in premium 
 
 #### Styling
 - Tailwind CSS implementation
+- shadcn/ui-inspired design tokens and buyer components
+- Lucide icons and Motion micro-interactions
 - Responsive design
 - Glass effect navigation
 - Dynamic loading animations

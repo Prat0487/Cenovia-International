@@ -8,126 +8,82 @@
   <meta name="description" content="Premium women's sportswear manufacturing and export. Specialized in sports bras, athletic tops, and performance wear for international markets.">
   <meta name="keywords" content="women's sportswear manufacturer, premium sports bra supplier, wholesale athletic tops, custom sportswear export">
   <title>Women's Premium Sportswear Manufacturing - Cenovia International</title>
-    
-  <!-- Stylesheets -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="css/custom.css" rel="stylesheet">
-  <!-- Custom styles -->
-  <style>
-      .nav-link {
-          @apply text-gray-700 hover:text-blue-600 font-bold transition-all duration-300;
-      }
-      .nav-link.active {
-          @apply text-blue-600;
-      }
-      .social-link {
-          @apply hover:text-blue-300 transition-all duration-300 hover:scale-110;
-      }
-      .glass-effect {
-          backdrop-filter: blur(10px);
-          background: rgba(255, 255, 255, 0.9);
-      }
-      .product-card {
-          @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
-      }
-      .product-image {
-          @apply relative overflow-hidden group;
-      }
-      .product-image img {
-          @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
-      }
-      /* Added styles for image zoom */
-      .image-container {
-          overflow: hidden; /* Prevent zoomed image from overflowing */
-      }
-      .product-image img {
-          transition: transform 0.3s ease; /* Smooth transition for zoom */
-      }
-      .product-image img:hover,
-      .product-image img:active {
-          transform: scale(1.1); /* Zoom in on hover/touch */
-      }
-  </style>
-    
-  <!-- Web Components -->
+  <link href="css/ui-theme.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script type="module" src="js/ui-kit.js"></script>
   <script src="components/TopRibbon.js"></script>
   <script src="components/MainNav.js"></script>
   <script src="components/SiteFooter.js"></script>
 </head>
 
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
   <top-ribbon></top-ribbon>
   <main-nav></main-nav>
 
-  <!-- Main Content -->
   <main class="flex-grow">
-      <!-- Category Banner -->
-      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
-          <div class="container mx-auto px-4">
+      <div class="ui-hero py-16">
+          <div class="container mx-auto px-4 relative z-10">
+              <p class="ui-eyebrow mb-4"><i data-lucide="sparkles"></i> Women's catalog</p>
               <h1 class="text-4xl md:text-5xl font-bold mb-4">Women's Sports Apparel</h1>
-              <p class="text-lg text-gray-300 max-w-2xl">Explore our collection of high-performance sportswear designed for women, including leggings, sports bras, tank tops, and more.</p>
+              <p class="text-lg text-white/80 max-w-2xl">Explore our collection of high-performance sportswear designed for women, including leggings, sports bras, tank tops, and more.</p>
           </div>
       </div>
 
       <div class="container mx-auto px-4 py-8">
-          <!-- Filters and Search Section -->
-          <div class="mb-8 space-y-4">
+          <div class="ui-filter-bar mb-8 space-y-4">
               <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 w-full lg:w-auto">
                   <div class="relative flex-grow md:flex-grow-0">
-                      <input type="search" placeholder="Search products..." 
-                             class="w-full md:w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                      <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                      <input type="search" placeholder="Search products..."
+                             class="ui-input w-full md:w-64 pl-10">
+                      <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-[hsl(var(--muted-foreground))]"></i>
                   </div>
-                  <select class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500" id="categoryFilter">
+                  <select class="ui-select w-full sm:w-auto" id="categoryFilter">
                       <option value="">All Categories</option>
                       <option value="Sports Bra">Sports Bra</option>
                       <option value="Sports Top">Sports Top</option>
                       <option value="Compression Shorts">Compression Shorts</option>
                       <option value="Yoga Pants">Yoga Pants</option>
                   </select>
-                  <select class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500" id="sizeFilter">
+                  <select class="ui-select w-full sm:w-auto" id="sizeFilter">
                       <option value="">All Sizes</option>
                   </select>
-                  <select class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500" id="compositionFilter">
+                  <select class="ui-select w-full sm:w-auto" id="compositionFilter">
                       <option value="">All Fabrics</option>
                   </select>
-                  <select class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500" id="grammageFilter">
+                  <select class="ui-select w-full sm:w-auto" id="grammageFilter">
                       <option value="">All Grammage</option>
                   </select>
               </div>
-              <!-- Sort and View Options -->
               <div class="flex flex-col sm:flex-row sm:items-center gap-4 w-full lg:w-auto">
-                  <select class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500" id="sortFilter">
+                  <select class="ui-select w-full sm:w-auto" id="sortFilter">
                       <option value="">Sort By</option>
                       <option value="name-asc">Name: A to Z</option>
                       <option value="name-desc">Name: Z to A</option>
                       <option value="grammage-high">Grammage: High to Low</option>
                       <option value="grammage-low">Grammage: Low to High</option>
                   </select>
-                  <button id="clearFilters" class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors">
+                  <button id="clearFilters" class="ui-btn-outline w-full sm:w-auto">
                       Clear Filters
                   </button>
               </div>
               </div>
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-600">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-[hsl(var(--muted-foreground))]">
                   <p id="filterSummary">Loading products...</p>
                   <p>Choose up to 3 products to compare.</p>
               </div>
               <div id="filterChips" class="filter-chips hidden"></div>
           </div>
-          <div id="compareTray" class="hidden mb-8 bg-white border border-gray-200 rounded-lg shadow-sm p-4"></div>
-          <!-- Product Grid -->
+          <div id="compareTray" class="hidden ui-card mb-8 p-4"></div>
           <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              <!-- Products will be dynamically loaded here -->
           </div>
       </div>
   </main>
 
   <site-footer></site-footer>
 
-  <!-- Scripts -->
   <script src="js/buyer-utils.js"></script>
   <script src="js/product-loader.js"></script>
   <script src="js/global-search.js"></script>

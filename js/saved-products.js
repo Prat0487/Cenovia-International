@@ -45,15 +45,17 @@ class SavedProducts {
         if (!savedProducts.length) {
             if (this.actionsBar) this.actionsBar.classList.add('hidden');
             this.grid.innerHTML = `
-                <div class="col-span-full bg-white border border-gray-200 rounded-lg p-8 text-center">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-3">No saved products yet</h2>
-                    <p class="text-gray-600 mb-6">Use the heart button on catalog cards to build a shortlist.</p>
+                <div class="col-span-full ui-card ui-empty">
+                    <i data-lucide="heart" class="mx-auto mb-3"></i>
+                    <h2 class="text-2xl font-semibold mb-3">No saved products yet</h2>
+                    <p class="text-[hsl(var(--muted-foreground))] mb-6">Use the heart on catalog cards to build a buyer shortlist.</p>
                     <div class="flex flex-wrap justify-center gap-3">
-                        <a href="product-menswear.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">Browse Menswear</a>
-                        <a href="product-womenswear.html" class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition-colors">Browse Womenswear</a>
+                        <a href="product-menswear.html" class="ui-btn-primary">Browse menswear</a>
+                        <a href="product-womenswear.html" class="ui-btn-success">Browse womenswear</a>
                     </div>
                 </div>
             `;
+            window.CenoviaUI?.refreshIcons(this.grid);
             return;
         }
 
@@ -63,6 +65,8 @@ class SavedProducts {
         }
 
         this.grid.innerHTML = savedProducts.map(product => this.getCard(product)).join('');
+        window.CenoviaUI?.refreshIcons(this.grid);
+        window.CenoviaUI?.animateCards(this.grid);
         this.grid.querySelectorAll('.remove-saved').forEach(button => {
             button.addEventListener('click', () => {
                 const key = `${button.dataset.productType}:${button.dataset.productId}`;
@@ -111,29 +115,27 @@ class SavedProducts {
         });
 
         return `
-            <div class="product-card bg-white">
+            <div class="product-card">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
-                </div>
-                <div class="p-4">
-                    <div class="flex justify-between items-start gap-3 mb-2">
-                        <div>
-                            <p class="text-xs uppercase tracking-wide text-gray-500">${product.productType === 'women' ? 'Womenswear' : 'Menswear'}</p>
-                            <h2 class="text-xl font-semibold">${product.name}</h2>
-                        </div>
-                        <button class="remove-saved text-red-500 hover:text-red-600" data-product-id="${product.id}" data-product-type="${product.productType}" aria-label="Remove ${product.name}">
-                            <i class="fas fa-heart text-xl"></i>
+                    <div class="product-card__overlay">
+                        <button class="wishlist-btn is-saved remove-saved" data-product-id="${product.id}" data-product-type="${product.productType}" aria-label="Remove ${product.name}">
+                            <i data-lucide="heart"></i>
                         </button>
                     </div>
-                    <div class="specifications text-sm text-gray-600 mt-2">
+                </div>
+                <div class="p-4">
+                    <p class="ui-badge mb-2">${product.productType === 'women' ? 'Womenswear' : 'Menswear'}</p>
+                    <h2 class="text-lg font-semibold">${product.name}</h2>
+                    <div class="specifications text-sm text-[hsl(var(--muted-foreground))] mt-3 space-y-1">
                         <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
                         <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
                         <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
                         <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
                     </div>
-                    <div class="flex flex-wrap gap-3 mt-4">
-                        <a href="product-detail.html?id=${product.id}&type=${product.productType}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">More Details</a>
-                        <a href="contact-us.html?${params.toString()}" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Enquire Now</a>
+                    <div class="product-card__actions mt-4">
+                        <a href="product-detail.html?id=${product.id}&type=${product.productType}" class="ui-btn-outline ui-btn-sm">Details</a>
+                        <a href="contact-us.html?${params.toString()}" class="ui-btn-success ui-btn-sm">Enquire</a>
                     </div>
                 </div>
             </div>

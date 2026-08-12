@@ -97,8 +97,10 @@ class ProductSearch {
 
             if (wishlist.includes(productKey)) {
                 this.saveWishlist(wishlist.filter(item => item !== productKey));
+                window.CenoviaUI?.toast('Removed from shortlist');
             } else {
                 this.saveWishlist([...wishlist, productKey]);
+                window.CenoviaUI?.toast('Saved to shortlist');
             }
 
             this.updateWishlistButtons();
@@ -186,11 +188,13 @@ class ProductSearch {
 
         if (!products.length) {
             this.productGrid.innerHTML = `
-                <div class="col-span-full bg-white border border-gray-200 rounded-lg p-8 text-center">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-2">No matching products</h2>
-                    <p class="text-gray-600">Try a different search term or clear one of the filters.</p>
+                <div class="col-span-full ui-card ui-empty">
+                    <i data-lucide="search-x" class="mx-auto mb-3"></i>
+                    <h2 class="text-xl font-semibold mb-2">No matching products</h2>
+                    <p class="text-[hsl(var(--muted-foreground))]">Try a different search term or clear one of the filters.</p>
                 </div>
             `;
+            window.CenoviaUI?.refreshIcons(this.productGrid);
             return;
         }
 
@@ -203,6 +207,8 @@ class ProductSearch {
 
         this.updateWishlistButtons();
         this.updateCompareState();
+        window.CenoviaUI?.refreshIcons(this.productGrid);
+        window.CenoviaUI?.animateCards(this.productGrid);
     }
 
     getProductTemplate(product, productType) {
@@ -215,33 +221,35 @@ class ProductSearch {
                          class="w-full h-64 object-cover"
                          loading="lazy"
                          decoding="async">
-                </div>
-                <div class="p-4">
-                    <div class="flex justify-between items-start gap-3 mb-2">
-                        <h2 class="text-xl font-semibold mb-1">${product.name}</h2>
-                        <button class="wishlist-btn text-gray-400 hover:text-red-500" data-product-id="${product.id}" data-product-type="${productType}" aria-label="Add ${product.name} to wishlist">
-                            <i class="far fa-heart text-xl"></i>
+                    <div class="product-card__overlay">
+                        <button class="wishlist-btn" data-product-id="${product.id}" data-product-type="${productType}" aria-label="Add ${product.name} to wishlist">
+                            <i data-lucide="heart"></i>
                         </button>
                     </div>
-                    <div class="specifications text-sm text-gray-600 mt-2">
-                        <p><span class="attribute-key">Category:</span> <span class="attribute-value">${product.attributes.category}</span></p>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-start justify-between gap-3 mb-2">
+                        <div>
+                            <span class="ui-badge mb-2">${product.attributes.category}</span>
+                            <h2 class="text-lg font-semibold mt-2">${product.name}</h2>
+                        </div>
+                    </div>
+                    <div class="specifications text-sm text-[hsl(var(--muted-foreground))] mt-3 space-y-1">
                         <p><span class="attribute-key">Size:</span> <span class="attribute-value">${product.attributes.size}</span></p>
                         <p><span class="attribute-key">Grammage:</span> <span class="attribute-value">${product.attributes.grammage}</span></p>
                         <p><span class="attribute-key">Composition:</span> <span class="attribute-value">${product.attributes.composition}</span></p>
                     </div>
-                    <div class="flex flex-wrap gap-3 items-center mt-4">
-                         <a href="product-detail.html?id=${product.id}&type=${productType}"
-                           class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            More Details
+                    <div class="product-card__actions mt-4">
+                         <a href="product-detail.html?id=${product.id}&type=${productType}" class="ui-btn-outline ui-btn-sm">
+                            Details
                         </a>
-                         <a href="${this.getInquiryUrl(product, productType)}"
-                           class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                            Enquire Now
+                         <a href="${this.getInquiryUrl(product, productType)}" class="ui-btn-success ui-btn-sm">
+                            Enquire
                         </a>
                     </div>
-                    <label class="mt-4 flex items-center gap-2 text-sm text-gray-700">
+                    <label class="compare-check">
                         <input type="checkbox" class="compare-product rounded border-gray-300" data-product-id="${product.id}" data-product-type="${productType}">
-                        Compare
+                        Compare specs
                     </label>
                 </div>
             </div>
@@ -270,17 +278,11 @@ class ProductSearch {
         const wishlist = this.getWishlist();
         document.querySelectorAll('.wishlist-btn').forEach(button => {
             const productKey = this.getProductKey(button.dataset.productType, button.dataset.productId);
-            const icon = button.querySelector('i');
             const isSaved = wishlist.includes(productKey);
 
-            button.classList.toggle('text-red-500', isSaved);
-            button.classList.toggle('text-gray-400', !isSaved);
+            button.classList.toggle('is-saved', isSaved);
             button.setAttribute('aria-pressed', String(isSaved));
             button.setAttribute('aria-label', isSaved ? 'Remove from wishlist' : 'Add to wishlist');
-            if (icon) {
-                icon.classList.toggle('fas', isSaved);
-                icon.classList.toggle('far', !isSaved);
-            }
         });
     }
 
@@ -311,11 +313,11 @@ class ProductSearch {
         this.compareTray.innerHTML = `
             <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                 <div>
-                    <h2 class="text-lg font-semibold text-gray-800">Compare Products</h2>
-                    <p class="text-sm text-gray-600">Selected ${selectedProducts.length} of 3 products.</p>
+                    <h2 class="text-lg font-semibold">Compare products</h2>
+                    <p class="text-sm text-[hsl(var(--muted-foreground))]">Selected ${selectedProducts.length} of 3 styles.</p>
                 </div>
-                <button id="clearCompare" class="self-start px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
-                    Clear Compare
+                <button id="clearCompare" class="ui-btn-outline ui-btn-sm self-start">
+                    Clear compare
                 </button>
             </div>
             <div class="mt-4 overflow-x-auto">
@@ -389,9 +391,10 @@ class ProductSearch {
         this.filterChips.innerHTML = chips.map(chip => `
             <button type="button" class="filter-chip" data-filter="${chip.id}" aria-label="Remove ${chip.label} filter ${chip.value}">
                 ${chip.label}: ${chip.value}
-                <span aria-hidden="true">&times;</span>
+                <i data-lucide="x" aria-hidden="true"></i>
             </button>
         `).join('');
+        window.CenoviaUI?.refreshIcons(this.filterChips);
     }
 
     showCompareLimit() {
@@ -400,8 +403,8 @@ class ProductSearch {
         this.compareTray.classList.remove('hidden');
         this.compareTray.innerHTML = `
             <div class="flex items-center justify-between gap-4">
-                <p class="text-sm text-gray-700">You can compare up to 3 products at a time.</p>
-                <button id="dismissCompareLimit" class="px-3 py-1 border border-gray-300 rounded text-gray-700 hover:bg-gray-100">Dismiss</button>
+                <p class="text-sm">You can compare up to 3 products at a time.</p>
+                <button id="dismissCompareLimit" class="ui-btn-outline ui-btn-sm">Dismiss</button>
             </div>
         `;
         this.compareTray.querySelector('#dismissCompareLimit')?.addEventListener('click', () => {

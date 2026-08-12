@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to Cenovia International website.
 
+## [August 12, 2026]
+- Buyer UI: shadcn-inspired theme, Lucide icons, and Motion-powered catalog interactions
+
 ## [February 16, 2025]
 - Added LinkedIn business page integration (#43)
 

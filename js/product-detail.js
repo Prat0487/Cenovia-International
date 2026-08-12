@@ -5,6 +5,8 @@ class ProductDetail {
         this.productName = document.getElementById('productName');
         this.productAttributes = document.getElementById('productAttributes');
         this.productInquiryLink = document.getElementById('productInquiryLink');
+        this.productSaveButton = document.getElementById('productSaveButton');
+        this.productBreadcrumb = document.getElementById('productBreadcrumb');
         this.similarProducts = document.getElementById('similarProducts');
         this.recentlyViewed = document.getElementById('recentlyViewed');
         this.urlParams = new URLSearchParams(window.location.search);
@@ -24,6 +26,7 @@ class ProductDetail {
             const product = products.find(p => p.id === this.productId);
             if (product) {
                 this.renderProductDetails(product);
+                this.bindSaveButton(product);
                 BuyerUtils.addRecentlyViewed(this.productType, this.productId, product.name);
                 this.renderSimilarProducts(products, product);
                 await this.renderRecentlyViewed();
@@ -39,6 +42,18 @@ class ProductDetail {
         this.productImage.src = product.detailImage;
         this.productImage.alt = product.name;
         this.productName.textContent = product.name;
+        if (this.productBreadcrumb) {
+            const typeLabel = this.productType === 'women' ? 'Womenswear' : 'Menswear';
+            const catalogHref = this.productType === 'women' ? 'product-womenswear.html' : 'product-menswear.html';
+            this.productBreadcrumb.innerHTML = `
+                <a href="index.html">Home</a>
+                <i data-lucide="chevron-right"></i>
+                <a href="${catalogHref}">${typeLabel}</a>
+                <i data-lucide="chevron-right"></i>
+                <span>${product.name}</span>
+            `;
+            window.CenoviaUI?.refreshIcons(this.productBreadcrumb);
+        }
         this.renderAttributes(product.attributes);
         if (this.productInquiryLink) {
             const params = new URLSearchParams({
@@ -52,11 +67,37 @@ class ProductDetail {
 
     renderAttributes(attributes) {
         this.productAttributes.innerHTML = `
-            <p><span class="detail-attribute-key">Category:</span> <span class="detail-attribute-value">${attributes.category}</span></p>
-            <p><span class="detail-attribute-key">Size:</span> <span class="detail-attribute-value">${attributes.size}</span></p>
-            <p><span class="detail-attribute-key">Grammage:</span> <span class="detail-attribute-value">${attributes.grammage}</span></p>
-            <p><span class="detail-attribute-key">Composition:</span> <span class="detail-attribute-value">${attributes.composition}</span></p>
+            <div class="ui-spec-grid">
+                <div class="ui-spec-row"><span class="detail-attribute-key">Category</span><span class="detail-attribute-value">${attributes.category}</span></div>
+                <div class="ui-spec-row"><span class="detail-attribute-key">Size</span><span class="detail-attribute-value">${attributes.size}</span></div>
+                <div class="ui-spec-row"><span class="detail-attribute-key">Grammage</span><span class="detail-attribute-value">${attributes.grammage}</span></div>
+                <div class="ui-spec-row"><span class="detail-attribute-key">Composition</span><span class="detail-attribute-value">${attributes.composition}</span></div>
+            </div>
         `;
+    }
+
+    bindSaveButton(product) {
+        if (!this.productSaveButton) return;
+        const key = `${this.productType}:${product.id}`;
+        const sync = () => {
+            const saved = BuyerUtils.getWishlist().includes(key);
+            this.productSaveButton.classList.toggle('is-saved', saved);
+            this.productSaveButton.setAttribute('aria-pressed', String(saved));
+            this.productSaveButton.querySelector('span').textContent = saved ? 'Saved to shortlist' : 'Save to shortlist';
+        };
+        this.productSaveButton.addEventListener('click', () => {
+            const wishlist = BuyerUtils.getWishlist();
+            if (wishlist.includes(key)) {
+                BuyerUtils.saveWishlist(wishlist.filter(item => item !== key));
+                window.CenoviaUI?.toast('Removed from shortlist');
+            } else {
+                BuyerUtils.saveWishlist([...wishlist, key]);
+                window.CenoviaUI?.toast('Saved to shortlist');
+            }
+            sync();
+        });
+        sync();
+        window.CenoviaUI?.refreshIcons(this.productSaveButton);
     }
 
     renderSimilarProducts(products, currentProduct) {
@@ -75,14 +116,15 @@ class ProductDetail {
 
         this.similarProducts.classList.remove('hidden');
         this.similarProducts.querySelector('#similarProductsGrid').innerHTML = similar.map(product => `
-            <a href="product-detail.html?id=${product.id}&type=${this.productType}" class="similar-product-card">
+            <a href="product-detail.html?id=${product.id}&type=${this.productType}" class="similar-product-card ui-reveal">
                 <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
                 <div class="p-3">
-                    <p class="font-semibold text-gray-800">${product.name}</p>
-                    <p class="text-sm text-gray-600">${product.attributes.category}</p>
+                    <p class="font-semibold">${product.name}</p>
+                    <p class="text-sm text-[hsl(var(--muted-foreground))]">${product.attributes.category}</p>
                 </div>
             </a>
         `).join('');
+        window.CenoviaUI?.refreshIcons(this.similarProducts);
     }
 
     async renderRecentlyViewed() {
@@ -105,14 +147,15 @@ class ProductDetail {
 
         this.recentlyViewed.classList.remove('hidden');
         this.recentlyViewed.querySelector('#recentlyViewedGrid').innerHTML = products.map(product => `
-            <a href="product-detail.html?id=${product.id}&type=${product.productType}" class="similar-product-card">
+            <a href="product-detail.html?id=${product.id}&type=${product.productType}" class="similar-product-card ui-reveal">
                 <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
                 <div class="p-3">
-                    <p class="font-semibold text-gray-800">${product.name}</p>
-                    <p class="text-sm text-gray-600">${product.productType === 'women' ? 'Womenswear' : 'Menswear'}</p>
+                    <p class="font-semibold">${product.name}</p>
+                    <p class="text-sm text-[hsl(var(--muted-foreground))]">${product.productType === 'women' ? 'Womenswear' : 'Menswear'}</p>
                 </div>
             </a>
         `).join('');
+        window.CenoviaUI?.refreshIcons(this.recentlyViewed);
     }
 }
 

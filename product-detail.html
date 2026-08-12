@@ -8,49 +8,36 @@
     <meta name="description" content="Explore the product details of Cenovia International. Premium sportswear manufacturing and export.">
     <title>Product Detail - Cenovia International</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="css/custom.css" rel="stylesheet">
-    <style>
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-        }
-        /* Added styles for image zoom */
-        .image-container {
-            overflow: hidden; /* Prevent zoomed image from overflowing */
-        }
-        #productImage {
-            transition: transform 0.3s ease; /* Smooth transition for zoom */
-        }
-        #productImage:hover,
-        #productImage:active {
-            transform: scale(1.1); /* Zoom in on hover/touch */
-        }
-    </style>
+    <link href="css/ui-theme.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="js/ui-kit.js"></script>
     <script src="components/TopRibbon.js"></script>
     <script src="components/MainNav.js"></script>
     <script src="components/SiteFooter.js"></script>
-    <script src="components/MainNav.js"></script>
-    <script src="components/SiteFooter.js"></script>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
     <top-ribbon></top-ribbon>
     <main-nav></main-nav>
     <main class="flex-grow">
         <div class="container mx-auto px-4 py-8">
+            <nav id="productBreadcrumb" class="ui-breadcrumb mb-6 text-sm text-[hsl(var(--muted-foreground))] flex items-center gap-2 flex-wrap"></nav>
             <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-3/5 flex-grow">
-                    <img id="productImage" src="" alt="" class="w-full h-auto rounded-lg shadow-md object-contain">
+                <div class="md:w-3/5 flex-grow ui-card overflow-hidden">
+                    <img id="productImage" src="" alt="" class="w-full h-auto object-contain">
                 </div>
                 <div class="md:w-2/5">
                     <h2 id="productName" class="text-3xl font-bold mb-4"></h2>
-                    <div id="productAttributes" class="text-gray-700">
-                        <!-- Attributes will be loaded here -->
+                    <div id="productAttributes" class="text-[hsl(var(--muted-foreground))]">
                     </div>
-                    <div class="mt-6">
-                        <a id="productInquiryLink" href="contact-us.html" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a id="productInquiryLink" href="contact-us.html" class="ui-btn-success">
                             Enquire Now
                         </a>
+                        <button id="productSaveButton" type="button" class="ui-btn-outline wishlist-btn w-auto px-4" aria-pressed="false">
+                            <i data-lucide="heart"></i>
+                            <span>Save to shortlist</span>
+                        </button>
                     </div>
                 </div>
             </div>

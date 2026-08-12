@@ -13,7 +13,7 @@ class BuyerBar {
         bar.innerHTML = `
             <div class="buyer-bar__inner">
                 <div class="buyer-bar__summary">
-                    <i class="fas fa-heart text-red-500" aria-hidden="true"></i>
+                    <i data-lucide="heart" aria-hidden="true"></i>
                     <span id="buyerBarCount">0 saved</span>
                 </div>
                 <div class="buyer-bar__actions">
@@ -29,6 +29,7 @@ class BuyerBar {
 
         window.addEventListener('cenovia:wishlist-changed', () => this.update());
         this.update();
+        window.CenoviaUI?.refreshIcons(bar);
     }
 
     update() {
@@ -43,6 +44,7 @@ class BuyerBar {
         this.bar.classList.remove('hidden');
         this.countEl.textContent = `${count} saved product${count === 1 ? '' : 's'}`;
         this.inquiryEl.href = BuyerUtils.buildInquiryUrl(keys);
+        window.CenoviaUI?.refreshIcons(this.bar);
     }
 }
 

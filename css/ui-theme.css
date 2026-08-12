@@ -1,0 +1,383 @@
+:root {
+    --background: 40 33% 98%;
+    --foreground: 24 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+    --primary: 222 47% 18%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 24 10% 16%;
+    --muted: 40 18% 94%;
+    --muted-foreground: 25 8% 42%;
+    --accent: 32 42% 92%;
+    --accent-foreground: 24 12% 16%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 12% 88%;
+    --input: 30 12% 88%;
+    --ring: 222 47% 18%;
+    --radius: 0.85rem;
+    --shadow: 0 12px 32px rgba(28, 25, 23, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "ss01", "cv11";
+}
+
+.ui-container {
+    width: min(1200px, calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.ui-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ui-btn,
+.ui-btn-primary,
+.ui-btn-secondary,
+.ui-btn-outline,
+.ui-btn-ghost,
+.ui-btn-success {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    border-radius: calc(var(--radius) - 2px);
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 0.925rem;
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.ui-btn:hover,
+.ui-btn-primary:hover,
+.ui-btn-secondary:hover,
+.ui-btn-outline:hover,
+.ui-btn-ghost:hover,
+.ui-btn-success:hover {
+    transform: translateY(-1px);
+}
+
+.ui-btn-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.ui-btn-secondary {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+}
+
+.ui-btn-outline {
+    background: hsl(var(--card));
+    color: hsl(var(--foreground));
+    border-color: hsl(var(--border));
+}
+
+.ui-btn-ghost {
+    background: transparent;
+    color: hsl(var(--foreground));
+}
+
+.ui-btn-success {
+    background: #166534;
+    color: #fff;
+}
+
+.ui-btn-sm {
+    min-height: 38px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.ui-card {
+    background: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04);
+}
+
+.ui-hero {
+    position: relative;
+    overflow: hidden;
+    color: hsl(var(--primary-foreground));
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.16), transparent 28%),
+        linear-gradient(135deg, hsl(222 47% 14%) 0%, hsl(222 32% 24%) 52%, hsl(32 28% 28%) 100%);
+}
+
+.ui-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -40% 40%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 60%);
+    pointer-events: none;
+}
+
+.ui-input,
+.ui-select,
+.ui-textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid hsl(var(--input));
+    border-radius: calc(var(--radius) - 4px);
+    background: hsl(var(--card));
+    color: hsl(var(--foreground));
+    outline: none;
+}
+
+.ui-input:focus,
+.ui-select:focus,
+.ui-textarea:focus {
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.14);
+}
+
+.ui-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    font-size: 0.72rem;
+    font-weight: 650;
+}
+
+.ui-badge-count {
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.35rem;
+    border-radius: 999px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.ui-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: transparent;
+    color: hsl(var(--foreground));
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.ui-nav-link:hover,
+.ui-nav-link[aria-expanded="true"] {
+    background: hsl(var(--accent));
+}
+
+.ui-filter-bar {
+    position: sticky;
+    top: 5.5rem;
+    z-index: 30;
+    padding: 1rem;
+    background: hsl(var(--card) / 0.92);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.product-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(28, 25, 23, 0.05);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.product-card__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+}
+
+.wishlist-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card) / 0.92);
+    color: hsl(var(--muted-foreground));
+}
+
+.wishlist-btn.is-saved {
+    color: #e11d48;
+    border-color: #fecdd3;
+    background: #fff1f2;
+}
+
+.wishlist-btn.is-saved svg {
+    fill: currentColor;
+}
+
+.product-card__overlay {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+}
+
+.compare-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    color: hsl(var(--muted-foreground));
+}
+
+.ui-toast-host {
+    position: fixed;
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    z-index: 80;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.ui-toast {
+    min-width: 240px;
+    max-width: 360px;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius);
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+    box-shadow: var(--shadow);
+    font-size: 0.9rem;
+}
+
+.ui-spec-grid {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.ui-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+    font-size: 0.92rem;
+}
+
+.ui-empty {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.glass-effect {
+    backdrop-filter: blur(16px);
+    background: hsl(var(--card) / 0.88);
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.buyer-bar {
+    background: hsl(var(--card) / 0.96);
+    border-top: 1px solid hsl(var(--border));
+}
+
+.buyer-bar__cta {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.global-search__field {
+    border-color: hsl(var(--border));
+    border-radius: 999px;
+    background: hsl(var(--card));
+}
+
+.saved-actions-bar,
+.similar-product-card,
+.filter-chip {
+    border-color: hsl(var(--border));
+}
+
+.filter-chip {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+}
+
+.wishlist-btn.ui-btn-outline,
+#productSaveButton {
+    width: auto;
+    height: auto;
+    min-height: 44px;
+    border-radius: calc(var(--radius) - 2px);
+}
+
+.ui-breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ui-breadcrumb a:hover {
+    color: hsl(var(--foreground));
+}
+    .ui-filter-bar {
+        position: static;
+        top: auto;
+    }
+
+    .product-card__actions {
+        grid-template-columns: 1fr;
+    }
+}

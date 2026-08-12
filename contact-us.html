@@ -9,49 +9,39 @@
   <meta name="description" content="Contact Cenovia International - Get in touch with us">
   <title>Contact Us - Cenovia International</title>
     
-  <!-- Stylesheets -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="css/custom.css" rel="stylesheet">
-  <!-- Custom styles -->
-  <style>
-      .nav-link {
-          @apply text-gray-700 hover:text-blue-600 font-bold transition-all duration-300;
-      }
-      .nav-link.active {
-          @apply text-blue-600;
-      }
-      .social-link {
-          @apply hover:text-blue-300 transition-all duration-300 hover:scale-110;
-      }
-      .glass-effect {
-          backdrop-filter: blur(10px);
-          background: rgba(255, 255, 255, 0.9);
-      }
-  </style>
-    
-  <!-- Web Components -->
+  <link href="css/ui-theme.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script type="module" src="js/ui-kit.js"></script>
   <script src="components/TopRibbon.js"></script>
   <script src="components/MainNav.js"></script>
   <script src="components/SiteFooter.js"></script>
 </head>
 
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
   <top-ribbon></top-ribbon>
   <main-nav></main-nav>
 
   <!-- Main Content -->
   <main class="flex-grow">
-      <div class="container mx-auto px-4 py-8">
+      <div class="ui-hero py-14">
+          <div class="container mx-auto px-4 relative z-10">
+              <p class="ui-eyebrow mb-4"><i data-lucide="mail"></i> Buyer inquiry</p>
+              <h1 class="text-4xl font-bold mb-3">Contact Us</h1>
+              <p class="text-white/80 max-w-2xl">Share quantities, customization, and export requirements. Shortlisted styles are attached automatically when you inquire from the catalog.</p>
+          </div>
+      </div>
+      <div class="container mx-auto px-4 py-10">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
           <div id="contactForm">
-              <h1 class="text-3xl font-bold mb-8">Contact Us</h1>              
               <form
                   id="leadForm"
-                  class="max-w-lg mx-auto bg-white p-6 rounded shadow-md"
+                  class="ui-card p-6 md:p-8"
                   action="https://script.google.com/macros/s/AKfycbx8wH_n2usm4V-5JJa71CykYDpKU57Ejl29J517FkLO7kjrBaRZn-NARJn399HH5fhO/exec"    
                   method="POST"
               >
-                  <div id="productContext" class="hidden mb-4 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm text-blue-900"></div>
+                  <div id="productContext" class="hidden mb-4 rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--accent))] p-4 text-sm"></div>
                   <div class="mb-4">
                       <label class="block font-semibold mb-2">Name (required)</label>
                       <input 
@@ -59,7 +49,7 @@
                           name="name" 
                           id="name"
                           autocomplete="name"
-                          class="w-full border border-gray-300 rounded px-3 py-2"
+                          class="ui-input"
                           required
                       />
                   </div>
@@ -70,7 +60,7 @@
                           name="company"
                           id="company"
                           autocomplete="organization"
-                          class="w-full border border-gray-300 rounded px-3 py-2"
+                          class="ui-input"
                       />
                   </div>
                   <div class="mb-4">
@@ -80,7 +70,7 @@
                           name="phone" 
                           autocomplete="tel"
                           inputmode="tel"
-                          class="w-full border border-gray-300 rounded px-3 py-2"
+                          class="ui-input"
                           required
                       />
                   </div>
@@ -90,7 +80,7 @@
                           type="email" 
                           name="email" 
                           autocomplete="email"
-                          class="w-full border border-gray-300 rounded px-3 py-2"
+                          class="ui-input"
                           required
                       />
                   </div>
@@ -102,7 +92,7 @@
                               name="country"
                               id="country"
                               autocomplete="country-name"
-                              class="w-full border border-gray-300 rounded px-3 py-2"
+                              class="ui-input"
                           />
                       </div>
                       <div class="mb-4">
@@ -113,7 +103,7 @@
                               id="quantity"
                               inputmode="numeric"
                               placeholder="e.g. 500 pieces"
-                              class="w-full border border-gray-300 rounded px-3 py-2"
+                              class="ui-input"
                           />
                       </div>
                   </div>
@@ -122,7 +112,7 @@
                       <textarea 
                           name="message" 
                           id="message"
-                          class="w-full border border-gray-300 rounded px-3 py-2"
+                          class="ui-input"
                           rows="4"
                       ></textarea>
                   </div>
@@ -134,21 +124,27 @@
                   <button 
                       id="submitButton"
                       type="submit"
-                      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                      class="ui-btn-primary"
                   >
                       Submit Now
                   </button>
               </form>
           </div>
+          <aside class="ui-card p-6 md:p-8 space-y-4">
+              <h2 class="text-xl font-semibold">Talk to the team</h2>
+              <a href="tel:+916360817265" class="flex items-center gap-3 text-[hsl(var(--muted-foreground))]"><i data-lucide="phone"></i> +91 6360817265</a>
+              <a href="https://wa.me/916360817265" class="flex items-center gap-3 text-[hsl(var(--muted-foreground))]" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i> WhatsApp</a>
+              <a href="mailto:support@cenoviainternational.com" class="flex items-center gap-3 text-[hsl(var(--muted-foreground))]"><i data-lucide="mail"></i> support@cenoviainternational.com</a>
+              <p class="text-sm text-[hsl(var(--muted-foreground))]">Typical buyer questions: MOQ, fabric substitutions, branding, sampling, and export lead times.</p>
+          </aside>
+          </div>
 
           <div id="thankYouMessage" class="hidden max-w-lg mx-auto text-center py-16">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                  <svg class="mx-auto h-16 w-16 text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <h2 class="text-3xl font-bold text-gray-800 mb-4">Thank You!</h2>
-                  <p id="personalizedMessage" class="text-lg text-gray-600 mb-6"></p>
-                  <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+              <div class="ui-card p-8">
+                  <i data-lucide="circle-check" class="mx-auto mb-4"></i>
+                  <h2 class="text-3xl font-bold mb-4">Thank You!</h2>
+                  <p id="personalizedMessage" class="text-lg text-[hsl(var(--muted-foreground))] mb-6"></p>
+                  <a href="index.html" class="ui-btn-primary">
                       Return to Home Page
                   </a>
               </div>

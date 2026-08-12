@@ -1,71 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <header-tags></header-tags>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://cenoviainternational.com/our-team.html">
     <meta name="keywords" content="cenovia international team, cenovia international founders, cenovia international ceo, cenovia international cto">
     <meta name="description" content="Meet our talented team at Cenovia International">
     <title>Our Team - Cenovia International</title>
-    
-    <!-- Stylesheets -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="css/custom.css" rel="stylesheet">
-    
-    <!-- Custom styles -->
-    <style>
-        .nav-link {
-            @apply text-gray-700 hover:text-blue-600 font-bold transition-all duration-300;
-        }
-        .nav-link.active {
-            @apply text-blue-600;
-        }
-        .social-link {
-            @apply hover:text-blue-300 transition-all duration-300 hover:scale-110;
-        }
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-        }
-    </style>
-    
-    <!-- Web Components -->
+    <link href="css/ui-theme.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="js/ui-kit.js"></script>
     <script src="components/TopRibbon.js"></script>
     <script src="components/MainNav.js"></script>
     <script src="components/SiteFooter.js"></script>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
-    <!-- Web Components -->
+<body class="flex flex-col min-h-screen">
     <top-ribbon></top-ribbon>
     <main-nav></main-nav>
 
-    <!-- Main Content -->
     <main class="flex-grow">
-        <div class="container mx-auto px-4 py-8">
-            <h1 class="text-3xl font-bold mb-8">Meet Our Team</h1>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Team Member Card - Anant Mittal -->
-                <div class="bg-white shadow-md rounded-lg p-6 transform hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-full aspect-square rounded-lg mb-4 bg-blue-50 text-blue-700 flex items-center justify-center text-5xl font-bold" aria-label="Anant Mittal">
+        <div class="ui-hero py-14">
+            <div class="container mx-auto px-4 relative z-10">
+                <p class="ui-eyebrow mb-4"><i data-lucide="users"></i> Leadership</p>
+                <h1 class="text-4xl font-bold mb-3">Meet Our Team</h1>
+                <p class="text-white/80 max-w-2xl">The founders buyers work with on manufacturing programs, quality, and export follow-up.</p>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+                <div class="ui-card p-6" data-ui-reveal>
+                    <div class="w-full aspect-square rounded-lg mb-4 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] flex items-center justify-center text-5xl font-bold" aria-label="Anant Mittal">
                         AM
                     </div>
                     <h2 class="text-xl font-semibold">Anant Mittal</h2>
-                    <p class="text-gray-700">Founder & CEO</p>
+                    <p class="text-[hsl(var(--muted-foreground))]">Founder & CEO</p>
                 </div>
-
-                <!-- Team Member Card - Prateek Rastogi -->
-                <div class="bg-white shadow-md rounded-lg p-6 transform hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-full aspect-square rounded-lg mb-4 bg-indigo-50 text-indigo-700 flex items-center justify-center text-5xl font-bold" aria-label="Prateek Rastogi">
+                <div class="ui-card p-6" data-ui-reveal>
+                    <div class="w-full aspect-square rounded-lg mb-4 bg-[hsl(var(--muted))] text-[hsl(var(--foreground))] flex items-center justify-center text-5xl font-bold" aria-label="Prateek Rastogi">
                         PR
                     </div>
                     <h2 class="text-xl font-semibold">Prateek Rastogi</h2>
-                    <p class="text-gray-700">Founder & CTO</p>
+                    <p class="text-[hsl(var(--muted-foreground))]">Founder & CTO</p>
                 </div>
             </div>
         </div>
     </main>
 
     <site-footer></site-footer>
+    <script src="js/buyer-utils.js"></script>
+    <script src="js/product-loader.js"></script>
+    <script src="js/global-search.js"></script>
+    <script src="js/buyer-bar.js"></script>
 </body>
 </html>
